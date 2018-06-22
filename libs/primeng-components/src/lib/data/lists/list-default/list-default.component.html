@@ -1,0 +1,69 @@
+<p-dataList [value]="cars" [paginator]="true" [rows]="5">
+    <p-header>
+        List of Cars
+    </p-header>
+    <ng-template let-car pTemplate="item">
+        <div class="ui-grid ui-grid-responsive ui-fluid"
+             style="font-size:16px;padding:20px;border-bottom:1px solid #D5D5D5;">
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-3" style="text-align:center"><i class="fa fa-search"
+                                                                        (click)="selectCar(car)"
+                                                                        style="cursor:pointer;float:left;margin-top:40px"></i>
+                    <img
+                        src={{car.photo}}></div>
+                <div class="ui-grid-col-9">
+                    <div class="ui-grid ui-grid-responsive ui-fluid">
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-2">Vin:</div>
+                            <div class="ui-grid-col-10">{{car.vin}}</div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-2">Year:</div>
+                            <div class="ui-grid-col-10">{{car.year}}</div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-2">Brand:</div>
+                            <div class="ui-grid-col-10">{{car.brand}}</div>
+                        </div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-2">Color:</div>
+                            <div class="ui-grid-col-10">{{car.color}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <p-footer>
+        this is a footer
+    </p-footer>
+</p-dataList>
+
+
+<p-dialog header="Car Details" [(visible)]="displayCarDialog" [responsive]="true" showEffect="fade" [modal]="true"
+          width="600" (onAfterHide)="onDialogHide()">
+    <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="selectedCar"
+         style="font-size:16px;text-align:center;padding:20px">
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-12" style="text-align:center"><img
+                    src={{selectedCar.photo}}>
+            </div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4">Vin:</div>
+            <div class="ui-grid-col-8">{{selectedCar.vin}}</div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4">Year:</div>
+            <div class="ui-grid-col-8">{{selectedCar.year}}</div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4">Brand:</div>
+            <div class="ui-grid-col-8">{{selectedCar.brand}}</div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4">Color:</div>
+            <div class="ui-grid-col-8">{{selectedCar.color}}</div>
+        </div>
+    </div>
+</p-dialog>

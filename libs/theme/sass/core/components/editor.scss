@@ -1,0 +1,14 @@
+@include placeholder {
+  color: $icon-dark-inactive-color;
+}
+
+@mixin ui-editor($primary-text-color:$primary-text-color) {
+  &.ui-editor-container {
+    .ui-editor-toolbar {
+
+    }
+    .ql-picker.ql-expanded .ql-picker-label {
+      color: $primary-text-color;
+    }
+  }
+}

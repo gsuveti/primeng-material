@@ -1,0 +1,121 @@
+@import "vars/vars";
+@import "utils";
+@import "sizes";
+@import "reset";
+@import "fonts";
+@import "ripple";
+@import "shadow";
+@import "components/widget";
+@import "wrappers/input-field";
+@import "wrappers/table-filter";
+@import "wrappers/pager";
+
+@mixin theme($extra-class:'') {
+  body#{$extra-class} {
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+
+    @include font-size-regular();
+    @include make-spacing();
+
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      cursor: hand;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    > .ui-widget-content {
+      &.ui-autocomplete-panel {
+        @include ui-autocomplete-panel();
+      }
+
+      &.ui-datepicker {
+        @include ui-datepicker();
+      }
+
+      &.ui-autocomplete-panel, &.ui-datepicker {
+        background: $default;
+      }
+    }
+
+    @include ui-icon();
+    @include ui-widget();
+    @include md-inputfield();
+    @include ui-float-label();
+    @include input-field();
+    @include table-filter();
+    @include pager();
+
+    h1 {
+      @include font-size-headline1();
+    }
+    h2 {
+      @include font-size-headline2();
+    }
+    h3 {
+      @include font-size-headline3();
+    }
+    h4 {
+      @include font-size-headline3();
+    }
+  }
+
+}
+
+$background-colors: (
+        white: $white,
+        black: $black,
+        primary:$primary,
+        primary-lighter: $primary-lighter,
+        primary-darker: $primary-darker,
+        accent: $accent,
+        accent-lighter:$accent-lighter,
+        accent-darker: $accent-darker,
+        default: $default,
+        info: $info,
+        success:$success,
+        warn: $warn,
+        danger: $danger,
+        border:$icon-dark-inactive-color
+) !default;
+$colors: (
+        white: $white,
+        black: $black,
+        primary:$primary-text-color,
+        primary-lighter: $primary-lighter-text-color,
+        primary-darker: $primary-darker-text-color,
+        accent: $accent-text-color,
+        accent-lighter:$accent-lighter-text-color,
+        accent-darker: $accent-darker-text-color,
+        default: $default-text-color,
+        default-lighter: $default-lighter-text-color,
+        info: $info-text-color,
+        success:$success-text-color,
+        warn: $warn-text-color,
+        danger: $danger-text-color
+) !default;
+
+@mixin generateColorClasses() {
+  @each $name, $value in $colors {
+    .color-#{$name} {
+      color: $value;
+    }
+  }
+}
+
+@mixin generateBackgroundColorClasses() {
+  @each $name, $value in $background-colors {
+    .background-#{$name} {
+      background-color: $value;
+    }
+  }
+}
+
+@include generateBackgroundColorClasses();
+@include generateColorClasses();

@@ -1,0 +1,9 @@
+<h3 class="first">Basic</h3>
+<p-chips [(ngModel)]="cities"></p-chips>
+
+<h3>ng-template</h3>
+<p-chips [(ngModel)]="cities">
+  <ng-template let-item pTemplate="item">
+    {{item}} - (active) <i class="material-icons ui-icon-accessibility" style="margin-right:2em"></i>
+  </ng-template>
+</p-chips>

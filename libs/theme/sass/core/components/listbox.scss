@@ -1,0 +1,81 @@
+@mixin ui-listbox(
+  $primary-text-color:$primary-text-color,
+  $accent:$accent,
+  $accent-text-color:$accent-text-color
+) {
+  &.ui-listbox {
+    min-width: 12.5em;
+    background-color: #ffffff;
+    border-radius: 3px;
+    &.ui-inputtext, .ui-listbox-list {
+      padding: 0;
+    }
+
+    .ui-listbox-header {
+      padding: $margin-medium;
+      vertical-align: middle;
+      float: none;
+      margin-left: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+
+      .ui-chkbox .ui-chkbox-box {
+        border-color: $primary-text-color;
+      }
+      .ui-listbox-filter-container {
+        .fa {
+          top: 0;
+          left: 0;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          color: $primary-text-color;
+        }
+        .ui-inputtext {
+          color: $primary-text-color;
+          padding-left: $icon-size;
+          width: 100%;
+          box-sizing: border-box;
+          border-bottom-color: $primary-text-color;
+          &:enabled:hover {
+            border-bottom-color: $primary-text-color;
+          }
+        }
+      }
+    }
+
+    .ui-listbox-list {
+      .ui-listbox-item {
+        overflow: hidden;
+        @include font-size-regular;
+        padding: $margin-medium;
+        margin: 0;
+        color: #424242;
+        position: relative;
+        overflow: hidden;
+        transition: background-color 0.3s;
+        border-radius: 0;
+        &.ui-state-highlight {
+          background-color: $accent;
+          color: $accent-text-color;
+          &:hover {
+            background-color: $accent;
+          }
+        }
+      }
+    }
+
+    .ui-listbox-header + .ui-listbox-list {
+      .ui-listbox-item {
+        &.ui-state-highlight {
+          background-color: transparent;
+          color: $default-text-color;
+        }
+        &:hover {
+          background-color: $hover;
+        }
+      }
+    }
+  }
+
+}

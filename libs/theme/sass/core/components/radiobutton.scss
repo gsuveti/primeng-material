@@ -1,0 +1,49 @@
+@mixin ui-radiobutton($background:$accent, $border: $border-color) {
+  &.ui-radiobutton {
+    $radio-border: 2px;
+    $icon-size: $icon-size;
+
+    .ui-radiobutton-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: $icon-size;
+      height: $icon-size;
+
+      .ui-radiobutton-icon {
+        display: block;
+        margin: 0;
+        box-sizing: border-box;
+        width: $icon-size - 2 * $radio-border;
+        height: $icon-size - 2 * $radio-border;
+
+        border-radius: 50%;
+        transition: transform ease .3s;
+        transform: scale(0);
+        background-color: $background;
+        color: transparent;
+      }
+
+      &.ui-state-focus {
+        border: $radio-border solid $background;
+      }
+      &.ui-state-active {
+        border: $radio-border solid $background;
+        background-color: transparent;
+
+        .ui-radiobutton-icon {
+          transform: scale(0.5);
+        }
+      }
+      &:not(.ui-state-active) {
+        background: none;
+        border: 2px solid $border;
+      }
+
+    }
+
+    & + .ui-radiobutton-label {
+
+    }
+  }
+}

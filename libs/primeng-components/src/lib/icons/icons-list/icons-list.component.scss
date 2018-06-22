@@ -1,0 +1,15 @@
+$margin-x-small: 4px;
+$margin-small: 8px;
+$margin-medium: 16px;
+$margin-large: 24px;
+$margin-x-large: 32px;
+
+.icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: $margin-medium;
+  i {
+    margin-bottom: $margin-small;
+  }
+}

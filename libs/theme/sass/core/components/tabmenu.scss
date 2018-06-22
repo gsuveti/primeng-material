@@ -1,0 +1,66 @@
+@mixin ui-tabmenu(
+  $primary: $primary,
+  $accent: $accent
+) {
+  &.ui-tabmenu {
+    padding: 0;
+
+    .ui-tabmenu-nav {
+      background-color: transparent;
+      border: none;
+      border-radius: 0;
+      > .ui-tabmenuitem {
+        top: auto;
+        margin: 0 $margin-x-small 0 0;
+        padding: 0;
+        border-style: solid;
+        border-width: 0 0 2px 0;
+        transition: border-color 0.3s;
+
+        &.ui-state-default {
+          border-color: transparent;
+
+          .ui-menuitem-link {
+            padding: $margin-medium;
+            background-color: transparent;
+            color: $default-text-color;
+
+            &:focus {
+              outline: 0 none;
+            }
+            .ui-menuitem-icon, .ui-menuitem-text {
+              float: none;
+              display: inline-block;
+              vertical-align: middle;
+            }
+
+            .ui-menuitem-icon {
+              margin-right: $margin-small;
+              &:before {
+                &:empty {
+                  display: none;
+                }
+              }
+
+            }
+          }
+        }
+        &:not(.ui-state-active):hover {
+          background-color: transparent;
+          border-color: $hover;
+        }
+        &.ui-state-active {
+          background-color: transparent;
+          border-color: $accent;
+
+          a {
+            color: $primary;
+            .fa {
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

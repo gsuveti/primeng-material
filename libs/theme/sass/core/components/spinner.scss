@@ -1,0 +1,40 @@
+@mixin ui-spinner() {
+
+  &.ui-spinner {
+    .ui-spinner-up {
+    }
+    .ui-spinner-down {
+
+    }
+
+    .ui-inputtext {
+      padding-right: $icon-size + $margin-small;
+    }
+
+    .ui-spinner-button {
+      &.ui-button {
+        @include ui-button-reset();
+        z-index: auto;
+        position: absolute;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        min-width: $icon-size;
+        width: $icon-size;
+
+        .fa {
+          color: $icon-dark-inactive-color;
+        }
+        &:enabled {
+          &:hover, &:active {
+            cursor: pointer;
+            .fa {
+              color: $primary;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,376 @@
+$spacing-sizes: (
+        '': $margin-medium,
+        none: 0,
+        xs : $margin-x-small,
+        sm : $margin-small,
+        md : $margin-medium,
+        lg : $margin-large,
+        xl : $margin-x-large,
+        auto:auto
+) !default;
+
+/// generate margin and padding classes
+/// e.g; mx-sm
+@mixin make-spacing() {
+  @each $size, $units in $spacing-sizes {
+    $dash: '-';
+    @if $size == '' {
+      $dash: '';
+    }
+
+    .p#{$dash}#{$size} {
+      @include p($size);
+    }
+    .px#{$dash}#{$size} {
+      @include px($size);
+    }
+    .py#{$dash}#{$size} {
+      @include py($size);
+    }
+    .pt#{$dash}#{$size} {
+      @include pt($size);
+    }
+    .pr#{$dash}#{$size} {
+      @include pr($size);
+    }
+    .pb#{$dash}#{$size} {
+      @include pb($size);
+    }
+    .pl#{$dash}#{$size} {
+      @include pl($size);
+    }
+
+    .m#{$dash}#{$size} {
+      @include m($size);
+    }
+    .mx#{$dash}#{$size} {
+      @include mx($size);
+    }
+    .my#{$dash}#{$size} {
+      @include my($size);
+    }
+    .mt#{$dash}#{$size} {
+      @include mt($size);
+    }
+    .mr#{$dash}#{$size} {
+      @include mr($size);
+    }
+    .mb#{$dash}#{$size} {
+      @include mb($size);
+    }
+    .ml#{$dash}#{$size} {
+      @include ml($size);
+    }
+  }
+}
+
+@mixin pt($size : md) {
+  padding-top: map-get($spacing-sizes, $size);
+}
+
+@mixin pt-xs() {
+  @include pt(xs)
+}
+
+@mixin pt-sm() {
+  @include pt(sm)
+}
+
+@mixin pt-lg() {
+  @include pt(lg)
+}
+
+@mixin pt-xl() {
+  @include pt(xl)
+}
+
+@mixin pr($size : md) {
+  padding-right: map-get($spacing-sizes, $size);
+}
+
+@mixin pr-xs() {
+  @include pr(xs)
+}
+
+@mixin pr-sm() {
+  @include pr(sm)
+}
+
+@mixin pr-lg() {
+  @include pr(lg)
+}
+
+@mixin pr-xl() {
+  @include pr(xl)
+}
+
+@mixin pb($size : md) {
+  padding-bottom: map-get($spacing-sizes, $size);
+}
+
+@mixin pb-xs() {
+  @include pb(xs)
+}
+
+@mixin pb-sm() {
+  @include pb(sm)
+}
+
+@mixin pb-lg() {
+  @include pb(lg)
+}
+
+@mixin pb-xl() {
+  @include pb(xl)
+}
+
+@mixin pl($size : md) {
+  padding-left: map-get($spacing-sizes, $size);
+}
+
+@mixin pl-xs() {
+  @include pl(xs)
+}
+
+@mixin pl-sm() {
+  @include pl(sm)
+}
+
+@mixin pl-lg() {
+  @include pl(lg)
+}
+
+@mixin pl-xl() {
+  @include pl(xl)
+}
+
+@mixin px($size : md) {
+  @include pr($size);
+  @include pl($size);
+}
+
+@mixin px-xs() {
+  @include pr(xs);
+  @include pl(xs);
+}
+
+@mixin px-sm() {
+  @include pr(sm);
+  @include pl(sm);
+}
+
+@mixin px-lg() {
+  @include pr(lg);
+  @include pl(lg);
+}
+
+@mixin px-xl() {
+  @include pr(xl);
+  @include pl(xl);
+}
+
+@mixin py($size : md) {
+  @include pt($size);
+  @include pb($size);
+}
+
+@mixin py-xs() {
+  @include pt(xs);
+  @include pb(xs);
+}
+
+@mixin py-sm() {
+  @include pt(sm);
+  @include pb(sm);
+}
+
+@mixin py-lg() {
+  @include pt(lg);
+  @include pb(lg);
+}
+
+@mixin py-xl() {
+  @include pt(xl);
+  @include pb(xl);
+}
+
+@mixin p($size : md) {
+  @include py($size);
+  @include px($size);
+}
+
+@mixin p-xs() {
+  @include px(xs);
+  @include py(xs);
+}
+
+@mixin p-sm() {
+  @include px(sm);
+  @include py(sm);
+}
+
+@mixin p-lg() {
+  @include px(lg);
+  @include py(lg);
+}
+
+@mixin p-xl() {
+  @include px(xl);
+  @include py(xl);
+}
+
+@mixin mt($size : md) {
+  margin-top: map-get($spacing-sizes, $size);
+}
+
+@mixin mt-xs() {
+  @include mt(xs)
+}
+
+@mixin mt-sm() {
+  @include mt(sm)
+}
+
+@mixin mt-lg() {
+  @include mt(lg)
+}
+
+@mixin mt-xl() {
+  @include mt(xl)
+}
+
+@mixin mr($size : md) {
+  margin-right: map-get($spacing-sizes, $size);
+}
+
+@mixin mr-xs() {
+  @include mr(xs)
+}
+
+@mixin mr-sm() {
+  @include mr(sm)
+}
+
+@mixin mr-lg() {
+  @include mr(lg)
+}
+
+@mixin mr-xl() {
+  @include mr(xl)
+}
+
+@mixin mb($size : md) {
+  margin-bottom: map-get($spacing-sizes, $size);
+}
+
+@mixin mb-xs() {
+  @include mb(xs)
+}
+
+@mixin mb-sm() {
+  @include mb(sm)
+}
+
+@mixin mb-lg() {
+  @include mb(lg)
+}
+
+@mixin mb-xl() {
+  @include mb(xl)
+}
+
+@mixin ml($size : md) {
+  margin-left: map-get($spacing-sizes, $size);
+}
+
+@mixin ml-xs() {
+  @include ml(xs)
+}
+
+@mixin ml-sm() {
+  @include ml(sm)
+}
+
+@mixin ml-lg() {
+  @include ml(lg)
+}
+
+@mixin ml-xl() {
+  @include ml(xl)
+}
+
+@mixin mx($size : md) {
+  @include mr($size);
+  @include ml($size);
+}
+
+@mixin mx-xs() {
+  @include mr(xs);
+  @include ml(xs);
+}
+
+@mixin mx-sm() {
+  @include mr(sm);
+  @include ml(sm);
+}
+
+@mixin mx-lg() {
+  @include mr(lg);
+  @include ml(lg);
+}
+
+@mixin mx-xl() {
+  @include mr(xl);
+  @include ml(xl);
+}
+
+@mixin my($size : md) {
+  @include mt($size);
+  @include mb($size);
+}
+
+@mixin my-xs() {
+  @include mt(xs);
+  @include mb(xs);
+}
+
+@mixin my-sm() {
+  @include mt(sm);
+  @include mb(sm);
+}
+
+@mixin my-lg() {
+  @include mt(lg);
+  @include mb(lg);
+}
+
+@mixin my-xl() {
+  @include mt(xl);
+  @include mb(xl);
+}
+
+@mixin m($size : md) {
+  @include my($size);
+  @include mx($size);
+}
+
+@mixin m-xs() {
+  @include mx(xs);
+  @include my(xs);
+}
+
+@mixin m-sm() {
+  @include mx(sm);
+  @include my(sm);
+}
+
+@mixin m-lg() {
+  @include mx(lg);
+  @include my(lg);
+}
+
+@mixin m-xl() {
+  @include mx(xl);
+  @include my(xl);
+}
+

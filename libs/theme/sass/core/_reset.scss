@@ -1,0 +1,10 @@
+@mixin reset() {
+  @include reset-header();
+}
+
+@mixin reset-header() {
+  &.reset-header {
+
+  }
+}
+

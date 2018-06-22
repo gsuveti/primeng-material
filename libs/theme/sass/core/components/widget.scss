@@ -1,0 +1,164 @@
+@import "../vars/vars";
+@import "../utils";
+@import "../sizes";
+@import "../reset";
+@import "../fonts";
+@import "../ripple";
+@import "../shadow";
+@import "icon";
+@import "autocomplete";
+@import "checkbox";
+@import "editor";
+@import "inputtext";
+@import "listbox";
+@import "multiselect";
+@import "radiobutton";
+@import "slider";
+@import "selectbutton";
+@import "calendar";
+@import "chips";
+@import "dropdown";
+@import "inputswitch";
+@import "password";
+@import "rating";
+@import "spinner";
+@import "togglebutton";
+@import "button";
+@import "splitbutton";
+@import "progressbar";
+//data
+@import "table";
+@import "datatable";
+@import "datalist";
+@import "datascroller";
+@import "datagrid";
+@import "paginator";
+@import "tree";
+@import "treetable";
+@import "fullcalendar";
+@import "picklist";
+//panel
+@import "accordion";
+@import "fieldset";
+@import "panel";
+@import "tabview";
+@import "toolbar";
+@import "contextmenu";
+@import "menu";
+@import "panelmenu";
+@import "steps";
+//overlay
+@import "dialog";
+@import "overlaypanel";
+@import "tooltip";
+@import "lightbox";
+@import "sidebar";
+//menu
+@import "menubar";
+@import "tieredmenu";
+@import "breadcrumb";
+@import "megamenu";
+@import "slidemenu";
+@import "tabmenu";
+@import "messages";
+@import "growl";
+@import "fileupload";
+
+@mixin ui-widget() {
+  .ui-widget {
+    font-family: "Roboto", "Helvetica Neue", sans-serif;
+    text-decoration: none;
+
+    @include ui-autocomplete();
+    @include ui-chkbox();
+    @include ui-editor();
+    @include ui-inputtext();
+    @include ui-listbox();
+    @include ui-multiselect();
+    @include ui-radiobutton();
+    @include ui-slider();
+    @include ui-selectbutton();
+    @include ui-chips();
+    @include ui-dropdown();
+    @include ui-inputswitch();
+    @include ui-password();
+    @include ui-spinner();
+    @include ui-togglebutton();
+    @include ui-progressbar();
+
+    //button
+    @include ui-button();
+    @include ui-button-secondary();
+    @include ui-button-success();
+    @include ui-button-info();
+    @include ui-button-warning();
+    @include ui-button-danger();
+    @include ui-splitbutton();
+
+    //menu
+    @include ui-contextmenu();
+
+    @include ui-panelmenu();
+    @include ui-steps();
+    @include ui-menubar();
+    @include ui-tieredmenu();
+    @include ui-breadcrumb();
+    @include ui-megamenu();
+    @include ui-slidemenu();
+    @include ui-tabmenu();
+
+    //panel
+    @include ui-accordion();
+    @include ui-fieldset();
+    @include ui-panel();
+    @include ui-tabview();
+    @include ui-toolbar();
+
+    //overlay
+
+    @include ui-dialog();
+    @include ui-overlaypanel();
+    @include ui-tooltip();
+    @include ui-lightbox();
+    @include ui-sidebar();
+
+    //data;
+    @include ui-table();
+    @include ui-datatable();
+    @include ui-datalist();
+    @include ui-datascroller();
+    @include ui-datagrid();
+    @include ui-paginator();
+    @include ui-tree();
+    @include ui-treetable();
+    @include fc();
+    @include ui-picklist();
+
+    //messages
+    @include ui-messages();
+    @include ui-growl();
+    //fileupload
+    @include ui-fileupload();
+
+    @include reset();
+
+  }
+
+  @include ui-calendar();
+  @include ui-rating();
+
+  .ui-widget-content {
+    background-color: unset;
+    border: none;
+  }
+
+  .ui-widget-header {
+    background-color: $primary;
+    color: $primary-text-color;
+    border: 1px solid $primary;
+    a {
+      color: $primary-text-color;
+    }
+  }
+
+}

@@ -1,0 +1,11 @@
+<h3 class="first">Single</h3>
+<p-selectButton [options]="types" [(ngModel)]="selectedType"></p-selectButton>
+<p>Selected Type: {{selectedType}}</p>
+
+<h3>Multiple</h3>
+<p-selectButton [options]="types" [(ngModel)]="selectedTypes" multiple="multiple"></p-selectButton>
+<p>Selected Types: <span *ngFor="let type of selectedTypes">{{type}} </span></p>
+
+<hr/>
+
+<button type="button" (click)="clear()" pButton icon="fa-close" label="Clear"></button>

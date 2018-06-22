@@ -1,0 +1,82 @@
+@mixin ui-splitbutton(
+  $primary: $primary,
+  $accent: $accent,
+  $primary-text-color:$primary-text-color,
+  $accent-text-color:$accent-text-color,
+  $hover:$hover
+) {
+  &.ui-splitbutton {
+    @include ui-buttonset(currentcolor);
+    border: 0 none;
+    background-color: $primary;
+    color: $primary-text-color;
+    padding: 0;
+    border-radius: $borderRadius;
+    height: $button-height;
+    vertical-align: bottom;
+
+    @include ui-shadow-2;
+    @include ui-button(".ui-button", $primary, $primary, $primary-text-color, $primary-text-color);
+
+    .ui-button {
+      box-shadow: none;
+
+      &.ui-splitbutton-menubutton {
+        &.ui-button-icon-only {
+          border-radius: 0 $borderRadius $borderRadius 0;
+          width: $icon-size + 2 * $margin-small;
+          min-width: $icon-size + 2 * $margin-small;
+          height: $button-height;
+          padding-left: $margin-small;
+          padding-right: $margin-small;
+        }
+      }
+    }
+
+    .ui-menu {
+      background-color: $default;
+    }
+
+    @include ui-button-secondary("&.ui-button-secondary .ui-button");
+    @include ui-button-info("&.ui-button-info .ui-button");
+    @include ui-button-success("&.ui-button-success .ui-button");
+    @include ui-button-warning("&.ui-button-warning .ui-button");
+    @include ui-button-danger("&.ui-button-danger .ui-button");
+
+    &.ui-button-secondary, &.ui-button-info, &.ui-button-success, &.ui-button-warning, &.ui-button-danger {
+      .ui-button {
+        box-shadow: none;
+      }
+    }
+
+  }
+}
+
+@mixin splitbutton-child-button() {
+  .ui-button {
+    margin: 0;
+    &.ui-state-default {
+      background-color: transparent;
+      color: inherit;
+    }
+
+    &:focus {
+      outline: 0 none;
+    }
+
+    &:enabled {
+      &:focus, &:active, &:hover {
+        background-color: transparent;
+        color: inherit;
+      }
+      &:active {
+        box-shadow: none;
+      }
+    }
+
+    &.ui-state-active {
+      background-color: transparent;
+      color: inherit;
+    }
+  }
+}

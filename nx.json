@@ -1,0 +1,24 @@
+{
+  "npmScope": "primeng-material",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "primeng-material": {
+      "tags": []
+    },
+    "primeng-material-e2e": {
+      "tags": []
+    },
+    "primeng-components": {
+      "tags": []
+    },
+    "source-code-tab-view": {
+      "tags": []
+    }
+  }
+}

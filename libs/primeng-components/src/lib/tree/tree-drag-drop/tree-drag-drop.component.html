@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="gr-12@xs gr-3@sm tree">
+    <h4>Files</h4>
+    <p-tree [value]="filesTree1" draggableNodes="true" droppableNodes="true" dragdropScope="files"></p-tree>
+  </div>
+
+  <div class="gr-12@xs gr-1@sm swap" style="text-align:center">
+    <i class="ui-icon-swap-horiz"></i>
+  </div>
+
+  <div class="gr-12@xs gr-4@sm tree">
+    <h4>Server 1</h4>
+    <p-tree [value]="filesTree2" draggableNodes="true" droppableNodes="true" dragdropScope="files"></p-tree>
+  </div>
+
+  <div class="gr-12@xs gr-1@sm swap" style="text-align:center">
+    <i class="ui-icon-swap-horiz"></i>
+  </div>
+
+  <div class="gr-12@xs gr-3@sm tree">
+    <h4>Server 2</h4>
+    <p-tree [value]="filesTree3" draggableNodes="true" droppableNodes="true" dragdropScope="other"></p-tree>
+  </div>
+</div>

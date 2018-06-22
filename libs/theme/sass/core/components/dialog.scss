@@ -1,0 +1,43 @@
+@mixin ui-dialog(
+  $primary: $primary,
+  $accent: $accent,
+  $primary-text-color:$primary-text-color,
+  $accent-text-color:$accent-text-color,
+  $border-color:$border-color
+) {
+  &.ui-dialog {
+    background-color: $default;
+    @include ui-shadow-2();
+    .ui-dialog-titlebar {
+      background-color: transparent;
+      color: $default-text-color;
+      padding: $margin-medium;
+      .ui-dialog-title {
+        @include font-size-headline2()
+      }
+      .ui-dialog-titlebar-icon {
+        @include overlay-close(transparent, $hover);
+
+        .fa-extlink:before {
+          content: "fullscreen";
+        }
+        .fa-newwin:before {
+          content: "fullscreen_exit";
+        }
+      }
+    }
+    .ui-dialog-content {
+      padding: $margin-medium;
+      overflow: visible;
+    }
+
+    .ui-dialog-footer {
+      text-align: right;
+      border-top: 1px solid $border-color;
+      .ui-dialog-buttonpane {
+        text-align: right;
+        @include ui-button-secondary(".ui-button");
+      }
+    }
+  }
+}

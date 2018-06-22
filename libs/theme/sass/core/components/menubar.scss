@@ -1,0 +1,9 @@
+@mixin ui-menubar($background:$default) {
+  &.ui-menubar {
+    padding: 0;
+    @include ui-tiered-submenu($default);
+    .ui-menubar-root-list {
+      display: flex;
+    }
+  }
+}

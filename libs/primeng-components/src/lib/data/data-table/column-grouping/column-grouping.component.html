@@ -1,0 +1,35 @@
+<p-dataTable [value]="sales">
+    <p-header>
+        <h2> DataTable - Column Grouping </h2>
+    </p-header>
+    <p-headerColumnGroup>
+        <p-row>
+            <p-column header="Brand" rowspan="3"></p-column>
+            <p-column header="Sale Rate" colspan="4"></p-column>
+        </p-row>
+        <p-row>
+            <p-column header="Sales" colspan="2"></p-column>
+            <p-column header="Profits" colspan="2"></p-column>
+        </p-row>
+        <p-row>
+            <p-column header="Last Year"></p-column>
+            <p-column header="This Year"></p-column>
+            <p-column header="Last Year"></p-column>
+            <p-column header="This Year"></p-column>
+        </p-row>
+    </p-headerColumnGroup>
+
+    <p-column field="brand"></p-column>
+    <p-column field="lastYearSale"></p-column>
+    <p-column field="thisYearSale"></p-column>
+    <p-column field="lastYearProfit"></p-column>
+    <p-column field="thisYearProfit"></p-column>
+
+    <p-footerColumnGroup>
+        <p-row>
+            <p-column footer="Totals:" colspan="3"></p-column>
+            <p-column footer="$506,202"></p-column>
+            <p-column footer="$531,020"></p-column>
+        </p-row>
+    </p-footerColumnGroup>
+</p-dataTable>

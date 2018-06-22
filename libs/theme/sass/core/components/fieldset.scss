@@ -1,0 +1,46 @@
+@mixin ui-fieldset(
+  $primary: $primary,
+  $accent: $accent,
+  $primary-text-color:$primary-text-color,
+  $accent-text-color:$accent-text-color,
+  $border-color:$border-color
+) {
+  &.ui-fieldset {
+    padding: $margin-medium;
+    border: 1px solid $border-color;
+
+    .ui-fieldset-legend {
+      padding: $margin-medium;
+      color: $default-text-color;
+
+      .ui-fieldset-toggler {
+        @include ui-icon-large();
+        @include ui-shadow-2();
+
+        background-color: $primary;
+        color: $primary-text-color;
+        margin-right: $margin-small;
+        border-radius: 50%;
+        width: $button-height;
+        height: $button-height;
+        position: relative;
+
+        &:hover {
+          background-color: $primary;
+        }
+        &:before {
+          position: absolute;
+          top: 50%;
+          margin-top: - $icon-size-large / 2;
+          left: 50%;
+          margin-left: - $icon-size-large / 2;
+        }
+      }
+      &.ui-state-focus, &:hover {
+        background-color: transparent;
+      }
+    }
+
+  }
+
+}

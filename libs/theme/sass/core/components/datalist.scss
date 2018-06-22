@@ -1,0 +1,26 @@
+@mixin ui-datalist {
+  &.ui-datalist {
+    .ui-datalist-header {
+      padding: $margin-medium;
+      background-color: transparent;
+      border-color: $border-color;
+      color: $default-text-color;
+
+      &:empty {
+
+      }
+    }
+    .ui-datalist-content {
+      padding: $margin-medium;
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+
+    }
+    .ui-datalist-footer {
+      background-color: transparent;
+      border-color: $border-color;
+      color: $default-text-color;
+    }
+  }
+}
+

@@ -1,0 +1,201 @@
+@mixin ui-table(
+  $primary: $primary,
+  $accent: $accent,
+  $primary-text-color:$primary-text-color,
+  $accent-text-color:$accent-text-color,
+  $hover:$hover,
+  $datatable-row-hover:$hover,
+  $datatable-row-odd:rgba(0, 0, 0, .02),
+  $border-color:$border-color
+) {
+  &.ui-table {
+    .ui-table-wrapper {
+      .ui-table-thead {
+        .ui-sortable-column {
+          position: relative;
+          padding: $margin-small $margin-x-large $margin-small $margin-small;
+
+          .ui-sortable-column-icon {
+            @include ui-icon-large();
+            position: absolute;
+
+            top: calc(50% - #{$icon-size-large / 2});
+            right: $margin-small;
+            display: flex;
+            justify-content: center;
+          }
+          &:hover {
+            background-color: $hover;
+          }
+          &.ui-state-highlight {
+            background-color: transparent;
+            color: $default-text-color;
+            &:hover {
+              background-color: $hover;
+            }
+          }
+        }
+        .ui-column-filter {
+          width: calc(100%);
+        }
+        > tr {
+          > th {
+            text-align: start;
+            padding: $margin-small;
+            height: $button-height + 2 * $margin-small;
+            @include row-border();
+          }
+          &:not(:last-child) {
+            > th {
+              border-bottom-color: transparent;
+            }
+          }
+        }
+      }
+      .ui-table-tbody {
+        > tr {
+          background: transparent;
+          > td {
+            background-color: transparent;
+            color: $default-text-color;
+
+            padding: $margin-small;
+            height: $button-height + 2 * $margin-small;
+            @include row-border();
+          }
+          &:hover {
+            background-color: $datatable-row-hover;
+            color: $default-text-color;
+          }
+          &.ui-contextmenu-selected {
+            color: $default-text-color;
+          }
+
+          &.ui-state-highlight {
+            background-color: $accent;
+            color: $accent-text-color;
+            a {
+              color: $accent-text-color;
+            }
+            .ui-chkbox {
+              .ui-chkbox-box {
+                border: 1px solid currentColor;
+              }
+            }
+          }
+
+          &:nth-child(odd) {
+            background-color: $datatable-row-odd;
+            &:hover {
+              background-color: $datatable-row-hover;
+              color: $default-text-color;
+            }
+            &.ui-contextmenu-selected {
+              color: $default-text-color;
+            }
+            &.ui-state-highlight {
+              background-color: $accent;
+              color: $accent-text-color;
+            }
+          }
+        }
+      }
+
+      .ui-table-tfoot {
+        > tr {
+          > td {
+            padding: $margin-small;
+            height: $button-height + 2 * $margin-small;
+            @include row-border();
+          }
+          &:not(:last-child) {
+            > td {
+              border-bottom-color: transparent;
+            }
+          }
+        }
+      }
+
+    }
+
+    &.card {
+      padding: 0;
+      .ui-table-thead, .ui-table-tbody, .ui-table-tfoot {
+        tr {
+          th, td {
+            @include row-border(transparent);
+          }
+        }
+      }
+      .ui-paginator, .ui-table-caption, .ui-table-summary, .ui-table-thead, .ui-table-tfoot {
+        background-color: transparent;
+        border-color: transparent;
+      }
+      .ui-table-summary {
+        border-top: 1px solid $border-color;
+      }
+
+    }
+
+    &.ui-table-responsive {
+      @include gridle_state(xs-down) {
+        .ui-table-thead, .ui-table-tfoot {
+          > tr {
+            > th, > td {
+              display: none !important;
+            }
+          }
+        }
+
+        .ui-table-tbody {
+          > tr {
+            > td {
+
+              text-align: left;
+              display: block;
+              width: 100% !important;
+              box-sizing: border-box;
+              float: left;
+              clear: left;
+              border: 0 !important;
+
+              .ui-column-title {
+                padding-right: $margin-x-small;
+                display: inline-block;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .ui-table-caption, .ui-table-summary {
+      padding: $margin-small;
+      background-color: transparent;
+      color: $default-text-color;
+      text-align: start;
+      border-color: $border-color;
+    }
+
+    .ui-table-caption {
+      border-bottom: 0 none;
+    }
+    .ui-table-summary {
+      border-top: 0 none;
+    }
+
+  }
+}
+
+@mixin row-border($left-right-border-color:$border-color,$top-bottom-border-color:$border-color) {
+  border-color: transparent;
+  border-top-color: $top-bottom-border-color;
+  border-bottom-color: $top-bottom-border-color;
+  &:first-child {
+    border-left-color: $left-right-border-color;
+  }
+  &:last-child {
+    border-right-color: $left-right-border-color;
+  }
+}

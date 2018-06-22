@@ -1,0 +1,7 @@
+<div class="row">
+    <div *ngFor="let icon of icons" class="icon-wrapper gr-12@xs gr-4@sm gr-3@lg">
+        <i class="large" [ngClass]="'ui-icon-'+icon"></i>
+        <span>{{icon}}</span>
+        <strong>ui-icon-{{icon}}</strong>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+.material-ink {
+  position: absolute;
+  background: rgba(0, 0, 0, .1);
+  border-radius: 50%;
+}
+
+.material-ink.animate {
+  animation: btn-circle 0.4s ease-out forwards;
+}
+
+@keyframes btn-circle {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.red-ripple {
+  .material-ink {
+    background: rgba(255, 0, 0, .1);
+  }
+}
+
+.no-ripple {
+  .material-ink {
+    background: transparent;
+  }
+}

@@ -1,0 +1,92 @@
+<p-dataTable
+        [value]="people"
+        sortMode="multiple"
+        [rows]="10"
+        [paginator]="true"
+        [pageLinks]="3"
+        [rowsPerPageOptions]="[5,10,20]"
+        reorderableColumns="true"
+        [responsive]="true"
+        [stacked]="stacked"
+
+        selectionMode="single"
+        [(selection)]="selectedPerson"
+        [contextMenu]="cm"
+        (onRowSelect)="onRowSelect($event)"
+        #dt
+>
+
+    <p-header>
+        <div style="text-align:left">
+            <p-multiSelect [options]="columnOptions" [(ngModel)]="cols"></p-multiSelect>
+            <h3>This is a header</h3>
+        </div>
+    </p-header>
+
+
+    <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" [filter]="true" sortable="true">
+        <ng-template pTemplate="filter" let-col *ngIf="col.field === 'id'">
+            <p-dropdown [options]="idFilter" [autoWidth]="false"
+                        (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)"
+                        styleClass="ui-column-filter"></p-dropdown>
+        </ng-template>
+
+        <ng-template pTemplate="filter" let-col *ngIf="col.field === 'age'">
+            <div class="ui-column-filter">
+                <i class="fa fa-close"
+                   (click)="ageFilter=null;dt.filter(null,col.field,col.filterMatchMode)"></i>
+                <span>{{ageFilter}}</span>
+                <p-slider [(ngModel)]="ageFilter" [min]="0" [max]="100"
+                          (onSlideEnd)="dt.filter($event.value,col.field,'equals')"></p-slider>
+            </div>
+        </ng-template>
+    </p-column>
+
+
+    <p-column styleClass="col-button">
+        <ng-template pTemplate="header">
+            <button type="button" pButton icon="ui-icon-refresh"></button>
+        </ng-template>
+        <ng-template let-car="rowData" pTemplate="body">
+            <button type="button" pButton icon="fa-search"></button>
+        </ng-template>
+    </p-column>
+
+
+    <p-footer>
+        <p *ngIf="selectedPerson.id"> {{selectedPerson.id}} {{selectedPerson.lastName}} {{selectedPerson.firstName}}
+            :
+            {{selectedPerson.age}} </p>
+    </p-footer>
+
+</p-dataTable>
+
+<p-contextMenu #cm [model]="menuItems"></p-contextMenu>
+
+
+<p-dialog header="Edit" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true">
+    <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="person">
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="vin">Id</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="vin" [(ngModel)]="person.id"/></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="year">LastName</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="year" [(ngModel)]="person.lastName"/></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="brand">FirstName</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="brand" [(ngModel)]="person.firstName"/></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="color">Age</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="color" [(ngModel)]="person.age"/></div>
+        </div>
+    </div>
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"></button>
+            <button type="button" pButton icon="fa-check" (click)="save()" label="Save"></button>
+        </div>
+    </p-footer>
+</p-dialog>

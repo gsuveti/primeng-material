@@ -1,0 +1,25 @@
+<button pButton type="button"
+        icon="ui-icon-color-lens"
+        label="toggle left menu"
+        (click)="toggleLeftMenu()"></button>
+<button pButton type="button"
+        icon="ui-icon-color-lens"
+        label="toggle right menu"
+        (click)="toggleRightMenu()"></button>
+
+
+<div class="side-nav-container mt">
+  <nav class="side-nav-side side-nav-side-left"
+       [class.side-nav-side-open]="leftMenuOpen" style="background-color: red">
+    <div class="p"> left menu</div>
+  </nav>
+  <div class="side-nav-content p-xl">
+    {{contentText}}
+  </div>
+  <nav class="side-nav-side side-nav-side-right" [class.side-nav-side-open]="rightMenuOpen"
+       style="background-color: blue">
+    <div class="p-md">
+      <div class="p"> right menu</div>
+    </div>
+  </nav>
+</div>

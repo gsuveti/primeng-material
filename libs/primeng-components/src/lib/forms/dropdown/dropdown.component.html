@@ -1,0 +1,19 @@
+<div>
+    <h3>Simple</h3>
+    <p-dropdown [options]="cities" [(ngModel)]="selectedCityForDropdown0"></p-dropdown>
+</div>
+
+<div>
+    <h3>No auto width</h3>
+    <p-dropdown [options]="cities" [(ngModel)]="selectedCityForDropdown1" [autoWidth]="false"></p-dropdown>
+</div>
+
+<div>
+    <h3>Editable</h3>
+    <p-dropdown [options]="cities" [(ngModel)]="selectedCityForDropdown2" editable="editable"></p-dropdown>
+</div>
+
+<div>
+    <h3>With filter</h3>
+    <p-dropdown [options]="cities" [(ngModel)]="selectedCityForDropdown3" [filter]="true"></p-dropdown>
+</div>

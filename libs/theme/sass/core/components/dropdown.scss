@@ -1,0 +1,94 @@
+@mixin ui-dropdown() {
+  &.ui-dropdown {
+    border: none;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 1px;
+    box-sizing: border-box;
+    border-radius: 0;
+    transition: border-color 0.3s;
+
+    .ui-dropdown-trigger {
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: $icon-size;
+      padding: 0;
+
+      .fa {
+        color: $icon-dark-inactive-color;
+        margin-top: 0;
+        margin-left: 0;
+      }
+    }
+    .ui-dropdown-label {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      padding: $margin-small $icon-size $margin-small 0;
+      border: 0;
+    }
+
+    &.ui-state-focus {
+      border-bottom: 2px solid $primary;
+      margin-bottom: 0;
+    }
+
+    &:not(.ui-state-disabled):hover {
+      background: none;
+      border-color: $primary;
+    }
+
+    .ui-dropdown-panel {
+      border-radius: 0;
+      background-color: $white;
+
+      .ui-dropdown-list {
+        padding: 0;
+        &:hover {
+          background-color: inherit;
+        }
+      }
+      .ui-dropdown-item {
+        margin: 0;
+        @include font-size-regular;
+        padding: 0.625em 1em;
+        color: $default-text-color;
+        transition: background-color 0.3s;
+        border-radius: 0;
+
+        &:hover {
+          background-color: $hover;
+          color: $default-text-color;
+        }
+
+        &.ui-state-highlight {
+          background-color: $accent;
+          color: $accent-text-color;
+        }
+      }
+      &.ui-shadow {
+        @include ui-shadow-2;
+      }
+      .ui-dropdown-filter-container {
+        display: block;
+        border-bottom: 1px solid $primary-text-color;
+        background-color: $primary;
+        padding: $margin-medium;
+        .ui-inputtext {
+          color: $primary-text-color;
+          padding-right: $icon-size;
+          border-bottom-color: $primary-text-color;
+          &:enabled:hover {
+            border-bottom-color: $primary-text-color;
+          }
+        }
+        .fa {
+          top: $margin-medium;
+          right: $margin-medium;
+          color: $primary-text-color;
+        }
+      }
+    }
+  }
+}

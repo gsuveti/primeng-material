@@ -1,0 +1,26 @@
+@mixin ui-chkbox($background:$accent, $border: $border-color, $color:$accent-text-color ) {
+  &.ui-chkbox {
+    .ui-chkbox-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.ui-state-active {
+        border: none;
+        background-color: $background;
+        color: $color;
+      }
+      &:not(.ui-state-active) {
+        background: none;
+        border: 1px solid $border;
+      }
+      .ui-checkbox-icon {
+        color: $color;
+      }
+    }
+
+    & + .ui-chkbox-label {
+
+    }
+  }
+}

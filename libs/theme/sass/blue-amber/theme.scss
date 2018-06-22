@@ -1,0 +1,9 @@
+@import "vars";
+@import "~primeng/resources/themes/theme";
+@import "../core/layout";
+@import "../core/theme";
+
+@mixin blue-amber($extra-class:'') {
+  @include layout($extra-class);
+  @include theme($extra-class);
+}

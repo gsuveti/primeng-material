@@ -1,0 +1,32 @@
+$margin-x-small: 4px;
+$margin-small: 8px;
+$margin-medium: 16px;
+$margin-large: 24px;
+$margin-x-large: 32px;
+
+$primary: blue;
+$border-color: gray;
+$primary-text-color: black;
+
+//todo fix
+.swap {
+  display: flex;
+  justify-content: center;
+  margin-top: $margin-medium;
+
+  i {
+    //@include ui-icon-large();
+    transform: rotate(90deg);
+
+    //@include gridle_state(sm) {
+    //  transform: rotate(0deg);
+    //}
+  }
+
+}
+
+.tree {
+  h4 {
+    text-align: center;
+  }
+}

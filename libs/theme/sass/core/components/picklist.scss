@@ -1,0 +1,106 @@
+@mixin ui-picklist(
+  $accent: $accent,
+  $accent-text-color:$accent-text-color,
+  $hover:$hover,
+  $border-color:$border-color
+) {
+  &.ui-picklist {
+    .ui-picklist-buttons {
+      padding: $margin-small $margin-medium;
+      .ui-picklist-buttons-cell {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    .ui-picklist-listwrapper {
+      .ui-picklist-list {
+        width: auto;
+        
+        .ui-picklist-droppoint {
+          height: 0;
+          padding: 0;
+        }
+        .ui-picklist-item {
+          padding: $margin-x-small $margin-small;
+          &.ui-state-highlight {
+            background-color: $accent;
+          }
+        }
+      }
+
+      .ui-picklist-filter-container {
+        padding: $margin-small;
+        border: 1px solid $border-color;
+        border-width: 0 1px;
+
+        .ui-picklist-filter {
+          padding-left: $margin-large;
+          text-indent: 0;
+        }
+        .fa {
+          left: $margin-small;
+        }
+      }
+      .ui-picklist-list {
+        border: 1px solid $border-color;
+      }
+    }
+    @include gridle_state(sm) {
+      display: flex;
+      align-items: center;
+
+      .ui-picklist-listwrapper {
+        flex: 1;
+      }
+      .ui-picklist-buttons {
+        width: auto;
+      }
+    }
+
+    &.ui-picklist-responsive {
+      @include gridle_state(xs) {
+        display: flex;
+        flex-direction: column;
+
+        .ui-picklist-listwrapper {
+          width: 100% !important;
+        }
+        .ui-picklist-buttons {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100% !important;
+          height: auto;
+
+          .ui-picklist-buttons-cell {
+            flex-direction: row;
+            justify-content: center;
+          }
+
+          .fa {
+            &.fa-angle-right, &.fa-angle-left {
+              &:before {
+                content: "play_arrow";
+              }
+            }
+
+            &.fa-angle-double-right, &.fa-angle-double-left {
+              &:before {
+                content: "fast_forward";
+              }
+            }
+
+            &.fa-angle-right, &.fa-angle-double-right {
+              transform: rotate(90deg);
+            }
+            &.fa-angle-left, &.fa-angle-double-left {
+              transform: rotate(-90deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

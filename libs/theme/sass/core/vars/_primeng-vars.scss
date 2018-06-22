@@ -1,0 +1,58 @@
+//primeng
+$fontFamily: "Roboto", Helvetica, Arial, sans-serif;
+$fontSize: 1em;
+$borderRadius: 2px;
+$disabledOpacity: 0.35;
+
+//Header
+$headerBorderWidth: 1px;
+$headerBorderColor: $border-color;
+$headerBgColor: transparent;
+$headerTextColor: $default-text-color;
+$headerFontWeight: normal;
+$headerIconTextColor: $icon-dark-active-color;
+
+//Content
+$contentBorderWidth: 1px;
+$contentBorderColor: transparent;
+$contentBgColor: transparent;
+$contentTextColor: $default-text-color;
+
+//Default State
+$stateDefaultBorderWidth: 0px;
+$stateDefaultBorderColor: transparent;
+$stateDefaultBgColor: transparent;
+$stateDefaultTextColor: $default-text-color;
+
+//Active State
+$stateActiveBorderColor: $accent;
+$stateActiveBgColor: $accent;
+$stateActiveTextColor: $accent-text-color;
+
+//Highlight State
+$stateHighlighBorderWidth: 5px;
+$stateHighlightBorderColor: $primary;
+$stateHighlightBgColor: $primary;
+$stateHighlightTextColor: $primary-text-color;
+
+//Focus State
+$stateFocusBorderColor: transparent;
+$stateFocusBgColor: transparent;
+$stateFocusTextColor: $default-text-color;
+
+//Error State
+$stateErrorBorderColor: $danger;
+$stateErrorBgColor: $danger;
+$stateErrorTextColor: $danger;
+
+//Hover State
+$stateHoverBorderColor: $hover;
+$stateHoverBgColor: $hover;
+$stateHoverTextColor: $default-text-color;
+
+//Forms
+$inputBgColor: transparent;
+$inputTextColor: $default-text-color;
+$invalidInputBorderColor: $danger;
+$inputGroupTextColor: transparent;
+

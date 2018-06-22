@@ -1,0 +1,40 @@
+@mixin ui-chips() {
+  &.ui-chips {
+    > ul.ui-inputtext {
+      @include ui-inputtext();
+      .ui-chips-input-token {
+        loat: none;
+        display: inline-flex;
+        margin: 0 1px;
+        vertical-align: middle;
+        padding: 0;
+
+        > input {
+          padding: 0;
+          margin: 0;
+          vertical-align: bottom;
+          .ui-state-disabled {
+            width: 0;
+          }
+        }
+      }
+      .ui-chips-token {
+        display: inline-block;
+        float: none;
+        vertical-align: middle;
+        @include font-size-regular;
+        margin-bottom: 2px;
+        border-radius: 24px;
+
+        .ui-chips-token-label {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+      &.ui-state-disabled {
+        border-bottom: 1px dotted;
+      }
+    }
+  }
+
+}

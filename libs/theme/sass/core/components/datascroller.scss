@@ -1,0 +1,31 @@
+@mixin ui-datascroller {
+  &.ui-datascroller {
+    .ui-datascroller-header {
+      padding: $margin-medium;
+      background-color: transparent;
+      border-color: $border-color;
+      color: $default-text-color;
+
+      &:empty {
+
+      }
+    }
+    .ui-datascroller-content {
+      padding: $margin-medium;
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+
+    }
+    .ui-datascroller-footer {
+      background-color: transparent;
+      border-color: $border-color;
+      color: $default-text-color;
+    }
+    &.no-border {
+      .ui-datascroller-header, .ui-datascroller-content, .ui-datascroller-footer {
+        border-color: transparent;
+      }
+    }
+  }
+}
+

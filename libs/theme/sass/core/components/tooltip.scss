@@ -1,0 +1,33 @@
+@mixin ui-tooltip(
+  $primary: $primary,
+  $accent: $accent,
+  $primary-text-color:$primary-text-color,
+  $accent-text-color:$accent-text-color,
+  $border-color:$border-color
+) {
+  &.ui-tooltip {
+    .ui-tooltip-arrow {
+
+    }
+    .ui-tooltip-text {
+      background-color: $primary;
+      border-radius: $borderRadius;
+      @include font-size-regular();
+    }
+    &.ui-tooltip-top .ui-tooltip-arrow {
+      bottom: 1px;
+      border-top-color: $primary;
+    }
+    &.ui-tooltip-bottom .ui-tooltip-arrow {
+      top: 1px;
+      border-bottom-color: $primary;
+    }
+    &.ui-tooltip-left .ui-tooltip-arrow {
+      border-left-color: $primary;
+    }
+    &.ui-tooltip-right .ui-tooltip-arrow {
+      left: 1px;
+      border-right-color: $primary;
+    }
+  }
+}

@@ -1,0 +1,148 @@
+@mixin ui-accordion(
+  $primary: $primary,
+  $accent: $accent,
+  $primary-text-color:$primary-text-color,
+  $accent-text-color:$accent-text-color,
+  $border-color:$border-color
+) {
+  $border-radius: $borderRadius;
+
+  &.ui-accordion {
+    margin: $margin-medium 0;
+    > * {
+      &:first-child {
+        .ui-accordion-header {
+          border-radius: $border-radius $border-radius 0 0;
+        }
+      }
+      &:last-child {
+        .ui-accordion-header {
+          border-radius: 0 0 $border-radius $border-radius;
+        }
+      }
+    }
+
+    .ui-accordion-header {
+      margin-top: 0;
+      transition: margin-top .3s, border-radius .3s;
+
+      border: 1px solid $border-color;
+      background-color: transparent;
+      color: $default-text-color;
+      border-radius: 0;
+      padding: $margin-medium $margin-large;
+
+      &:not(.ui-state-active):not(.ui-state-disabled):hover {
+        background-color: transparent;
+        color: $default-text-color;
+        border-radius: 0;
+        border-color: $border-color;
+
+      }
+      &.ui-state-active {
+        background-color: transparent;
+        color: $default-text-color;
+        border-radius: $border-radius $border-radius 0 0;
+        margin-top: $margin-medium;
+
+        > a {
+          color: $default-text-color;
+        }
+        + .ui-accordion-content-wrapper {
+          margin-bottom: $margin-medium;
+        }
+      }
+      > a {
+        padding: 0;
+        padding-right: $icon-size-large + $margin-medium;
+      }
+
+      .ui-accordion-toggle-icon {
+        @include ui-icon-large();
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        right: $margin-large;
+        left: unset;
+        margin-top: 0;
+        transition: transform ease .3s;
+
+        &.fa-caret-right {
+          &:before {
+            content: 'keyboard_arrow_down';
+          }
+          transform: rotate(180deg);
+        }
+        &.fa-caret-down {
+          transform: rotate(0deg);
+        }
+      }
+    }
+    .ui-accordion-content-wrapper {
+      margin-bottom: 0;
+      transition: margin-bottom .3s;
+      .ui-accordion-content {
+        border: 1px solid $border-color;
+        border-radius: 0 0 $border-radius $border-radius;
+        border-top-width: 0;
+        padding: $margin-medium;
+      }
+
+    }
+    &.card {
+      padding: 0;
+      box-shadow: none;
+
+      .ui-accordion-header {
+        border: none;
+        box-sizing: content-box;
+
+        &.ui-state-active {
+          &:before {
+            content: '';
+            display: flex;
+            position: absolute;
+            top: -1px;
+            bottom: -2px;
+            left: 0px;
+            right: 0px;
+            @include ui-shadow-content-left-right();
+            border-radius: $border-radius $border-radius 0 0;
+          }
+          &:after {
+            content: '';
+            display: flex;
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: -1px;
+            right: -1px;
+            @include ui-shadow-content-top();
+            border-radius: $border-radius $border-radius 0 0;
+          }
+
+          border-radius: $border-radius $border-radius 0 0;
+          border-color: transparent;
+          border-bottom-color: $border-color;
+        }
+
+        &:not(.ui-state-active) {
+          @include ui-shadow-content();
+        }
+      }
+      .ui-accordion-content-wrapper {
+        border: none;
+        box-sizing: content-box;
+
+        @include ui-shadow-content();
+        border-radius: 0 0 $border-radius $border-radius;
+        .ui-accordion-content {
+          border: none;
+        }
+      }
+    }
+  }
+}

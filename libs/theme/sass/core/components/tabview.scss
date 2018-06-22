@@ -1,0 +1,105 @@
+@mixin ui-tabview(
+  $primary: $primary,
+  $accent: $accent,
+  $primary-text-color:$primary-text-color,
+  $accent-text-color:$accent-text-color,
+  $border-color:$border-color
+) {
+  &.ui-tabview {
+    padding: 0;
+    border: 1px solid $border-color;
+
+    .ui-tabview-nav {
+      background-color: transparent;
+      border: 0 none;
+      border-radius: 0;
+      > li {
+        padding: 0;
+        border: 0 solid transparent;
+        border-bottom-width: 2px;
+        display: flex;
+        > {
+          a {
+            flex-grow: 1;
+            padding: $margin-medium;
+            &:focus {
+              outline: 0 none;
+            }
+          }
+          .fa-close {
+            margin: $margin-x-small;
+          }
+        }
+        .ui-tabview-left-icon, .ui-tabview-right-icon {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .ui-tabview-title {
+          vertical-align: middle;
+        }
+        &.ui-state-default a {
+          color: $default-text-color;
+        }
+        &:not(.ui-state-active):not(.ui-state-disabled):hover {
+          background-color: transparent;
+        }
+        &:not(.ui-state-active):hover {
+          background-color: transparent;
+          border-color: transparent;
+        }
+        &.ui-state-active {
+          border-color: $accent;
+          background-color: transparent;
+          a {
+            color: $primary;
+          }
+          > .fa-close {
+            color: $primary;
+          }
+        }
+        &.ui-tabview-outline {
+          outline: 0 none;
+          border-color: #FFECB3;
+        }
+      }
+    }
+    .ui-tabview-panel {
+      padding: $margin-medium;
+    }
+    &.ui-tabview-top > .ui-tabview-nav {
+      border-bottom: 1px solid $border-color;
+      > li {
+        border-style: solid;
+        border-width: 0 0 2px 0;
+      }
+    }
+    &.ui-tabview-bottom > .ui-tabview-nav {
+      border-top: 1px solid $border-color;
+      > li {
+        border-width: 2px 0 0 0;
+      }
+    }
+    &.ui-tabview-left > .ui-tabview-nav {
+      border-right: 1px solid $border-color;
+      > li {
+        box-sizing: border-box;
+        border-width: 0 2px 0 0;
+        width: 100%;
+        flex-direction: row-reverse;
+      }
+    }
+    &.ui-tabview-right > .ui-tabview-nav {
+      border-left: 1px solid $border-color;
+      > li {
+        box-sizing: border-box;
+        border-width: 0 0 0 2px;
+        width: 100%;
+        > a {
+          width: 100%;
+          padding-right: $margin-x-large;
+        }
+      }
+    }
+  }
+
+}

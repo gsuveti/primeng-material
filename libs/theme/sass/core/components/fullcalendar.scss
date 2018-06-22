@@ -1,0 +1,54 @@
+@mixin fc(
+  $primary: $primary,
+  $accent: $accent,
+  $primary-text-color:$primary-text-color,
+  $accent-text-color:$accent-text-color,
+  $border-color:$border-color
+) {
+  $border-radius: $borderRadius;
+
+  &.fc {
+    .fc-prev-button, .fc-next-button {
+      .ui-icon {
+        @include ui-material-icons();
+      }
+    }
+
+    .fc-prev-button {
+      .ui-icon {
+        &:before {
+          content: "navigate_before";
+        }
+      }
+    }
+
+    .fc-next-button {
+      .ui-icon {
+        &:before {
+          content: "navigate_next";
+        }
+      }
+    }
+
+    .fc-button-group {
+      @include ui-button-flat(".ui-button");
+    }
+    .fc-today-button {
+      @include ui-button-flat("&.ui-button");
+    }
+    .ui-widget-content {
+      border: 1px solid $border-color;
+    }
+    .fc-day-header {
+      padding: $margin-small 0;
+    }
+
+    .fc-row {
+      border-width: 0;
+    }
+
+    .fc-event {
+      background-color: $primary;
+    }
+  }
+}

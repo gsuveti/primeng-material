@@ -1,0 +1,16 @@
+@mixin ui-breadcrumb(
+  $background: transparent,
+  $color:$default-text-color
+) {
+  &.ui-breadcrumb {
+    padding: $margin-medium;
+    background: transparent;
+    border: none;
+
+    .ui-breadcrumb-chevron, .ui-breadcrumb-home, .ui-menuitem-text {
+      background-color: $background;
+      color: $color;
+      @include font-size-regular();
+    }
+  }
+}

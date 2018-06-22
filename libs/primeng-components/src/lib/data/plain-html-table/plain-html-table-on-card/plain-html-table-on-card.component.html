@@ -1,0 +1,34 @@
+<div class="ui-widget ui-datatable ui-htmltable card">
+  <div class="ui-datatable-header">
+    Plain HTML table on a card
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>LastName</th>
+      <th>FirstName</th>
+      <th>Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of people">
+      <td>{{item.id}}</td>
+      <td>{{item.lastName}}</td>
+      <td>{{item.firstName}}</td>
+      <td>{{item.age}}</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td>Id</td>
+      <td>LastName</td>
+      <td>FirstName</td>
+      <td>Age</td>
+    </tr>
+    </tfoot>
+  </table>
+  <div class="ui-datatable-footer">
+    Footer
+  </div>
+</div>

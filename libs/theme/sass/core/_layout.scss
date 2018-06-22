@@ -1,0 +1,166 @@
+@import "grid";
+
+@mixin layout($extra-class:'') {
+  @include make-grid();
+
+  //todo remove me after positioning of overflow elements is fixed in primeng
+  p-overlaypanel {
+    position: relative;
+    display: block;
+    > * {
+      top: 0 !important;
+      left: 0 !important;
+    }
+  }
+
+  .ui-contextmenu {
+    margin-top: - $icon-size-large - 2 * $margin-large;
+  }
+
+  body#{$extra-class} {
+    overflow-y: hidden;
+
+    hr {
+      border: 0;
+      height: 1px;
+      background-color: $border-color;
+    }
+
+    .divider {
+      @include divider();
+    }
+
+    .layout-wrapper {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+
+      position: relative;
+
+      .layout-toolbar {
+        width: 100%;
+        background-color: $primary;
+        color: $primary-text-color;
+
+        .profile-img {
+          object-fit: cover;
+          width: $icon-size-large;
+          height: $icon-size-large;
+          border-radius: 100%;
+          margin-left: $margin-small;
+        }
+
+        .brand {
+          display: flex;
+          align-items: center;
+          height: $button-height;
+
+          .brand-image {
+            height: $button-height;
+            display: none;
+            bottom: $margin-x-small;
+
+            @include gridle_state(lg) {
+              display: flex;
+              align-items: center;
+            }
+
+          }
+          .brand-title {
+            margin-left: $margin-small;
+            @include font-size-headline3();
+          }
+        }
+      }
+
+      .layout-content {
+        width: 100%;
+        flex-grow: 1;
+        display: flex;
+        overflow: hidden;
+      }
+
+    }
+
+    .card {
+      @include ui-shadow-content();
+      border-radius: $borderRadius;
+      background: $default;
+      @include p();
+      @include my();
+      box-sizing: border-box;
+      &.card-w-title {
+        padding-bottom: $margin-x-large;
+      }
+
+    }
+
+    .side-nav-container {
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-grow: 1;
+
+      .side-nav-content {
+        overflow-y: auto;
+
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .side-nav-side {
+        position: absolute;
+        bottom: 0px;
+        min-width: $side-nav-width;
+        width: $side-nav-width;
+        transform: translateX(0);
+        transition: transform .3s;
+
+        @include ui-shadow-content();
+        background-color: $default;
+
+        &.side-nav-side-right, &.side-nav-side-left {
+          height: 100%;
+
+          &.side-nav-side-open {
+            position: absolute;
+            transform: translateX(0);
+          }
+          &.side-nav-side-permanent {
+            @media(min-width: $laptopSmallBreakpoint) {
+              position: relative;
+              transform: translateX(0);
+            }
+          }
+        }
+
+        &.side-nav-side-right {
+          z-index: 2000;
+          right: 0px;
+          transform: translateX($side-nav-width + $margin-small);
+        }
+
+        &.side-nav-side-left {
+          z-index: 3000;
+          left: 0px;
+          transform: translateX(- $side-nav-width - $margin-small);
+        }
+      }
+
+    }
+
+    .side-nav-toggle {
+      &.side-nav-side-permanent {
+        @media(min-width: $laptopSmallBreakpoint) {
+          display: none !important;
+        }
+      }
+    }
+
+    .circle {
+      border-radius: 50%;
+    }
+  }
+
+}

@@ -1,0 +1,12 @@
+@mixin card() {
+  @include ui-shadow-content();
+  border-radius: $borderRadius;
+  background: $default;
+  padding: $margin-medium;
+  margin: $margin-medium;
+
+  box-sizing: border-box;
+  &.card-w-title {
+    padding-bottom: $margin-x-large;
+  }
+}

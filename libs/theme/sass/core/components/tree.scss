@@ -1,0 +1,102 @@
+@mixin ui-tree(
+  $primary: $primary,
+  $accent: $accent,
+  $primary-text-color:$primary-text-color,
+  $accent-text-color:$accent-text-color,
+  $border-color:$border-color
+) {
+  $border-radius: $borderRadius;
+
+  &.ui-tree {
+    padding: $margin-medium;
+
+    .ui-treenode-children {
+      padding-left: 0;
+    }
+
+    .ui-treenode-content {
+      .ui-chkbox {
+        @include ui-chkbox();
+      }
+      .ui-tree-toggler {
+        vertical-align: middle;
+        margin: 0 0 0 $margin-x-small;
+      }
+
+      .ui-treenode-icon {
+        vertical-align: middle;
+        margin: 0 $margin-x-small;
+
+        &.fa-folder:before {
+          content: "folder";
+        }
+        &.fa-folder-open:before {
+          content: "folder_open";
+        }
+      }
+
+      .ui-chkbox {
+        margin: 0 $margin-x-small;
+      }
+      .ui-treenode-label {
+        margin: 0;
+        padding: $margin-x-small $margin-small;
+        vertical-align: middle;
+      }
+
+      &.ui-treenode-selectable {
+        .ui-treenode-label {
+          &:not(.ui-state-highlight):hover {
+
+          }
+          &.ui-state-highlight {
+            background-color: $primary;
+            color: $primary-text-color;
+          }
+        }
+      }
+      &.ui-treenode-dragover {
+        background: #2196F3;
+        > span {
+          color: #FFFFFF;
+        }
+      }
+    }
+    &.ui-tree-horizontal {
+      padding-left: 0;
+      padding-right: 0;
+
+      .ui-treenode-content {
+        display: flex;
+        align-items: center;
+
+        background-color: $default;
+        color: $default-text-color;
+        border: 1px solid $border-color;
+
+        .ui-tree-toggler {
+          vertical-align: top;
+        }
+        .ui-treenode-icon {
+          vertical-align: top;
+          margin-right: $margin-x-small;
+        }
+        .ui-treenode-label {
+          white-space: nowrap;
+        }
+
+        &.ui-treenode-selectable:not(.ui-state-highlight):hover {
+          background-color: $default;
+          color: $default-text-color;
+          border-color: $primary;
+        }
+
+        &.ui-state-highlight {
+          background-color: $accent;
+          color: $accent-text-color;
+        }
+      }
+    }
+  }
+
+}

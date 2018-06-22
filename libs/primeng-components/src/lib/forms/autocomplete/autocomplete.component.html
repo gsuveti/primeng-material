@@ -1,0 +1,38 @@
+<p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"
+                placeholder="Name"></p-autoComplete>
+<p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"
+                [dropdown]="true" (onDropdownClick)="handleDropdown($event)" placeholder="Name"></p-autoComplete>
+<p-autoComplete [(ngModel)]="multipleText" [suggestions]="multipleResults" (completeMethod)="searchMultiple($event)"
+                [minLength]="1" placeholder="Name" [multiple]="true">
+</p-autoComplete>
+
+<div class="ui-fluid mt-xl">
+    <h3 class="mb">Autocomplete with completeMethod & field</h3>
+    <p>Add user details:</p>
+    <p-autoComplete [(ngModel)]="user" [suggestions]="users" field="name" (completeMethod)="searchUsers($event)"
+                    [minLength]="3" placeholder="Name">
+        <ng-template let-user pTemplate="user">
+            <div>
+                <div>{{user.uuid}}</div>
+                <div>{{user.name}}</div>
+            </div>
+        </ng-template>
+
+    </p-autoComplete>
+
+    <p-autoComplete [(ngModel)]="user" [suggestions]="users" field="uuid" (completeMethod)="searchUsers($event)"
+                    [minLength]="1" placeholder="Id">
+        <ng-template let-user pTemplate="user">
+            <div>
+                <div>{{user.uuid}}</div>
+                <div>{{user.name}}</div>
+            </div>
+        </ng-template>
+    </p-autoComplete>
+    <p>User details:</p>
+    <div *ngIf="user">
+        <p>Id: {{user.uuid}}</p>
+        <p>Name: {{user.name}}</p>
+        <p>Job Type: {{user.jobType}}</p>
+    </div>
+</div>

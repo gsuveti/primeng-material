@@ -1,0 +1,15 @@
+@mixin ui-lightbox(
+  $primary: $primary,
+  $accent: $accent,
+  $primary-text-color:$primary-text-color,
+  $accent-text-color:$accent-text-color,
+  $border-color:$border-color
+) {
+  &.ui-lightbox {
+    @include ui-shadow-2();
+    background-color: $default;
+    .ui-lightbox-content {
+
+    }
+  }
+}

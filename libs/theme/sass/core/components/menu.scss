@@ -1,0 +1,106 @@
+@mixin ui-menu(
+  $primary: $primary,
+  $accent: $accent,
+  $primary-text-color:$primary-text-color,
+  $accent-text-color:$accent-text-color,
+  $hover:$hover,
+  $border-color:$border-color
+) {
+
+  border: 1px solid $border-color;
+  border-radius: $borderRadius;
+  @include ui-submenu();
+
+}
+
+@mixin ui-submenu(
+  $primary: $primary,
+  $accent: $accent,
+  $primary-text-color:$primary-text-color,
+  $accent-text-color:$accent-text-color,
+  $hover:$hover,
+  $border-color:$border-color
+) {
+  padding: $margin-small 0;
+
+  &.ui-menu-dynamic {
+    background-color: $default;
+  }
+
+  .ui-menu-list {
+    padding: 0;
+    margin: 0;
+  }
+
+  .ui-submenu-list {
+    padding: 0;
+    margin: 0;
+    background-color: white;
+  }
+
+  .ui-widget-header {
+    margin: 0 0 1px 0;
+    border: 0 none;
+    width: 100%;
+    box-sizing: border-box;
+    padding: $margin-medium;
+
+    background-color: $accent;
+    color: $accent-text-color;
+
+    h3 {
+      display: block;
+      float: none;
+      @include font-size-regular();
+      padding: 0;
+      font-weight: 400;
+    }
+  }
+
+  .ui-menuitem {
+    margin: 0;
+    border-radius: 0;
+    .ui-menuitem-link {
+      display: flex;
+      align-items: center;
+      border: 0 none;
+      padding: $margin-medium;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 0;
+      position: relative;
+
+      &.ui-state-active, &:hover {
+        background-color: $hover;
+        color: $default-text-color;
+      }
+      .ui-menuitem-icon {
+        margin-right: $margin-small;
+        display: inline-block;
+        vertical-align: middle;
+        float: none;
+        color: $icon-dark-active-color;
+      }
+      .ui-submenu-icon {
+        right: $margin-small;
+        margin: 0;
+        top: unset;
+        margin-left: $margin-small;
+        vertical-align: middle;
+      }
+      .ui-menuitem-text {
+        display: inline-block;
+        vertical-align: middle;
+        float: none;
+      }
+    }
+  }
+
+  .ui-separator {
+    height: 1px;
+    background-color: $border-color;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+

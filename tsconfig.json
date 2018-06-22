@@ -1,7 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -15,6 +15,23 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@primeng-material/*": [
+        "libs/*"
+      ],
+      "primeng-components/*": [
+        "dist/primeng-components/*"
+      ],
+      "@primeng-material/primeng-components": [
+        "libs/primeng-components/src/index.ts"
+      ],
+      "source-code-tab-view/*": [
+        "dist/source-code-tab-view/*"
+      ],
+      "@primeng-material/source-code-tab-view": [
+        "libs/source-code-tab-view/src/index.ts"
+      ]
+    }
   }
 }

@@ -1,0 +1,173 @@
+@mixin ui-calendar() {
+
+  .ui-calendar {
+    .ui-datepicker-trigger {
+      &.ui-button.ui-button-icon-only {
+        @include ui-button-reset();
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: $icon-dark-inactive-color;
+        height: 100%;
+        width: $icon-size;
+
+        .fa {
+          color: $icon-dark-inactive-color;
+        }
+        &:enabled:hover {
+          background-color: transparent;
+        }
+      }
+
+    }
+
+    .ui-inputtext ~ .ui-datepicker {
+      background-color: $default;
+    }
+
+    .ui-datepicker {
+      @include ui-datepicker();
+    }
+  }
+}
+
+@mixin ui-datepicker($width: 300px) {
+  padding: 0;
+  width: $width;
+  &.ui-shadow {
+    @include ui-shadow-2();
+  }
+  &.ui-datepicker-inline {
+    @include ui-shadow-1();
+  }
+  .ui-datepicker-header {
+    padding: $margin-medium;
+    @include font-size-regular();
+    background: $primary;
+    border-color: $primary;
+    border-radius: 2px 2px 0 0;
+    .ui-datepicker-prev {
+      cursor: pointer;
+      top: $margin-medium;
+      left: $margin-small;
+
+      border-radius: 50%;
+      color: $primary-text-color;
+      &:before {
+        content: "keyboard_arrow_left";
+      }
+      .fa {
+        display: none;
+      }
+      &:hover {
+        background-color: $primary;
+      }
+    }
+    .ui-datepicker-next {
+      cursor: pointer;
+      top: $margin-medium;
+      right: $margin-small;
+
+      border-radius: 50%;
+      color: $primary-text-color;
+      &:before {
+        content: "keyboard_arrow_right";
+      }
+      .fa {
+        display: none;
+      }
+      &:hover {
+        background-color: $primary;
+      }
+    }
+    .ui-datepicker-next, .ui-datepicker-prev {
+      @include ui-material-icons();
+      @include ui-icon-large();
+    }
+    select {
+      &.ui-datepicker-month, &.ui-datepicker-year {
+        //@include custom-select($primary-text-color);
+      }
+    }
+  }
+  table {
+    table-layout: fixed;
+    border-spacing: 0;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  thead tr {
+    color: $icon-dark-inactive-color;
+    border-bottom: 1px solid $border-color;
+  }
+  tbody td {
+    padding: $margin-x-small;
+    box-sizing: border-box;
+    &.ui-datepicker-today {
+      a, span {
+        color: $primary-text-color;
+        background: $primary;
+      }
+      a.ui-state-active, span.ui-state-active {
+        background-color: $accent;
+        color: $accent-text-color;
+      }
+    }
+    a, span {
+      margin: 0;
+      text-align: center;
+      color: $default-text-color;
+      display: inline-block;
+      height: $button-height;
+      width: $button-height;
+      border-radius: 50%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    a {
+      padding: 0;
+    }
+    span {
+      padding: $margin-small;
+    }
+    a.ui-state-active, span.ui-state-active {
+      color: $accent-text-color;
+      background-color: $accent;
+      &:hover {
+        color: $accent-text-color;
+        background-color: $accent;
+      }
+    }
+    a:not(.ui-state-active):not(.ui-state-highlight):hover, span:not(.ui-state-active):not(.ui-state-highlight):hover {
+      background-color: $hover;
+      color: $default-text-color;
+    }
+  }
+  .ui-timepicker {
+    border-radius: 0;
+    > div a {
+      > span {
+        display: inline-block;
+        margin-top: $margin-x-small;
+        margin-bottom: $margin-x-small;
+      }
+      .fa {
+        color: $primary-text-color;
+        transform: rotate(0);
+        @include ui-material-icons();
+        &.fa-angle-up {
+          &:before {
+            content: "keyboard_arrow_up";
+          }
+        }
+        &.fa-angle-down {
+          &:before {
+            content: "keyboard_arrow_down";
+          }
+        }
+      }
+    }
+  }
+}

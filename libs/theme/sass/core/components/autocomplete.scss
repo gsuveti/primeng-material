@@ -1,0 +1,108 @@
+@mixin ui-autocomplete() {
+  &.ui-autocomplete {
+    .ui-autocomplete-loader {
+      @include spin();
+    }
+
+    .ui-autocomplete-input {
+      padding-right: $icon-size;
+    }
+    .ui-autocomplete-dropdown.ui-button:enabled:not(:focus):hover {
+      background: none;
+    }
+    .ui-autocomplete-dropdown.ui-button.ui-button-icon-only {
+      @include ui-button-reset();
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: $icon-size;
+      height: 100%;
+
+      .ui-button-text {
+        display: none;
+      }
+      .ui-button-icon-left {
+        color: $icon-dark-inactive-color;
+      }
+    }
+    .ui-autocomplete-panel {
+      @include ui-autocomplete-panel();
+    }
+
+    &.ui-autocomplete-multiple {
+      display: inline-flex;
+
+      .ui-autocomplete-multiple-container {
+        display: flex;
+        &:not(.ui-state-disabled) {
+          &:hover {
+            border-color: $primary;
+          }
+        }
+        &.ui-state-focus {
+
+        }
+        &.ui-state-disabled {
+          border-bottom: 1px dotted;
+        }
+      }
+      .ui-autocomplete-input-token {
+        float: none;
+        display: inline-flex;
+        vertical-align: middle;
+        margin: 0;
+        padding: 0;
+
+        > input {
+          padding: 0;
+          margin: 0;
+          vertical-align: bottom;
+        }
+      }
+      .ui-autocomplete-token {
+        display: inline-block;
+        float: none;
+        vertical-align: middle;
+        @include font-size-regular;
+        margin-bottom: 2px;
+        border-radius: 24px;
+
+        .ui-autocomplete-token-label {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+@mixin ui-autocomplete-panel() {
+  background-color: $default;
+  border-radius: 0;
+  &.ui-shadow {
+    @include ui-shadow-2;
+  }
+  .ui-autocomplete-list {
+    padding: 0;
+    .ui-autocomplete-list-item {
+      transition: background-color 0.03s;
+      @include font-size-regular;
+      padding: $margin-medium;
+      border-radius: 0;
+      color: $default-text-color;
+      .ui-autocomplete-query {
+        font-weight: 700;
+      }
+      &.ui-state-highlight {
+        background-color: $hover;
+      }
+    }
+    .ui-autocomplete-group {
+      padding: $margin-medium;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@mixin ui-inputswitch($checked:$accent, $unchecked: $white, $slider: $slider-color ) {
+  &.ui-inputswitch {
+    background-color: $slider;
+    border-radius: 8px;
+    width: 34px !important;
+    height: 14px;
+    overflow: visible;
+    position: relative;
+
+    .ui-inputswitch-on, .ui-inputswitch-onlabel, .ui-inputswitch-off, .ui-inputswitch-offlabel {
+      visibility: hidden;
+
+    }
+    .ui-inputswitch-handle {
+      @include ui-shadow-2;
+      width: 20px !important;
+      height: 20px !important;
+      border-radius: 50%;
+      position: relative;
+      top: -3px;
+      background-color: $unchecked;
+      transition: background-color 0.3s;
+    }
+
+    &.ui-inputswitch-checked {
+      background-color: rgba($checked, $opacity-slider-checked);
+      .ui-inputswitch-handle {
+        background-color: $checked;
+        color: #000000;
+      }
+    }
+  }
+}

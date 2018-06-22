@@ -1,0 +1,6 @@
+@mixin ui-contextmenu($background:$default) {
+  &.ui-contextmenu {
+    background-color: $background;
+    @include ui-tiered-submenu($background);
+  }
+}

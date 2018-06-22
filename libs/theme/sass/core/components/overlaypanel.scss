@@ -1,0 +1,45 @@
+@mixin ui-overlaypanel(
+  $primary: $primary,
+  $accent: $accent,
+  $primary-text-color:$primary-text-color,
+  $accent-text-color:$accent-text-color,
+  $border-color:$border-color
+) {
+  &.ui-overlaypanel {
+    background-color: $default;
+    @include ui-shadow-2();
+    .ui-overlaypanel-close {
+      top: - $icon-size-large / 2;
+      right: - $icon-size-large / 2;
+      @include overlay-close();
+
+      @include ui-shadow-1();
+      &:hover, &:focus {
+        @include ui-shadow-2();
+      }
+
+    }
+    .ui-overlaypanel-content {
+      padding: $margin-medium;
+    }
+  }
+}
+
+@mixin overlay-close($background:$accent,$background-hover:$accent) {
+  @include ui-icon-large();
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+
+  color: $icon-dark-inactive-color;
+  background: $background;
+
+  &:hover, &:focus {
+    color: $icon-dark-active-color;
+    background: $background-hover;
+  }
+}

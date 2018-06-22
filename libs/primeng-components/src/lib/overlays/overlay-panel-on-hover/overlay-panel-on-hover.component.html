@@ -1,0 +1,6 @@
+<p>This OverlayPanel gets displayed on hover of the button, is not dismissable and displays a close icon.</p>
+
+<button type="text" pButton label="hover me" (mouseenter)="op2.show($event)"></button>
+<p-overlayPanel #op2 [showCloseIcon]="true" [dismissable]="false">
+    <h1>Lorem ipsum</h1>
+</p-overlayPanel>

@@ -1,0 +1,18 @@
+<p-dataGrid [value]="people" [paginator]="true" [rows]="9">
+    <p-header>
+        Grid
+    </p-header>
+    <ng-template let-person pTemplate="item">
+        <div class="ui-g-12 ui-md-3">
+            <p-panel>
+                <p-header>{{person.firstName}} {{person.lastName}}</p-header>
+                <img src={{person.photo}}>
+                <p>Id:{{person.id}}</p>
+                <p>Age: {{person.age}}</p>
+            </p-panel>
+        </div>
+    </ng-template>
+    <p-footer>
+        this is a footer
+    </p-footer>
+</p-dataGrid>

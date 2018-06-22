@@ -1,0 +1,13 @@
+
+<p-messages [(value)]="messages"></p-messages>
+<p-growl [(value)]="messages" sticky="true"></p-growl>
+
+<div>
+    <button type="button" pButton (click)="showSuccess()" label="Success" class="ui-button-success"></button>
+    <button type="button" pButton (click)="showInfo()" label="Info" class="ui-button-info"></button>
+    <button type="button" pButton (click)="showWarn()" label="Warn" class="ui-button-warning"></button>
+    <button type="button" pButton (click)="showError()" label="Error" class="ui-button-danger"></button>
+    <button type="button" pButton (click)="showMultiple()" label="Multiple"></button>
+    <button type="button" pButton (click)="clearMessages()" icon="fa-close" style="float:right"
+            label="Clear"></button>
+</div>

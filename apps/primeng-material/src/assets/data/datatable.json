@@ -1,0 +1,88 @@
+{
+  "data": [
+    {
+      "type": "examples",
+      "id": "e01",
+      "attributes": {
+        "name": "John", "surname": "Doe", "address": "Sample street 1"
+      }
+    },
+    {
+      "type": "examples",
+      "id": "e02",
+      "attributes": {
+        "name": "Jane", "surname": "Doe", "address": "Sample street 1"
+      }
+    },
+    {
+      "type": "examples",
+      "id": "e03",
+      "attributes": {
+        "name": "Bill", "surname": "Foe", "address": "Example square 42"
+      }
+    },
+    {
+      "type": "examples",
+      "id": "e04",
+      "attributes": {
+        "name": "Lisa", "surname": "Asil", "address": "Main street 456"
+      }
+    },
+    {
+      "type": "examples",
+      "id": "e05",
+      "attributes": {
+        "name": "Robert", "surname": "Deer", "address": "In the woods 99"
+      }
+    },
+    {
+      "type": "examples",
+      "id": "e06",
+      "attributes": {
+        "name": "Lenny", "surname": "Lame", "address": "No street -45"
+      }
+    },
+    {
+      "type": "examples",
+      "id": "e07",
+      "attributes": {
+        "name": "Bill", "surname": "Bull", "address": "Main square 54"
+      }
+    },
+    {
+      "type": "examples",
+      "id": "e08",
+      "attributes": {
+        "name": "Frank", "surname": "Foo", "address": "Lake street 123"
+      }
+    },
+    {
+      "type": "examples",
+      "id": "e09",
+      "attributes": {
+        "name": "Anna", "surname": "Naan", "address": "India square 11"
+      }
+    },
+    {
+      "type": "examples",
+      "id": "e10",
+      "attributes": {
+        "name": "Jill", "surname": "Jones", "address": "North road 22"
+      }
+    },
+    {
+      "type": "examples",
+      "id": "e11",
+      "attributes": {
+        "name": "Max", "surname": "Musterman", "address": "Hauptplatz 32"
+      }
+    },
+    {
+      "type": "examples",
+      "id": "e12",
+      "attributes": {
+        "name": "Lilli", "surname": "Lee", "address": "South road 11"
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<p-treeTable [value]="lazyFiles" [style]="{'margin-top':'50px'}" styleClass="ui-treetable-scrollable"
+             (onNodeExpand)="nodeExpand($event)">
+  <p-header>
+    <p>Fixed header</p>
+    <div class="ui-treetable-scrollable-header">
+      <div style="width: 40%;">Name</div>
+      <div style="width: 30%;">Size</div>
+      <div style="width: 30%;">Type</div>
+    </div>
+  </p-header>
+  <p-column field="name" header="Name" [style]="{'width':'40%'}"></p-column>
+  <p-column field="size" header="Size" [style]="{'width':'30%'}"></p-column>
+  <p-column field="type" header="Type" [style]="{'width':'30%'}"></p-column>
+  <p-footer>Footer</p-footer>
+</p-treeTable>

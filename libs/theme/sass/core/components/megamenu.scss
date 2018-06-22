@@ -1,0 +1,17 @@
+@mixin ui-megamenu() {
+  &.ui-megamenu {
+    @include ui-menu();
+
+    .ui-megamenu-root-list {
+      display: flex;
+      .ui-megamenu-panel {
+        background-color: $default;
+      }
+    }
+    &.ui-megamenu-vertical {
+      .ui-megamenu-root-list {
+        flex-direction: column;
+      }
+    }
+  }
+}

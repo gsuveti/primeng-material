@@ -1,0 +1,35 @@
+$margin-x-small: 4px;
+$margin-small: 8px;
+$margin-medium: 16px;
+$margin-large: 24px;
+$margin-x-large: 32px;
+
+$primary: blue;
+$border-color: gray;
+$primary-text-color: black;
+
+.first {
+  margin: $margin-x-small $margin-small $margin-medium $margin-large;
+}
+
+.second {
+  margin: $margin-x-large $margin-large;
+}
+
+.third {
+  margin: $margin-medium;
+}
+
+.grid {
+  display: inline-flex;
+  background-size: 4px 4px;
+  background-image: linear-gradient(to right, $border-color 1px, transparent 1px),
+                    linear-gradient(to bottom, $border-color 1px, transparent 1px);
+
+  > * {
+    width: 201px;
+    padding: $margin-small;
+    background-color: $primary;
+    color: $primary-text-color;
+  }
+}

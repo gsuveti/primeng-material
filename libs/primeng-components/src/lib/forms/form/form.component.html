@@ -1,0 +1,54 @@
+<div class="container">
+    <h3>User Form</h3>
+    <form #userform="ngForm" (ngSubmit)="onSubmit(userform)">
+        <div class="form-group ui-fluid">
+            <p-dropdown [options]="titles"
+                        [autoWidth]="false"
+                        [(ngModel)]="user.title"
+                        name="title"
+                        placeholder="Select a title"
+                        required></p-dropdown>
+        </div>
+
+        <div class="form-group ui-float-label ui-fluid">
+            <input pInputText type="text" class="form-control" id="firstName"
+
+                   [(ngModel)]="user.firstName" name="firstName">
+            <label for="firstName">First Name</label>
+        </div>
+
+        <div class="form-group ui-float-label ui-fluid">
+            <input pInputText type="text" class="form-control" id="secondName"
+                   required
+                   [(ngModel)]="user.secondName" name="secondName">
+            <label for="secondName">Second Name</label>
+        </div>
+
+        <div class="form-group ui-float-label ui-fluid">
+            <input pInputText type="text" class="form-control" id="nickName"
+                   [(ngModel)]="user.nickName" name="nickName">
+            <label for="nickName">Nickname</label>
+        </div>
+
+        <div class="form-group ui-fluid mt">
+            <p-autoComplete [(ngModel)]="user.role" name="role" [suggestions]="roles"
+                            (completeMethod)="searchRoles($event)"
+                            required
+                            [minLength]="2" placeholder="Role">
+            </p-autoComplete>
+        </div>
+
+        <div class="form-group ui-fluid mt">
+            <span>Skills:</span>
+            <p-chips [(ngModel)]="user.skills" name="skills"></p-chips>
+        </div>
+
+
+        <button class="mt-xl"
+                pButton
+                type="submit"
+                label="Submit"
+                [disabled]="!userform.valid">
+        </button>
+    </form>
+</div>

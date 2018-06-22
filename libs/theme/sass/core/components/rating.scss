@@ -1,0 +1,28 @@
+@mixin ui-rating() {
+  .ui-rating {
+    a {
+      text-decoration: none;
+    }
+    .fa-ban, .fa-star, .fa-star-o {
+      @include ui-material-icons();
+      @include ui-icon-large();
+      color: $icon-dark-inactive-color;
+    }
+    .fa-ban {
+
+      &:before {
+        content: "cancel";
+      }
+    }
+    .fa-star {
+      &:before {
+        content: "star";
+      }
+    }
+    .fa-star-o {
+      &:before {
+        content: "star_border";
+      }
+    }
+  }
+}

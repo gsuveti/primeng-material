@@ -1,0 +1,34 @@
+@import "overlaypanel";
+
+@mixin ui-sidebar(
+  $primary: $primary,
+  $primary-text-color: $primary-text-color
+) {
+  &.ui-sidebar {
+    background-color: $white;
+    padding: $margin-medium;
+
+    .ui-sidebar-close {
+      position: absolute;
+      top: $margin-small;
+      right: $margin-small;
+      @include overlay-close(transparent, $hover);
+    }
+
+    &.ui-sidebar-sm, &.ui-sidebar-md, &.ui-sidebar-lg {
+      width: $side-nav-width;
+    }
+
+    @include gridle_state(sm) {
+      &.ui-sidebar-md, &.ui-sidebar-lg {
+        width: $side-nav-width-md;
+      }
+    }
+
+    @include gridle_state(lg) {
+      &.ui-sidebar-lg {
+        width: $side-nav-width-lg;
+      }
+    }
+  }
+}

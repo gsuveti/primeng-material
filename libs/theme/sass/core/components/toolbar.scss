@@ -1,0 +1,35 @@
+@mixin ui-toolbar($background:$primary, $color:$primary-text-color) {
+  &.ui-toolbar {
+    padding: $margin-medium;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: space-between;
+    border-radius: 0;
+
+    background-color: transparent;
+    color: $default-text-color;
+
+    .ui-toolbar-group-left {
+      justify-content: flex-start;
+    }
+    .ui-toolbar-group-right {
+      justify-content: flex-end;
+    }
+    .ui-toolbar-group-left, .ui-toolbar-group-right {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+    }
+
+    &.primary {
+      background-color: $background;
+      color: $color;
+      a {
+        color: $color;
+      }
+    }
+  }
+
+}

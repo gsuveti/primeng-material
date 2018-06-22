@@ -1,0 +1,63 @@
+@mixin ui-paginator(
+  $background-color:$default,
+  $text-color:$default-text-color,
+  $accent-color:$accent,
+  $accent-text-color-color:$accent-text-color
+) {
+  &.ui-paginator {
+    color: $text-color;
+    background-color: $background-color;
+    padding: $margin-medium;
+    border: 1px solid $border-color;
+
+    > a {
+      @include font-size-medium();
+      box-sizing: border-box;
+      color: $text-color;
+      &:not(.ui-state-disabled):not(.ui-state-active):hover {
+        background-color: transparent;
+        border-radius: 50%;
+        transition: background-color 0.3s;
+      }
+    }
+    .ui-paginator-next, .ui-paginator-last, .ui-paginator-prev, .ui-paginator-first {
+      vertical-align: middle;
+      .fa {
+        @include font-size-headline2();
+      }
+      &:not(.ui-state-disabled):hover {
+        .fa {
+          color: $text-color;
+        }
+      }
+    }
+
+    .ui-paginator-pages {
+      vertical-align: middle;
+      margin: 0 $margin-small;
+      a {
+        padding: 0;
+        color: $text-color;
+        min-width: $icon-size-large;
+        min-height: $icon-size-large;
+        line-height: $icon-size-large;
+        border-radius: 50%;
+        transition: background-color 0.3s;
+        color: $text-color;
+
+        &:not(.ui-state-active):hover {
+          background-color: $hover;
+          color: $text-color;
+        }
+
+        &.ui-state-active {
+          background-color: $accent-color;
+          color: $accent-text-color-color;
+        }
+      }
+    }
+    .ui-paginator-rpp-options {
+      @include custom-select($text-color);
+    }
+  }
+}

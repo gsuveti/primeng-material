@@ -1,0 +1,42 @@
+@import "breakpoints";
+
+$font-size-small: 12px;
+
+@mixin font-size-small() {
+  font-weight: 400;
+  font-size: $font-size-small;
+}
+
+@mixin font-size-regular() {
+  font-weight: 400;
+  font-size: 14px;
+  @media (min-width: $laptopSmallBreakpoint) {
+    font-size: 13px;
+  }
+}
+
+@mixin font-size-medium() {
+  font-weight: 400;
+  font-size: 16px;
+  @media (min-width: $laptopSmallBreakpoint) {
+    font-size: 15px;
+  }
+}
+
+@mixin font-size-headline3() {
+  font-size: 14px;
+  font-weight: 500;
+  @media (min-width: $laptopSmallBreakpoint) {
+    font-size: 13px;
+  }
+}
+
+@mixin font-size-headline2() {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+@mixin font-size-headline1() {
+  font-weight: 400;
+  font-size: 45px;
+}

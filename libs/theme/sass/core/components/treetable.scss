@@ -1,0 +1,136 @@
+@import "datatable";
+@import "inputtext";
+@import "calendar";
+
+@mixin ui-treetable(
+  $primary: $primary,
+  $accent: $accent,
+  $primary-text-color:$primary-text-color,
+  $accent-text-color:$accent-text-color,
+  $border-color:$border-color
+) {
+  $border-radius: $borderRadius;
+
+  &.ui-treetable {
+    .ui-treetable-header, .ui-treetable-footer {
+      padding: $margin-medium;
+
+      background-color: transparent;
+      border-color: $border-color;
+      color: $default-text-color;
+    }
+
+    .ui-treetable-header {
+      border-top-left-radius: $borderRadius;
+      border-top-right-radius: $borderRadius;
+    }
+    .ui-treetable-footer {
+      border-bottom-left-radius: $borderRadius;
+      border-bottom-right-radius: $borderRadius;
+    }
+
+    thead tr {
+      border-color: $border-color;
+
+      th {
+        text-align: left;
+        background-color: transparent;
+        color: $default-text-color;
+        vertical-align: top;
+        position: relative;
+        height: $button-height + 2 * $margin-small;
+        padding: $margin-small;
+        overflow: visible;
+        @include row-border();
+      }
+    }
+    tfoot td {
+      border: 0 none;
+      padding: $margin-small;
+    }
+    tbody .ui-treetable-row {
+      td {
+        overflow: visible;
+        vertical-align: middle;
+        padding: $margin-small;
+        height: $button-height + 2 * $margin-small;
+        border: 1px solid $border-color;
+        @include row-border();
+        @include ui-inputtext('input');
+
+        &.ui-treetable-child-table-container {
+          padding: 0;
+          border-top-color: transparent;
+          border-bottom-color: transparent;
+
+          tbody .ui-treetable-row {
+            td {
+              border-color: transparent;
+              border-bottom-color: $border-color;
+              border-left-width: 0;
+              border-right-width: 0;
+            }
+          }
+        }
+        .ui-treetable-checkbox {
+          border: 1px solid $border-color;
+          border-radius: $border-radius;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          .ui-chkbox-icon {
+            margin-left: 0;
+          }
+        }
+      }
+
+      &.ui-treetable-row-selectable:not(.ui-state-highlight):hover {
+
+      }
+      &.ui-state-highlight {
+        background-color: $accent;
+        border-color:   $accent;
+        color: $accent-text-color;
+
+        .ui-treetable-toggler {
+          color: $accent-text-color;
+        }
+        .ui-treetable-checkbox {
+          border-color: $accent-text-color;
+
+          .ui-chkbox-icon {
+            color: $accent-text-color;
+          }
+        }
+      }
+    }
+
+    &.ui-treetable-scrollable {
+      .ui-treetable-scrollable-header {
+
+        font-weight: bold;
+        display: flex;
+        text-align: start;
+        margin-right: -$margin-medium;
+        margin-left: -$margin-medium;
+        border-top: 1px solid $border-color;
+
+        > * {
+          padding: 8px;
+        }
+      }
+
+
+      .ui-treetable-tablewrapper {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        border-bottom: 1px solid $border-color;
+        border-top: 1px solid $border-color;
+
+        table thead {
+          display: none;
+        }
+      }
+    }
+  }
+}

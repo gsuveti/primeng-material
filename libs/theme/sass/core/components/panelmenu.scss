@@ -1,0 +1,109 @@
+@mixin ui-panelmenu(
+  $accent: $primary,
+  $accent-text-color:$primary-text-color,
+  $hover:$hover,
+  $border-color:$border-color
+) {
+  $border-radius: $borderRadius;
+
+  &.ui-panelmenu {
+    padding: 0;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    //@extend .ui-shadow-2;
+
+    .ui-panelmenu-panel {
+      .ui-panelmenu-header {
+        padding: 0;
+        background-color: transparent;
+        &:focus {
+          outline: none;
+        }
+
+        .ui-panelmenu-header-link {
+          display: flex;
+          padding: $margin-medium;
+          .ui-panelmenu-icon, .ui-menuitem-icon {
+            color: $icon-dark-active-color;
+          }
+          .ui-menuitem-text {
+            color: $default-text-color;
+          }
+
+          &.ui-state-active {
+            background-color: $accent;
+            .ui-panelmenu-icon, .ui-menuitem-icon {
+              color: $icon-dark-active-color;
+            }
+            .ui-menuitem-text {
+              color: $accent-text-color;
+            }
+          }
+
+          &:hover {
+            &:not(.ui-state-active) {
+              background-color: $hover;
+              color: $default-text-color;
+            }
+          }
+        }
+      }
+
+      .ui-panelmenu-content {
+        padding: 0;
+
+        .ui-menuitem {
+          margin: 0;
+          .ui-menuitem-link {
+            border: 0 none;
+            padding: $margin-medium;
+            padding-left: $margin-medium + $icon-size + $margin-small;
+            width: 100%;
+            box-sizing: border-box;
+            border-radius: 0;
+            position: relative;
+            &.ui-state-active {
+              background-color: $accent;
+              color: $accent-text-color;
+            }
+            &:hover {
+              &:not(.ui-state-active) {
+                background-color: $hover;
+                color: $default-text-color;
+              }
+            }
+            .ui-menuitem-text {
+              display: inline-block;
+              vertical-align: middle;
+              float: none;
+            }
+            .fa {
+              position: static;
+              display: inline-block;
+              vertical-align: middle;
+            }
+          }
+
+          &.ui-menu-parent {
+            > .ui-menuitem-link {
+              &.ui-state-active {
+                background-color: transparent;
+                color: $default-text-color;
+              }
+            }
+            .ui-menu-list {
+              margin-left: $margin-medium;
+            }
+          }
+        }
+      }
+
+      &:not(:last-child) {
+        .ui-panelmenu-content {
+          border-bottom: 1px solid $border-color;
+        }
+      }
+    }
+
+  }
+}

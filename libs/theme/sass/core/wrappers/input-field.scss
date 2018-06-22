@@ -1,0 +1,152 @@
+@mixin input-field() {
+  $label-width: 200px;
+
+  .input-field {
+    position: relative;
+    text-align: left;
+    flex-direction: row;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    margin-bottom: $margin-medium;
+
+    //TODO move me in dropdown
+    .ui-dropdown {
+      display: flex;
+      align-items: baseline;
+    }
+
+    > * {
+      display: flex;
+      flex-basis: 100%;
+    }
+
+    .control-prefix {
+      flex-basis: unset;
+      margin-right: $margin-small;
+      + .ui-inputtext, .ui-dropdown {
+        flex-basis: unset;
+        flex: 1;
+      }
+    }
+
+    .ui-inputtext, .ui-dropdown {
+      flex-basis: 100%;
+    }
+
+    .ui-message {
+      border-color: transparent;
+      background-color: transparent;
+      padding: 0;
+      margin: $margin-x-small 0;
+      text-align: left;
+    }
+
+    &.is-disabled {
+      > label, .control-prefix {
+        color: $border-color;
+      }
+    }
+
+    &.is-focused, &.is-focused:hover {
+      > label, .control-prefix {
+        color: $primary;
+      }
+    }
+
+    &.has-error {
+      .ui-inputtext, .ui-dropdown {
+        border-bottom-color: $danger;
+        &:enabled {
+          &:hover {
+            border-bottom-color: $danger;
+          }
+        }
+      }
+
+      .ui-message {
+        &.ui-messages-error {
+          color: $danger;
+        }
+      }
+
+      > label, .control-prefix {
+        color: $danger;
+      }
+    }
+
+    &.has-warning {
+      .ui-inputtext, .ui-dropdown {
+        border-bottom-color: $warn;
+        &:enabled {
+          &:hover {
+            border-bottom-color: $warn;
+          }
+        }
+      }
+
+      .ui-message {
+        &.ui-messages-error {
+          color: $warn;
+        }
+      }
+
+      > label, .control-prefix {
+        color: $warn;
+      }
+    }
+
+    &.has-success, &.has-success:hover {
+      &.is-focused {
+        .ui-inputtext, .ui-dropdown {
+          border-bottom-color: $success;
+        }
+      }
+      > label, .control-prefix {
+        color: $success;
+      }
+    }
+  }
+
+  .ui-fluid {
+    .input-field {
+      display: flex;
+    }
+  }
+
+  @include gridle_state(sm) {
+    .left-aligned-labels, .right-aligned-labels {
+      .input-field {
+        display: flex;
+        margin: 0;
+
+        > label {
+          flex-basis: $label-width;
+          + * {
+            &:not(.control-prefix) {
+              flex-basis: unset;
+              flex: 1;
+            }
+          }
+        }
+        .control-prefix {
+          + * {
+            flex-basis: unset;
+            flex: 1;
+          }
+        }
+        .ui-message {
+          padding-left: $label-width;
+        }
+      }
+    }
+    .right-aligned-labels {
+      .input-field {
+        > label {
+          padding-right: $margin-medium;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}

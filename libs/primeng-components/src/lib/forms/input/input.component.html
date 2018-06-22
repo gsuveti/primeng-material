@@ -1,0 +1,17 @@
+<h3> Text: {{name}} </h3>
+<input type="text" pInputText placeholder="Name" [(ngModel)]="name"/>
+
+<h3> Floating label</h3>
+<div class="ui-float-label">
+    <input type="text" pInputText [(ngModel)]="name"/>
+    <label>Name</label>
+</div>
+
+<h3> Email: {{email}} </h3>
+<input type="email" pInputText placeholder="Email" [(ngModel)]="email" required email/>
+
+<h3> Password: {{password}} </h3>
+<input type="password" pInputText placeholder="Password" [(ngModel)]="password"/>
+
+<h3> Disabled </h3>
+<input type="text" pInputText disabled=true/>

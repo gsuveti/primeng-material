@@ -1,0 +1,50 @@
+@mixin ui-slidemenu() {
+  &.ui-slidemenu {
+    @include ui-menu();
+    .ui-slidemenu-wrapper {
+      .ui-slidemenu-content {
+        .ui-menu-list {
+          width: 100%;
+          &.ui-menu-rootlist {
+            > .ui-menuitem {
+              &.ui-menu-parent {
+                .ui-menuitem-link {
+
+                }
+                &.ui-slidemenuitem-active {
+                  .ui-menuitem-link {
+
+                  }
+                }
+              }
+            }
+          }
+          .ui-menuitem {
+            &.ui-menu-parent {
+              .ui-menuitem-link {
+
+              }
+              .ui-submenu {
+                .ui-menu-child {
+                  padding: 0;
+                  box-shadow: none;
+                }
+              }
+              &.ui-slidemenuitem-active {
+                .ui-menuitem-link {
+
+                }
+              }
+            }
+          }
+        }
+      }
+      .ui-slidemenu-backward {
+        box-sizing: border-box;
+        .fa {
+          color: $icon-light-active-color;
+        }
+      }
+    }
+  }
+}

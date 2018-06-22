@@ -1,0 +1,23 @@
+@mixin ui-progressbar(
+  $background: $border-color,
+  $accent: $primary
+) {
+
+  &.ui-progressbar {
+    height: 4px;
+    background-color: $background;
+    margin-top: $margin-medium;
+    overflow: visible;
+
+    .ui-progressbar-value {
+      background-color: $accent;
+    }
+    .ui-progressbar-label {
+      color: $default-text-color;
+      @include font-size-small();
+      position: absolute;
+      top: calc(-1em - #{$margin-x-small});
+      text-align: left;
+    }
+  }
+}

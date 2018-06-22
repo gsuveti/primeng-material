@@ -1,0 +1,320 @@
+@mixin ui-datatable {
+  &.ui-datatable {
+    .ui-datatable-loading {
+      background-color: $hover;
+    }
+    .ui-datatable-loading-content {
+      top: 1px;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      @include progress-bar($primary);
+      > * {
+        display: none;
+      }
+    }
+    .ui-widget-header {
+      overflow: visible;
+      margin: 0;
+    }
+
+    .ui-datatable-header, .ui-datatable-footer {
+      padding: $margin-medium;
+      background-color: transparent;
+      border-color: $border-color;
+      color: $default-text-color;
+    }
+
+    .ui-datatable-header {
+      border-top-left-radius: $borderRadius;
+      border-top-right-radius: $borderRadius;
+    }
+    .ui-datatable-footer {
+      border-bottom-left-radius: $borderRadius;
+      border-bottom-right-radius: $borderRadius;
+    }
+
+    .ui-paginator {
+      padding: $margin-medium;
+    }
+
+    .ui-datatable-thead {
+      tr {
+        border-color: $border-color;
+
+        > th {
+          text-align: left;
+          background-color: transparent;
+          color: $default-text-color;
+          vertical-align: top;
+          position: relative;
+          padding: 0;
+          overflow: visible;
+          @include row-border();
+
+          .ui-column-title {
+            width: 100%;
+            padding: $margin-small $margin-x-large $margin-small $margin-small;
+          }
+
+          .ui-sortable-column-icon {
+            @include ui-icon-large();
+            position: absolute;
+            top: $margin-x-small;
+            right: $margin-small;
+            display: flex;
+            justify-content: center;
+
+          }
+          .ui-column-filter {
+            margin: 0 $margin-small $margin-small $margin-small;
+            width: calc(100% - #{2 * $margin-small});
+          }
+
+          .ui-column-title {
+            display: inline-block;
+            vertical-align: middle;
+          }
+
+          &.ui-sortable-column:not(.ui-state-active):hover {
+          }
+
+          &.ui-state-active, &.ui-state-highlight {
+          }
+
+          &.ui-selection-column {
+            padding: $margin-small;
+            .ui-chkbox {
+              .ui-chkbox-box {
+                box-sizing: content-box;
+                &.ui-state-active {
+                  background-color: transparent;
+                  border: 1px solid $default-text-color;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .ui-datatable-tfoot > tr > td {
+      padding: $margin-medium;
+      border: 1px solid $border-color;
+      background-color: $default;
+    }
+    .ui-datatable-data {
+      tr {
+        word-wrap: break-word;
+        td {
+          overflow: visible;
+          padding: $margin-small;
+          height: $button-height + 2 * $margin-small;
+          @include row-border();
+          .ui-cell-data, .ui-cell-editor {
+            white-space: normal;
+          }
+
+          .ui-row-toggler {
+            display: inherit;
+          }
+          &.ui-state-highlight .ui-inputtext {
+            color: $default-text-color;
+            border-color: $default-text-color;
+            &:focus {
+              border-color: $default-text-color;
+            }
+          }
+          &.ui-state-error {
+            background-color: $warn;
+            border-color: $warn;
+            color: $primary-text-color;
+          }
+          input.ui-cell-editor {
+            padding: $margin-small 0;
+            @include font-size-regular;
+          }
+          &.ui-editable-column {
+            padding: $margin-small;
+            .ui-cell-editing {
+              padding: 0;
+            }
+          }
+          &.ui-selection-column {
+            .ui-chkbox-box, .ui-radiobutton-box {
+              box-sizing: content-box;
+            }
+          }
+        }
+        &:last-child {
+          td {
+            border-bottom: transparent;
+          }
+        }
+        &.ui-state-highlight {
+          background-color: $accent;
+          border-color:   $accent;
+          color: $accent-text-color;
+        }
+        .ui-cell-editor-input input {
+          color: #000000;
+        }
+        &.ui-state-error {
+          background-color: $warn;
+          border-color: $warn;
+          color: $default-text-color;
+          .ui-inputtext {
+            border-color: $default-text-color;
+            &.ui-state-error {
+              border-color: $default-text-color;
+            }
+          }
+        }
+        &.ui-state-highlight {
+          td.ui-selection-column {
+            .ui-radiobutton-box {
+              border-color: $default-text-color;
+              .ui-radiobutton-icon {
+                background-color: $default-text-color;
+              }
+            }
+            .ui-chkbox {
+              border-color: $default-text-color;
+              background-color: transparent;
+
+              .ui-chkbox-box {
+                border: 1px solid $default-text-color;
+              }
+              .ui-chkbox-icon {
+                color: $default-text-color;
+              }
+            }
+
+          }
+          .ui-inputtext {
+            color: $default-text-color;
+            border-color: $default-text-color;
+            &:focus {
+              border-color: $default-text-color;
+            }
+          }
+        }
+        &.ui-rowgroup-header td a {
+          height: 1.5em;
+        }
+      }
+      &.ui-datatable-hoverable-rows {
+        tr {
+          &.ui-widget-content:not(.ui-state-highlight) {
+            &:hover {
+              background-color: $datatable-row-hover;
+
+            }
+            &.ui-datatable-even {
+              background-color: $hover;
+              &:hover {
+                background-color: $datatable-row-hover;
+
+              }
+            }
+          }
+        }
+      }
+    }
+    &.ui-datatable-scrollable {
+      .ui-datatable-scrollable-view {
+        &:before {
+          content: '';
+          width: 15px;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          right: 0px;
+          border: 0 solid $border-color;
+          border-width: 1px 1px 0 0;
+          z-index: 1;
+          pointer-events: none;
+        }
+        .ui-datatable-scrollable-header, .ui-datatable-scrollable-footer {
+          border: 0 none;
+          background-color: transparent;
+        }
+      }
+    }
+    &.ui-datatable-resizable {
+      .ui-datatable-thead {
+        tr {
+          th {
+            border-color: $border-color;
+          }
+        }
+      }
+      .ui-datatable-data {
+        tr {
+          td {
+            border-color: $border-color;
+          }
+        }
+      }
+    }
+    &.ui-htmltable {
+      tr {
+        border: 0;
+        td {
+          font-weight: unset;
+        }
+        th, td {
+          border: 1px solid;
+          @include row-border();
+
+          text-align: left;
+          padding: $margin-small;
+          height: $button-height + 2 * $margin-small;
+        }
+        &:hover {
+          background-color: $hover;
+        }
+      }
+      thead {
+        tr {
+          &:hover {
+            background-color: transparent;
+          }
+          th {
+            &:hover {
+              background-color: $hover;
+            }
+          }
+        }
+      }
+    }
+
+    &.card {
+      padding: 0;
+      thead, tr {
+        th, td {
+          @include row-border(transparent);
+        }
+      }
+      .ui-datatable-header, .ui-datatable-footer {
+        background-color: transparent;
+        border-color: transparent;
+      }
+      .ui-paginator {
+        border: none;
+        border-top: 1px solid $border-color;
+      }
+    }
+  }
+}
+
+@mixin row-border($left-right-border-color:$border-color,$top-bottom-border-color:$border-color) {
+  border-color: transparent;
+  border-top-color: $top-bottom-border-color;
+  border-bottom-color: $top-bottom-border-color;
+  &:first-child {
+    border-left-color: $left-right-border-color;
+  }
+  &:last-child {
+    border-right-color: $left-right-border-color;
+  }
+}

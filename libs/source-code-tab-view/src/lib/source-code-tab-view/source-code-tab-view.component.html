@@ -1,0 +1,20 @@
+<p-tabView>
+  <p-tabPanel header="Demo">
+    <ng-content></ng-content>
+  </p-tabPanel>
+  <p-tabPanel header="HTML">
+    <primeng-material-prism *ngIf="code.html" [code]="code.html" [language]="'markup'"></primeng-material-prism>
+  </p-tabPanel>
+  <p-tabPanel header="SCSS">
+    <primeng-material-prism *ngIf="code.scss" [code]="code.scss" [language]="'scss'"></primeng-material-prism>
+  </p-tabPanel>
+  <p-tabPanel header="TS">
+    <primeng-material-prism *ngIf="code.ts" [code]="code.ts" [language]="'ts'"></primeng-material-prism>
+  </p-tabPanel>
+</p-tabView>
+
+
+
+
+
+

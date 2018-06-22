@@ -1,0 +1,6 @@
+<p-growl [value]="msgs"></p-growl>
+<div>
+    <p-tree [value]="filesTree" selectionMode="multiple" [(selection)]="selectedFiles"
+            (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeUnselect($event)"></p-tree>
+    <div>Selected Nodes: <span *ngFor="let file of selectedFiles" class="selected-node mr-xs">{{file.label}}</span></div>
+</div>

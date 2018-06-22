@@ -1,0 +1,54 @@
+@mixin ui-slider( $size:20px, $accent:$accent,$accent-text-color:$accent-text-color, $background:$border-color) {
+
+  &.ui-slider {
+    border: solid transparent;
+    box-sizing: content-box;
+
+    .ui-slider-handle {
+      background-color: $accent;
+      border-radius: 50%;
+      width: $size;
+      height: $size;
+      transform: scale(0.7);
+      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      &.ui-state-focus {
+        transform: scale(1);
+      }
+      &:focus {
+        outline: 0 none;
+      }
+
+    }
+    &:before {
+      content: '';
+      display: flex;
+      height: 100%;
+      width: 100%;
+      background-color: $background;
+    }
+
+    &.ui-slider-horizontal {
+      height: 2px;
+      border-width: ($size * 0.7 - 2px) / 2 0;
+
+      .ui-slider-handle {
+        top: 1 - $size / 2;
+      }
+    }
+    &.ui-slider-vertical {
+      width: 2px;
+      border-width: 0 ($size - 2px) / 2;
+
+      .ui-slider-handle {
+        left: 1 - $size / 2;
+      }
+    }
+    .ui-slider-range {
+      background-color: $accent;
+      color: $accent-text-color;
+    }
+    &:not(.ui-state-disabled) .ui-slider-handle:hover {
+      transform: scale(1);
+    }
+  }
+}

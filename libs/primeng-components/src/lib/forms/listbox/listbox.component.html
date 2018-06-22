@@ -1,0 +1,32 @@
+<div style="display: flex">
+    <div class="ui-g-12 ui-md-4">
+        <h3 class="first">Single</h3>
+        <p-listbox [options]="cities" [(ngModel)]="selectedCity"></p-listbox>
+        <p>Selected City: {{selectedCity}}</p>
+    </div>
+
+    <div class="ui-g-12 ui-md-4">
+        <h3>Advanced (Multiple, Checkbox and Filter)</h3>
+        <p-listbox [options]="cities" [(ngModel)]="selectedCities" multiple="multiple" checkbox="checkbox"
+                   filter="filter"></p-listbox>
+        <p>Selected Cities: <span *ngFor="let city of selectedCities" style="margin-right: 10px">{{city}}</span></p>
+    </div>
+
+
+    <div class="ui-g-12 ui-md-4">
+        <h3>Content</h3>
+        <p-listbox [options]="cars" [(ngModel)]="selectedCar" [style]="{'width':'190px','max-height':'250px'}">
+            <ng-template let-car pTemplate="item">
+                <div class="ui-helper-clearfix">
+                    <img src="https://www.primefaces.org/primeng/assets/showcase/images/demo/car/{{car.label}}.png"
+                         width="30px" height="30px"
+                         style="display:inline-block;margin:5px 0 0 5px"/>
+                    <span style="font-size:20px;float:right;margin:15px 10px 0 0">{{car.value}}</span>
+                </div>
+            </ng-template>
+        </p-listbox>
+        <p>Selected Car: {{selectedCar}}</p>
+
+        <button type="button" (click)="selectedCar=null" pButton icon="fa-close" label="Clear Selected Car"></button>
+    </div>
+</div>

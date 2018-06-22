@@ -1,0 +1,19 @@
+$margin-x-small: 4px;
+$margin-small: 8px;
+$margin-medium: 16px;
+$margin-large: 24px;
+$margin-x-large: 32px;
+
+$primary: blue;
+$border-color: gray;
+$primary-text-color: black;
+
+.selected-node {
+  margin-right: $margin-x-small;
+  &:not(:last-child) {
+    &:after {
+      padding-left: $margin-x-small;
+      content: ",";
+    }
+  }
+}

@@ -1,0 +1,131 @@
+@mixin ui-multiselect(
+  $text-color:$default-text-color,
+  $border-color:$border-color,
+  $active-border-color:$primary,
+  $trigger-color: $icon-dark-inactive-color
+) {
+  &.ui-multiselect {
+    border-bottom: 1px solid $border-color;
+    box-sizing: border-box;
+    border-radius: 0;
+    transition: border-color 0.3s;
+    .ui-multiselect-label-container {
+      color: $text-color;
+      padding-right: $icon-size;
+      .ui-multiselect-label {
+        padding: 0px 2px 0px 2px;
+      }
+    }
+    .ui-multiselect-trigger {
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: $icon-size;
+      padding: 0;
+
+      .fa {
+        color: $trigger-color;
+        margin-top: 0;
+        margin-left: 0;
+      }
+    }
+    &.ui-state-focus {
+      border-bottom: 2px solid $active-border-color;
+    }
+    &:not(.ui-state-disabled):hover {
+      background: none;
+      border-color: $active-border-color;
+    }
+
+    .ui-multiselect-panel {
+      padding: 0;
+      border-radius: 0;
+      @include ui-shadow-2;
+      min-width: 12.5em;
+      background-color: $white;
+
+      .ui-multiselect-header {
+        border-radius: 0;
+        padding: $margin-medium;
+        position: relative;
+        .ui-chkbox {
+          float: none;
+          position: static;
+          border-color: $primary-text-color;
+
+          .ui-chkbox-box {
+            border: 1px solid $primary-text-color;
+
+            &:not(.ui-state-disabled):not(.ui-state-active):hover {
+              background: none;
+            }
+
+            &.ui-state-active {
+              background: none;
+              .ui-chkbox-icon {
+                color: $primary-text-color;
+              }
+            }
+          }
+        }
+        .ui-multiselect-filter-container {
+          width: 70%;
+          display: inline-block;
+          vertical-align: middle;
+          float: none;
+          margin-left: 0;
+          .fa {
+            top: 0;
+            left: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: $primary-text-color;
+          }
+          .ui-inputtext {
+            color: $primary-text-color;
+            padding-left: $icon-size;
+            width: 100%;
+            box-sizing: border-box;
+            border-bottom-color: $primary-text-color;
+            &:enabled:hover {
+              border-bottom-color: $primary-text-color;
+            }
+          }
+        }
+        .ui-multiselect-close {
+          position: absolute;
+          right: $icon-size;
+          top: $margin-medium;
+          bottom: $margin-medium;
+          width: $icon-size;
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+
+          span {
+            color: $primary-text-color;
+          }
+        }
+      }
+      .ui-multiselect-item {
+        @include font-size-regular;
+        padding: $margin-medium;
+        color: $default-text-color;
+        border-radius: 0;
+
+        &.ui-state-highlight {
+          background-color: transparent;
+          color: $default-text-color;
+          &:hover {
+            background-color: $hover;
+            color: $default-text-color;
+          }
+        }
+      }
+    }
+
+  }
+
+}

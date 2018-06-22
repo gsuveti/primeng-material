@@ -1,0 +1,76 @@
+@mixin ui-messages(
+  $primary: $primary,
+  $primary-text-color: $primary-text-color,
+  $info: $info,
+  $info-text-color: $info-text-color,
+  $success: $success,
+  $success-text-color: $success-text-color,
+  $warn: $warn,
+  $warn-text-color: $warn-text-color,
+  $danger: $danger,
+  $danger-text-color: $danger-text-color
+) {
+
+  &.ui-messages {
+    padding: $margin-small;
+    ul {
+      display: inline-block;
+      margin-left: 0;
+    }
+    &.ui-messages-info {
+      background-color: $info;
+      border-color: $info;
+      color: $info-text-color;
+    }
+    &.ui-messages-warn {
+      background-color: $warn;
+      border-color: $warn;
+      color: $warn-text-color;
+    }
+    &.ui-messages-error {
+      background-color: $danger;
+      border-color: $danger;
+      color: $danger-text-color;
+    }
+    &.ui-messages-fatal {
+      background-color: $black;
+      border-color: $black;
+      color: $white;
+    }
+    &.ui-messages-success {
+      background-color: $success;
+      border-color: $success;
+      color: $success-text-color;
+    }
+    .ui-messages-close {
+      text-decoration: none;
+      right: $margin-small;
+      top: $margin-small;
+    }
+    .ui-messages-icon {
+      background: none;
+      margin-top: -2px;
+      &.fa-info-circle {
+        &:before {
+          content: "info";
+        }
+      }
+      &.fa-warning {
+        &:before {
+          content: "warning";
+        }
+      }
+      &.fa-close {
+        &:before {
+          content: "error_outline";
+        }
+      }
+      &.fa-check {
+        &:before {
+          content: "check_circle";
+        }
+      }
+    }
+  }
+
+}

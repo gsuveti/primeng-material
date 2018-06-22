@@ -1,0 +1,20 @@
+@mixin ui-datagrid {
+  &.ui-datagrid {
+    .ui-datagrid-header {
+      padding: $margin-medium;
+      &:empty {
+
+      }
+    }
+    .ui-datagrid-content {
+      padding: $margin-medium;
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+
+    }
+    .ui-datagrid-footer {
+
+    }
+  }
+}
+

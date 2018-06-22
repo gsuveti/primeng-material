@@ -1,0 +1,12 @@
+<p-pickList [source]="sourceCars" [target]="targetCars" sourceHeader="Available" targetHeader="Selected"
+            [responsive]="true" filterBy="brand"
+            dragdrop="true" dragdropScope="cars" sourceFilterPlaceholder="Search by brand"
+            targetFilterPlaceholder="Search by brand" [sourceStyle]="{'height':'300px'}"
+            [targetStyle]="{'height':'300px'}">
+    <ng-template let-car pTemplate="item">
+        <div class="ui-helper-clearfix">
+            <img src="{{car.photo}}" width="48">
+            <span class="ml">{{car.brand}} - {{car.year}} - {{car.color}}</span>
+        </div>
+    </ng-template>
+</p-pickList>

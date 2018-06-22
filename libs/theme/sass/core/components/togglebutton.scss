@@ -1,0 +1,19 @@
+@mixin ui-togglebutton() {
+
+  &.ui-togglebutton {
+    &:not(.ui-state-active):not(.ui-state-disabled):hover {
+      background-color: $primary;
+    }
+    &.ui-state-active {
+      background-color: $accent;
+      color: $accent-text-color;
+    }
+
+    .ui-button-icon-left {
+    }
+    .ui-button-text {
+
+    }
+
+  }
+}

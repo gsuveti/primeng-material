@@ -1,0 +1,54 @@
+<p-dataTable
+        [value]="peopleLazy"
+        [rows]="10"
+        [paginator]="true"
+        [pageLinks]="3"
+        [lazy]="true"
+        [totalRecords]="totalRecords"
+        (onLazyLoad)="loadPeopleLazy($event)"
+        [editable]="true"
+        reorderableColumns="true"
+        resizableColumns="true"
+        columnResizeMode="expand"
+        [responsive]="true"
+        [(selection)]="selectedPeople"
+        #dt
+>
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <button type="button" class="ui-button-secondary" pButton icon="ui-icon-file-download" iconPos="left"
+                    label="CSV" l
+                    (click)="dt.exportCSV()"
+                    style="float:left"></button>
+            <div>
+                <span>single selection</span>
+                <p-inputSwitch [(ngModel)]="selectionModeMultiple"></p-inputSwitch>
+                <span>multiple selection</span>
+            </div>
+        </div>
+    </p-header>
+
+    <p-column [style]="{'width':'38px'}" [selectionMode]="selectionModeMultiple ? 'multiple':'single'"></p-column>
+    <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header"
+              [editable]="true"
+              sortable="true"
+              [style]="{'width':'25%'}">
+
+        <ng-template let-col let-people="rowData" pTemplate="editor" *ngIf="col.field === 'id'">
+            <p-dropdown [(ngModel)]="people[col.field]" [options]="idOptions" [autoWidth]="false"
+                        [style]="{'width':'100%'}" required="true"></p-dropdown>
+        </ng-template>
+
+        <ng-template let-col let-people="rowData" pTemplate="editor" *ngIf="col.field === 'carBrand'">
+            <p-autoComplete [(ngModel)]="people[col.field]" (completeMethod)="search($event)" [suggestions]="results"
+                            [minLength]="1"></p-autoComplete>
+        </ng-template>
+
+        <ng-template let-col let-people="rowData" pTemplate="editor" *ngIf="col.field === 'birthday'">
+            <p-calendar [(ngModel)]="people[col.field]"
+                        [style]="{'width':'100%'}" required="true"></p-calendar>
+        </ng-template>
+
+    </p-column>
+</p-dataTable>
+

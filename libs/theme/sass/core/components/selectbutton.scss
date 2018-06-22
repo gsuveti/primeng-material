@@ -1,0 +1,41 @@
+@mixin ui-selectbutton(
+  $primary: $primary,
+  $accent: $accent,
+  $primary-text-color:$primary-text-color,
+  $accent-text-color:$accent-text-color,
+  $hover:$hover
+) {
+
+  $size: 36px;
+
+  &.ui-selectbutton {
+    @include ui-buttonset($border-color);
+
+    .ui-button {
+      margin: 0;
+      &.ui-state-active {
+        background-color: $accent;
+        color: $accent-text-color;
+
+        &:focus, &:active, &:hover {
+          background-color: $accent;
+          color: $accent-text-color;
+        }
+      }
+
+      &:not(.ui-state-disabled) {
+        &:not(.ui-state-active) {
+          background-color: transparent;
+          color: $default-text-color;
+
+          &:hover {
+            background-color: transparent;
+            color: $default-text-color;
+          }
+        }
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,62 @@
+@import "../core/vars/vars";
+
+$opacity-hover: .04;
+$datatable-row-hover-opacity: .08;
+$opacity-dividers: .12;
+$opacity-button-hover: .12;
+$opacity-slider: .38;
+$opacity-slider-checked: .5;
+
+$opacity-text-dark-primary: .87;
+$opacity-text-dark-accent: .54;
+$opacity-text-dark-disabled: .38;
+
+$opacity-text-light-primary: 1;
+$opacity-text-light-accent: .7;
+$opacity-text-light-disabled: .5;
+
+$white: #ffffff;
+$black: #000000;
+
+$primary: #039be5;
+$primary-lighter: lighten($primary, 10);
+$primary-darker: darken($primary, 10);
+
+$accent: $primary-lighter;
+$accent-lighter: lighten($accent, 10);
+$accent-darker: darken($accent, 10);
+
+$primary-text-color: $white;
+$primary-lighter-text-color: $white;
+$primary-darker-text-color: $white;
+
+$accent-text-color: $white;
+$accent-lighter-text-color: $white;
+$accent-darker-text-color: $white;
+
+$default: $white;
+$info: #00bcd4; //map-get($mat-green,500)
+$success: #87dc8b;
+$warn: #ffc14b;
+$danger: #f36464;
+
+$default-text-color: rgba($black, $opacity-text-dark-primary);
+$default-lighter-text-color: rgba($black, $opacity-text-dark-accent);
+
+$info-text-color: #000000;
+$success-text-color: #ffffff;
+$warn-text-color: #ffffff;
+$danger-text-color: #ffffff;
+
+$hover: rgba($black, $opacity-hover);
+$datatable-row-hover: rgba($black, $datatable-row-hover-opacity);
+$border-color: rgba($black, $opacity-dividers);
+$slider-color: rgba($black, $opacity-slider);
+
+$icon-dark-inactive-color: rgba($black, $opacity-text-dark-disabled);
+$icon-dark-active-color: rgba($black, $opacity-text-dark-accent);
+
+$icon-light-inactive-color: rgba($white, $opacity-text-light-disabled);
+$icon-light-active-color: rgba($white, $opacity-text-light-primary);
+
+@import "../core/vars/primeng-vars";

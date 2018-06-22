@@ -1,0 +1,93 @@
+@mixin ui-growl(
+  $primary: $primary,
+  $primary-text-color: $primary-text-color,
+  $info: $info,
+  $info-text-color: $info-text-color,
+  $success: $success,
+  $success-text-color: $success-text-color,
+  $warn: $warn,
+  $warn-text-color: $warn-text-color,
+  $danger: $danger,
+  $danger-text-color: $danger-text-color
+) {
+
+  &.ui-growl {
+
+    top: 90px;
+    .ui-growl-item-container {
+      opacity: 1;
+      margin: $margin-small 0;
+      @include ui-shadow-3;
+
+      &.ui-growl-message-info {
+        background-color: $info;
+        border-color: $info;
+        color: $info-text-color;
+      }
+      &.ui-growl-message-warn {
+        background-color: $warn;
+        border-color: $warn;
+        color: $warn-text-color;
+      }
+      &.ui-growl-message-error {
+        background-color: $danger;
+        border-color: $danger;
+        color: $danger-text-color;
+      }
+      &.ui-growl-message-fatal {
+        background-color: $black;
+        border-color: $black;
+        color: $white;
+      }
+      &.ui-growl-message-success {
+        background-color: $success;
+        border-color: $success;
+        color: $success-text-color;
+      }
+    }
+    .ui-growl-item {
+      padding: $margin-small $margin-x-large;
+
+      .ui-growl-image {
+        background: none;
+        @include ui-icon-large();
+        top: $margin-small;
+        left: $margin-small;
+        &.fa-info-circle {
+          &:before {
+            content: "info";
+          }
+        }
+        &.fa-exclamation-circle {
+          &:before {
+            content: "warning";
+          }
+        }
+        &.fa-close {
+          &:before {
+            content: "error_outline";
+          }
+        }
+        &.fa-check {
+          &:before {
+            content: "check_circle";
+          }
+        }
+      }
+      .ui-growl-message {
+        margin: 0;
+        padding: 0 $margin-small;
+      }
+      .ui-growl-icon-close {
+        @include ui-icon-large();
+        top: $margin-small;
+        right: $margin-small;
+        &:before {
+          content: "close";
+        }
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,20 @@
+@mixin ui-tieredmenu($background:$default) {
+  &.ui-tieredmenu {
+    @include ui-tiered-submenu($background);
+    padding: $margin-small 0;
+  }
+}
+
+@mixin ui-tiered-submenu($background:$default) {
+  @include ui-menu();
+  .ui-menu-list {
+    .ui-menuitem {
+      .ui-submenu {
+        .ui-menu-child {
+          padding: $margin-small 0;
+          background-color: $background;
+        }
+      }
+    }
+  }
+}

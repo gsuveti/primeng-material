@@ -1,0 +1,11 @@
+@mixin pager() {
+  .pager {
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    a {
+      @include ui-icon-small();
+    }
+  }
+}

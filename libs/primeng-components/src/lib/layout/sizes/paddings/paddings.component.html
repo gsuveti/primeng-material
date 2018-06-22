@@ -1,0 +1,59 @@
+<div>
+    <h2>1.Using sass variables in stylesheet</h2>
+    <p>$margin-x-small: 4px;</p>
+    <p>$margin-small: 8px;</p>
+    <p>$margin-medium: 16px;</p>
+    <p>$margin-large: 24px;</p>
+    <p>$margin-x-large: 32px;</p>
+    <div class="grid first">
+        <div>
+            <p>padding top extra small</p>
+            <p>padding right small</p>
+            <p>padding bottom medium</p>
+            <p>padding left large </p>
+        </div>
+    </div>
+
+
+    <div class="grid second">
+        <div>
+            <p>padding top/bottom extra large</p>
+            <p>padding right/left large</p>
+        </div>
+    </div>
+
+    <div class="grid third">
+        <div>
+            <p>all paddings medium</p>
+        </div>
+    </div>
+</div>
+
+<div>
+    <h2>2.Using predefined classes</h2>
+    <p>p<span style="color: red">position</span>-<span style="color: red">size</span></p>
+    <p>position=[t|r|b|l|y|x] (if missing the size will be applied to all paddings. e.g.: m-xs)</p>
+    <p>size=[xs|sm|md|lg|xl]; (if missing the md size will be used. e.g.: pt - same as pt-md)</p>
+    <div class="grid pt-xs pr-sm pb-md pl-lg">
+        <div>
+            <p>padding top extra small</p>
+            <p>padding right small</p>
+            <p>padding bottom medium</p>
+            <p>padding left large </p>
+        </div>
+    </div>
+
+
+    <div class="grid py-xl px-lg">
+        <div>
+            <p>padding top/bottom extra large</p>
+            <p>padding right/left large</p>
+        </div>
+    </div>
+
+    <div class="grid p-md">
+        <div>
+            <p>all paddings medium</p>
+        </div>
+    </div>
+</div>

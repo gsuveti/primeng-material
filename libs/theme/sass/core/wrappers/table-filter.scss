@@ -1,0 +1,44 @@
+@mixin table-filter() {
+  .filter-box {
+    display: inline-flex;
+    align-items: center;
+
+    input {
+      //todo remove after adding pInput on amp-filter-table component
+      $input-line-height: 1px;
+      outline: none;
+      @include font-size-regular();
+
+      background: transparent;
+      padding: $margin-small 0;
+      margin-bottom: 1px;
+      border: 0 solid $border-color;
+      border-bottom-width: $input-line-height;
+      transition: border-color 0.3s;
+      border-radius: 0px;
+      &:focus, &.ui-state-focus {
+        border-bottom-width: $input-line-height + 1px;
+        border-color: $primary;
+        margin-bottom: 0px;
+      }
+      &:disabled {
+        border-bottom: 1px dotted;
+      }
+      &.ui-widget-content {
+        border-width: 1px;
+      }
+      &.ui-state-error {
+        border-color: $danger;
+      }
+      &:enabled {
+        &:hover {
+          border-color: $primary;
+        }
+      }
+      &:hover {
+        border-color: $primary;
+      }
+
+    }
+  }
+}
