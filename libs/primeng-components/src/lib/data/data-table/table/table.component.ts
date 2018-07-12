@@ -18,6 +18,8 @@ export class TableComponent implements OnInit {
   displayCarDialog: boolean;
 
   colors = [];
+  cols: any[];
+  frozenCols: any[];
 
   constructor() {}
 
@@ -35,6 +37,17 @@ export class TableComponent implements OnInit {
         icon: 'fa-close',
         command: event => this.deleteCar(this.selectedCar)
       }
+    ];
+
+    this.cols = [
+      { field: 'year', header: 'Year' },
+      { field: 'brand', header: 'Brand' },
+      { field: 'color', header: 'Color' },
+      { field: 'photo', header: 'Photo' }
+    ];
+
+    this.frozenCols = [
+      { field: 'vin', header: 'Vin' }
     ];
   }
 
@@ -59,7 +72,7 @@ export class TableComponent implements OnInit {
   deleteCar(car: Car) {
     let index = -1;
     for (let i = 0; i < this.cars.length; i++) {
-      if (this.cars[i].vin == car.vin) {
+      if (this.cars[i].vin === car.vin) {
         index = i;
         break;
       }
@@ -81,7 +94,7 @@ export class TableComponent implements OnInit {
         vin: faker.random.uuid(),
         year: faker.date.past().getFullYear(),
         brand: faker.company.companyName(),
-        color: faker.commerce.color(),
+        color: faker.internet.color(),
         photo: faker.image.transport(100, 100, true)
       };
       if (this.colors.indexOf(car.color) < 0) {

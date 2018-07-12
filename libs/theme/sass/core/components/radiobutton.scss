@@ -1,27 +1,36 @@
 @mixin ui-radiobutton($background:$accent, $border: $border-color) {
   &.ui-radiobutton {
     $radio-border: 2px;
-    $icon-size: $icon-size;
+    $box-size: $radio-button-size;
+    $icon-size: $box-size - 2 * $radio-border;
 
     .ui-radiobutton-box {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: $icon-size;
-      height: $icon-size;
+      width: $radio-button-size;
+      height: $radio-button-size;
+      position: relative;
 
       .ui-radiobutton-icon {
-        display: block;
+        position: absolute;
         margin: 0;
-        box-sizing: border-box;
-        width: $icon-size - 2 * $radio-border;
-        height: $icon-size - 2 * $radio-border;
+        width: $radio-button-size;
+        height: $radio-button-size;
+        top: -1 * $radio-border;
+        left: -1 * $radio-border;
 
+        display: flex;
+        justify-content: center;
+
+        box-sizing: border-box;
         border-radius: 50%;
         transition: transform ease .3s;
         transform: scale(0);
-        background-color: $background;
         color: transparent;
+        background-color: $background;
+
+        &:before {
+          content: none;
+          display: none;
+        }
       }
 
       &.ui-state-focus {
@@ -39,7 +48,6 @@
         background: none;
         border: 2px solid $border;
       }
-
     }
 
     & + .ui-radiobutton-label {

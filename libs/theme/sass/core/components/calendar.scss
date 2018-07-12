@@ -53,12 +53,7 @@
 
       border-radius: 50%;
       color: $primary-text-color;
-      &:before {
-        content: "keyboard_arrow_left";
-      }
-      .fa {
-        display: none;
-      }
+
       &:hover {
         background-color: $primary;
       }
@@ -70,20 +65,23 @@
 
       border-radius: 50%;
       color: $primary-text-color;
-      &:before {
-        content: "keyboard_arrow_right";
-      }
-      .fa {
-        display: none;
-      }
+
       &:hover {
         background-color: $primary;
       }
     }
     .ui-datepicker-next, .ui-datepicker-prev {
       @include ui-material-icons();
-      @include ui-icon-large();
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      > * {
+        position: static;
+        margin: 0;
+      }
     }
+
     select {
       &.ui-datepicker-month, &.ui-datepicker-year {
         //@include custom-select($primary-text-color);

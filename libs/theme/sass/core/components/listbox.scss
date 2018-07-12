@@ -4,9 +4,12 @@
   $accent-text-color:$accent-text-color
 ) {
   &.ui-listbox {
-    min-width: 12.5em;
+    min-width: 200px;
     background-color: #ffffff;
     border-radius: 3px;
+    margin: 0;
+    box-sizing: content-box;
+
     &.ui-inputtext, .ui-listbox-list {
       padding: 0;
     }
@@ -23,7 +26,7 @@
         border-color: $primary-text-color;
       }
       .ui-listbox-filter-container {
-        .fa {
+        .ui-listbox-filter-icon {
           top: 0;
           left: 0;
           height: 100%;
@@ -43,23 +46,26 @@
         }
       }
     }
-
-    .ui-listbox-list {
-      .ui-listbox-item {
-        overflow: hidden;
-        @include font-size-regular;
-        padding: $margin-medium;
-        margin: 0;
-        color: #424242;
-        position: relative;
-        overflow: hidden;
-        transition: background-color 0.3s;
-        border-radius: 0;
-        &.ui-state-highlight {
-          background-color: $accent;
-          color: $accent-text-color;
-          &:hover {
+    .ui-listbox-list-wrapper {
+      max-height: inherit;
+      height: inherit;
+      .ui-listbox-list {
+        .ui-listbox-item {
+          overflow: hidden;
+          @include font-size-regular;
+          padding: $margin-medium;
+          margin: 0;
+          color: #424242;
+          position: relative;
+          overflow: hidden;
+          transition: background-color 0.3s;
+          border-radius: 0;
+          &.ui-state-highlight {
             background-color: $accent;
+            color: $accent-text-color;
+            &:hover {
+              background-color: $accent;
+            }
           }
         }
       }

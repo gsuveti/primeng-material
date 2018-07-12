@@ -1,23 +1,8 @@
 @import "grid";
 
 @mixin layout($extra-class:'') {
-  @include make-grid();
 
-  //todo remove me after positioning of overflow elements is fixed in primeng
-  p-overlaypanel {
-    position: relative;
-    display: block;
-    > * {
-      top: 0 !important;
-      left: 0 !important;
-    }
-  }
-
-  .ui-contextmenu {
-    margin-top: - $icon-size-large - 2 * $margin-large;
-  }
-
-  body#{$extra-class} {
+  body {
     overflow-y: hidden;
 
     hr {
@@ -41,6 +26,9 @@
         width: 100%;
         background-color: $primary;
         color: $primary-text-color;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
 
         .profile-img {
           object-fit: cover;
@@ -78,19 +66,6 @@
         flex-grow: 1;
         display: flex;
         overflow: hidden;
-      }
-
-    }
-
-    .card {
-      @include ui-shadow-content();
-      border-radius: $borderRadius;
-      background: $default;
-      @include p();
-      @include my();
-      box-sizing: border-box;
-      &.card-w-title {
-        padding-bottom: $margin-x-large;
       }
 
     }

@@ -13,7 +13,7 @@
       color: $text-color;
       padding-right: $icon-size;
       .ui-multiselect-label {
-        padding: 0px 2px 0px 2px;
+        padding: $margin-small $icon-size $margin-small 0;
       }
     }
     .ui-multiselect-trigger {
@@ -75,7 +75,7 @@
           vertical-align: middle;
           float: none;
           margin-left: 0;
-          .fa {
+          .ui-multiselect-filter-icon {
             top: 0;
             left: 0;
             height: 100%;

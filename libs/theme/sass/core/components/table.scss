@@ -16,7 +16,7 @@
           padding: $margin-small $margin-x-large $margin-small $margin-small;
 
           .ui-sortable-column-icon {
-            @include ui-icon-large();
+            color: $default-text-color;
             position: absolute;
 
             top: calc(50% - #{$icon-size-large / 2});

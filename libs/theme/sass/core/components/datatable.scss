@@ -58,14 +58,14 @@
           }
 
           .ui-sortable-column-icon {
-            @include ui-icon-large();
+            color: $default-text-color;
             position: absolute;
             top: $margin-x-small;
             right: $margin-small;
             display: flex;
             justify-content: center;
-
           }
+
           .ui-column-filter {
             margin: 0 $margin-small $margin-small $margin-small;
             width: calc(100% - #{2 * $margin-small});
@@ -86,7 +86,7 @@
             padding: $margin-small;
             .ui-chkbox {
               .ui-chkbox-box {
-                box-sizing: content-box;
+                //box-sizing: content-box;
                 &.ui-state-active {
                   background-color: transparent;
                   border: 1px solid $default-text-color;
@@ -141,7 +141,7 @@
           }
           &.ui-selection-column {
             .ui-chkbox-box, .ui-radiobutton-box {
-              box-sizing: content-box;
+              //box-sizing: content-box;
             }
           }
         }

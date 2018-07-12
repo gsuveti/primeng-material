@@ -1,89 +1,103 @@
 <p-growl [value]="msgs"></p-growl>
 
 <p-table
-        [responsive]="true"
-        styleClass="card"
-        [value]="cars"
-        [paginator]="true"
-        [rows]="10"
-        sortMode="multiple"
-        dataKey="vin"
-        [(selection)]="selectedCars"
-        [(contextMenuSelection)]="selectedCar" [contextMenu]="cm"
-        #dt>
-    <ng-template pTemplate="caption">
-        List of Cars
-    </ng-template>
-    <ng-template pTemplate="header">
-        <tr>
-            <th style="width: 2.25em">
-                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
-            </th>
+  [responsive]="true"
+  [scrollable]="true"
+  [style]="{width:'500px'}"
+  [columns]="cols"
+  [frozenColumns]="frozenCols"
+  frozenWidth="200px"
+  [value]="cars"
+  [paginator]="true"
+  [rows]="10"
+  [(contextMenuSelection)]="selectedCar" [contextMenu]="cm"
+  [(selection)]="selectedCars"
+  sortMode="multiple"
+  dataKey="vin"
+  styleClass="card"
+  #dt>
+  <ng-template pTemplate="caption">
+    List of Cars
+  </ng-template>
 
-            <th [pSortableColumn]="'vin'">
-                Vin
-                <p-sortIcon [field]="'vin'"></p-sortIcon>
-            </th>
-            <th [pSortableColumn]="'year'">Year
-                <p-sortIcon [field]="'year'"></p-sortIcon>
-            </th>
-            <th>Brand</th>
-            <th>Color</th>
-            <th style="width: 2.25em"></th>
-        </tr>
-        <tr>
-            <th></th>
-            <th>
-                <input class="ui-column-filter" pInputText type="text"
-                       (input)="dt.filter($event.target.value, 'vin', 'contains')">
-            </th>
-            <th></th>
-            <th>
-                <input class="ui-column-filter" pInputText type="text"
-                       (input)="dt.filter($event.target.value, 'brand', 'contains')">
-            </th>
-            <th>
-                <p-dropdown [options]="colors" styleClass="ui-column-filter" [autoWidth]="false"
-                            (onChange)="dt.filter($event.value, 'color', 'equals')"></p-dropdown>
-            </th>
-            <th></th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-car let-expanded="expanded" let-columns="columns">
-        <tr [pSelectableRow]="car" [pContextMenuRow]="car">
-            <td>
-                <p-tableCheckbox [value]="car"></p-tableCheckbox>
-            </td>
-                      <td><span class="ui-column-title">vin: </span>{{car.vin}}</td>
-            <td><span class="ui-column-title">year: </span>{{car.year}}</td>
-            <td><span class="ui-column-title">brand: </span>{{car.brand}}</td>
-            <td><span class="ui-column-title">color: </span>{{car.color}}</td>
-            <td>
-                <a href="#" [pRowToggler]="car">
-                    <i [ngClass]="expanded ? 'fa fa-fw fa-chevron-circle-down' : 'fa fa-fw fa-chevron-circle-right'"></i>
-                </a>
-            </td>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
-        <tr>
-            <td [attr.colspan]="6">
-                expanded
-            </td>
-        </tr>
-    </ng-template>
+  <ng-template pTemplate="colgroup" let-columns>
+    <colgroup>
+      <col *ngFor="let col of columns" style="width:250px">
+    </colgroup>
+  </ng-template>
 
-    <ng-template pTemplate="footer">
-        <tr>
-            <td></td>
-            <td colspan="3">Lorem ipsum dolor sic amet</td>
-            <td></td>
-            <td></td>
-        </tr>
-    </ng-template>
+  <ng-template pTemplate="header">
+    <tr>
+      <!--<th style="width: 2.25em">-->
+        <!--<p-tableHeaderCheckbox></p-tableHeaderCheckbox>-->
+      <!--</th>-->
 
-    <ng-template pTemplate="summary">
-        There are {{cars?.length}} cars
-    </ng-template>
+      <th [pSortableColumn]="'vin'">
+        Vin
+        <p-sortIcon [field]="'vin'"></p-sortIcon>
+      </th>
+      <th [pSortableColumn]="'year'">Year
+        <p-sortIcon [field]="'year'"></p-sortIcon>
+      </th>
+      <th>Brand</th>
+      <th>Color</th>
+      <th style="width: 2.25em"></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>
+        <input class="ui-column-filter" pInputText type="text"
+               (input)="dt.filter($event.target.value, 'vin', 'contains')">
+      </th>
+      <th></th>
+      <th>
+        <input class="ui-column-filter" pInputText type="text"
+               (input)="dt.filter($event.target.value, 'brand', 'contains')">
+      </th>
+      <th>
+        <p-dropdown [options]="colors" styleClass="ui-column-filter" [autoWidth]="false"
+                    (onChange)="dt.filter($event.value, 'color', 'equals')"></p-dropdown>
+      </th>
+      <th></th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-car let-expanded="expanded" let-columns="columns">
+    <tr [pSelectableRow]="car" [pContextMenuRow]="car">
+      <!--<td>-->
+        <!--<p-tableCheckbox [value]="car"></p-tableCheckbox>-->
+      <!--</td>-->
+      <td><span class="ui-column-title">vin: </span>{{car.vin}}</td>
+      <td><span class="ui-column-title">year: </span>{{car.year}}</td>
+      <td><span class="ui-column-title">brand: </span>{{car.brand}}</td>
+      <td><span class="ui-column-title">color: </span>{{car.color}}</td>
+      <td>
+        <a href="#" [pRowToggler]="car">
+          <i [ngClass]="expanded ? 'fa fa-fw fa-chevron-circle-down' : 'fa fa-fw fa-chevron-circle-right'"></i>
+        </a>
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+    <tr>
+      <td [attr.colspan]="6">
+        expanded
+      </td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="footer">
+    <tr>
+      <!--<td></td>-->
+      <td colspan="3">Lorem ipsum dolor sic amet</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="summary">
+    There are {{cars?.length}} cars
+  </ng-template>
 </p-table>
 <p-contextMenu #cm [model]="items"></p-contextMenu>
