@@ -10,7 +10,7 @@ $font-size-small: 12px;
 @mixin font-size-regular() {
   font-weight: 400;
   font-size: 14px;
-  @media (min-width: $laptopSmallBreakpoint) {
+  @include g-state(md) {
     font-size: 13px;
   }
 }
@@ -18,7 +18,7 @@ $font-size-small: 12px;
 @mixin font-size-medium() {
   font-weight: 400;
   font-size: 16px;
-  @media (min-width: $laptopSmallBreakpoint) {
+  @include g-state(md) {
     font-size: 15px;
   }
 }
@@ -26,7 +26,7 @@ $font-size-small: 12px;
 @mixin font-size-headline3() {
   font-size: 14px;
   font-weight: 500;
-  @media (min-width: $laptopSmallBreakpoint) {
+  @include g-state(md) {
     font-size: 13px;
   }
 }

@@ -1,4 +1,4 @@
-@import "~gridle/sass/gridle/gridle-flex";
+@import "~coffeekraken-gridle/index";
 @import "vars/breakpoints";
 
 $smStartBreakpoint: $tabletBreakpoint;
@@ -6,9 +6,76 @@ $mdStartBreakpoint: $laptopSmallBreakpoint;
 $lgStartBreakpoint: $laptopMediumBreakpoint;
 $xlStartBreakpoint: $laptopLargeBreakpoint;
 
+@mixin register-states() {
+  @include g-register-state(xs, (
+    min-width : 0
+  ));
+  @include g-register-state(sm, (
+    min-width : $smStartBreakpoint
+  ));
+  @include g-register-state(md, (
+    min-width : $mdStartBreakpoint
+  ));
+  @include g-register-state(lg, (
+    min-width : $lgStartBreakpoint
+  ));
+  @include g-register-state(xl, (
+    min-width : $xlStartBreakpoint
+  ));
+
+  @include g-register-state(xs-up, (
+    min-width : 0
+  ));
+  @include g-register-state(sm-up, (
+    min-width : $smStartBreakpoint
+  ));
+  @include g-register-state(md-up, (
+    min-width : $mdStartBreakpoint
+  ));
+  @include g-register-state(lg-up, (
+    min-width : $lgStartBreakpoint
+  ));
+  @include g-register-state(xl-up, (
+    min-width : $xlStartBreakpoint
+  ));
+
+  @include g-register-state(xs-only, (
+    min-width : 0, max-width:$smStartBreakpoint - 1px
+  ));
+  @include g-register-state(sm-only, (
+    min-width : $smStartBreakpoint, max-width:$mdStartBreakpoint - 1px
+  ));
+  @include g-register-state(md-only, (
+    min-width : $mdStartBreakpoint, max-width:$lgStartBreakpoint - 1px
+  ));
+  @include g-register-state(lg-only, (
+    min-width : $lgStartBreakpoint, max-width:$xlStartBreakpoint - 1px
+  ));
+  @include g-register-state(xl-only, (
+    min-width : $xlStartBreakpoint
+  ));
+
+  @include g-register-state(xs-down, (
+    max-width:$smStartBreakpoint - 1px
+  ));
+  @include g-register-state(sm-down, (
+    max-width:$mdStartBreakpoint - 1px
+  ));
+  @include g-register-state(md-down, (
+    max-width:$lgStartBreakpoint - 1px
+  ));
+  @include g-register-state(lg-down, (
+    max-width:$xlStartBreakpoint - 1px
+  ));
+  @include g-register-state(xl-down, (
+    max-width : $xlStartBreakpoint
+  ));
+}
+
+
 @mixin make-grid() {
   // setting up the grid
-  @include gridle_setup((
+  @include g-setup((
           context : 12,
           gutter-width : 0px, // size of the gutters
           gutter-left : 0px, // size of left gutter
@@ -16,72 +83,5 @@ $xlStartBreakpoint: $laptopLargeBreakpoint;
   ));
 
   @include register-states();
-  @include gridle_init();
-  @include gridle_generate_classes();
-}
-
-@mixin register-states() {
-  @include gridle_register_state(xs, (
-          min-width : 0
-  ));
-  @include gridle_register_state(sm, (
-          min-width : $smStartBreakpoint
-  ));
-  @include gridle_register_state(md, (
-          min-width : $mdStartBreakpoint
-  ));
-  @include gridle_register_state(lg, (
-          min-width : $lgStartBreakpoint
-  ));
-  @include gridle_register_state(xl, (
-          min-width : $xlStartBreakpoint
-  ));
-
-  @include gridle_register_state(xs-up, (
-          min-width : 0
-  ));
-  @include gridle_register_state(sm-up, (
-          min-width : $smStartBreakpoint
-  ));
-  @include gridle_register_state(md-up, (
-          min-width : $mdStartBreakpoint
-  ));
-  @include gridle_register_state(lg-up, (
-          min-width : $lgStartBreakpoint
-  ));
-  @include gridle_register_state(xl-up, (
-          min-width : $xlStartBreakpoint
-  ));
-
-  @include gridle_register_state(xs-only, (
-          min-width : 0, max-width:$smStartBreakpoint - 1px
-  ));
-  @include gridle_register_state(sm-only, (
-          min-width : $smStartBreakpoint, max-width:$mdStartBreakpoint - 1px
-  ));
-  @include gridle_register_state(md-only, (
-          min-width : $mdStartBreakpoint, max-width:$lgStartBreakpoint - 1px
-  ));
-  @include gridle_register_state(lg-only, (
-          min-width : $lgStartBreakpoint, max-width:$xlStartBreakpoint - 1px
-  ));
-  @include gridle_register_state(xl-only, (
-          min-width : $xlStartBreakpoint
-  ));
-
-  @include gridle_register_state(xs-down, (
-          max-width:$smStartBreakpoint - 1px
-  ));
-  @include gridle_register_state(sm-down, (
-          max-width:$mdStartBreakpoint - 1px
-  ));
-  @include gridle_register_state(md-down, (
-          max-width:$lgStartBreakpoint - 1px
-  ));
-  @include gridle_register_state(lg-down, (
-          max-width:$xlStartBreakpoint - 1px
-  ));
-  @include gridle_register_state(xl-down, (
-          max-width : $xlStartBreakpoint
-  ));
+  @include g-classes();
 }

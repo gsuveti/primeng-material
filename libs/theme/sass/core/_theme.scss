@@ -1,20 +1,19 @@
+@import "grid";
 @import "vars/vars";
-@import "utils";
 @import "sizes";
+@import "utils";
 @import "reset";
 @import "fonts";
 @import "ripple";
 @import "shadow";
-@import "grid";
-@import "components/widget";
 @import "wrappers/input-field";
 @import "wrappers/table-filter";
 @import "wrappers/pager";
+@import "components/widget";
+
 
 @mixin theme($extra-class:'') {
   body#{$extra-class} {
-    @include make-grid();
-
     font-family: "Roboto", "Helvetica Neue", sans-serif;
     text-decoration: none;
     margin: 0;
@@ -25,12 +24,21 @@
 
     a {
       text-decoration: none;
-      cursor: pointer;
       cursor: hand;
     }
 
     ul {
       list-style: none;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background-color: $border-color;
+    }
+
+    .divider {
+      @include divider();
     }
 
     > .ui-widget-content {

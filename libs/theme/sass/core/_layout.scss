@@ -1,19 +1,9 @@
-@import "grid";
+@import "vars/vars";
 
 @mixin layout($extra-class:'') {
 
   body {
     overflow-y: hidden;
-
-    hr {
-      border: 0;
-      height: 1px;
-      background-color: $border-color;
-    }
-
-    .divider {
-      @include divider();
-    }
 
     .layout-wrapper {
       height: 100vh;
@@ -48,7 +38,7 @@
             display: none;
             bottom: $margin-x-small;
 
-            @include gridle_state(lg) {
+            @include g-state(lg) {
               display: flex;
               align-items: center;
             }
@@ -86,7 +76,7 @@
 
       .side-nav-side {
         position: absolute;
-        bottom: 0px;
+        bottom: 0;
         min-width: $side-nav-width;
         width: $side-nav-width;
         transform: translateX(0);
@@ -103,7 +93,7 @@
             transform: translateX(0);
           }
           &.side-nav-side-permanent {
-            @media(min-width: $laptopSmallBreakpoint) {
+            @include g-state(md) {
               position: relative;
               transform: translateX(0);
             }
@@ -112,13 +102,13 @@
 
         &.side-nav-side-right {
           z-index: 2000;
-          right: 0px;
+          right: 0;
           transform: translateX($side-nav-width + $margin-small);
         }
 
         &.side-nav-side-left {
           z-index: 3000;
-          left: 0px;
+          left: 0;
           transform: translateX(- $side-nav-width - $margin-small);
         }
       }
@@ -127,7 +117,7 @@
 
     .side-nav-toggle {
       &.side-nav-side-permanent {
-        @media(min-width: $laptopSmallBreakpoint) {
+        @include g-state(md) {
           display: none !important;
         }
       }

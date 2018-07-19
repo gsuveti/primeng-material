@@ -19,13 +19,13 @@
       width: $side-nav-width;
     }
 
-    @include gridle_state(sm) {
+    @include g-state(sm) {
       &.ui-sidebar-md, &.ui-sidebar-lg {
         width: $side-nav-width-md;
       }
     }
 
-    @include gridle_state(lg) {
+    @include g-state(lg) {
       &.ui-sidebar-lg {
         width: $side-nav-width-lg;
       }

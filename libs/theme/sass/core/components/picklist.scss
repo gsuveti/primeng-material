@@ -16,7 +16,7 @@
     .ui-picklist-listwrapper {
       .ui-picklist-list {
         width: auto;
-        
+
         .ui-picklist-droppoint {
           height: 0;
           padding: 0;
@@ -46,7 +46,7 @@
         border: 1px solid $border-color;
       }
     }
-    @include gridle_state(sm) {
+    @include g-state(sm) {
       display: flex;
       align-items: center;
 
@@ -59,7 +59,7 @@
     }
 
     &.ui-picklist-responsive {
-      @include gridle_state(xs) {
+      @include g-state(xs) {
         display: flex;
         flex-direction: column;
 

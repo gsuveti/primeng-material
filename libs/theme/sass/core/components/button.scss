@@ -239,7 +239,7 @@
       }
     }
 
-    @media (min-width: $tabletBreakpoint) {
+    @include g-state(sm) {
       .ui-button {
         &:first-child {
           border-radius: $borderRadius 0 0 $borderRadius;

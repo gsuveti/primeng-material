@@ -37,6 +37,9 @@
         }
         .ui-column-filter {
           width: calc(100%);
+          > * {
+            width: 100%;
+          }
         }
         > tr {
           > th {
@@ -138,7 +141,7 @@
     }
 
     &.ui-table-responsive {
-      @include gridle_state(xs-down) {
+      @include g-state(xs-down) {
         .ui-table-thead, .ui-table-tfoot {
           > tr {
             > th, > td {

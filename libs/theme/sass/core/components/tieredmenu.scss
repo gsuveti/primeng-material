@@ -6,7 +6,7 @@
 }
 
 @mixin ui-tiered-submenu($background:$default) {
-  @include ui-menu();
+  @include ui-submenu();
   .ui-menu-list {
     .ui-menuitem {
       .ui-submenu {

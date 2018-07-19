@@ -1,9 +1,23 @@
 @import "vars";
 @import "~primeng/resources/themes/theme";
+@import "../core/grid";
+@include make-grid();
+
 @import "../core/layout";
 @import "../core/theme";
 
 @mixin blue-amber($extra-class:'') {
-  @include layout($extra-class);
+  @include make-grid();
   @include theme($extra-class);
+  @include layout($extra-class);
+}
+
+@mixin blue-amber-theme($extra-class:'') {
+  @include make-grid();
+  @include theme($extra-class);
+}
+
+@mixin blue-amber-layout($extra-class:'') {
+  @include make-grid();
+  @include layout($extra-class);
 }

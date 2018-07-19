@@ -3,7 +3,8 @@ import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {FormsComponent} from '@primeng-material/primeng-components/src/lib/forms/forms.component';
 
-import {MenuComponent} from './menu/menu.component';
+import {MenuComponent as MenuComponentWrapper} from './menu/menu.component';
+import {MenuComponent} from './menu/menu/menu.component';
 import {OverlaysComponent} from './overlays/overlays.component';
 import {TreeComponent} from './tree/tree.component';
 import {TreeTableComponent} from './tree-table/tree-table.component';
@@ -243,7 +244,7 @@ const routes: Routes = [
       },
       {
         path: 'menus',
-        component: MenuComponent
+        component: MenuComponentWrapper
       },
       {
         path: 'panels',
@@ -420,6 +421,8 @@ const routes: Routes = [
     MessagesComponent,
     ProgressBarComponent,
     PanelComponent,
+    MenuComponent,
+    MenuComponentWrapper,
     TieredMenuComponent,
     SlideMenuComponent,
     StepMenuComponent,

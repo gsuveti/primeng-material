@@ -1,6 +1,6 @@
 @mixin ui-megamenu() {
   &.ui-megamenu {
-    @include ui-menu();
+    @include ui-submenu();
 
     .ui-megamenu-root-list {
       display: flex;

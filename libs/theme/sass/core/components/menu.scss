@@ -6,11 +6,9 @@
   $hover:$hover,
   $border-color:$border-color
 ) {
-
-  border: 1px solid $border-color;
-  border-radius: $borderRadius;
-  @include ui-submenu();
-
+  &.ui-menu {
+    @include ui-submenu();
+  }
 }
 
 @mixin ui-submenu(
@@ -21,6 +19,9 @@
   $hover:$hover,
   $border-color:$border-color
 ) {
+
+  border: 1px solid $border-color;
+  border-radius: $borderRadius;
   padding: $margin-small 0;
 
   &.ui-menu-dynamic {

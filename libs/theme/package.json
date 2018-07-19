@@ -2,8 +2,7 @@
   "name": "@irian/primeng-material",
   "version": "5.0.0",
   "peerDependencies": {
-    "coffeekraken-gridle": "^3.0.0-rc.4",
-    "gridle": "^2.0.48",
+    "coffeekraken-gridle": "^3.0.0",
     "material-icons-font": "^1.3.0",
     "primeng": "^6.0.0",
     "roboto-fontface": "^0.9.0"

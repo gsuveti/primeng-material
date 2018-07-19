@@ -54,6 +54,7 @@
 @import "lightbox";
 @import "sidebar";
 //menu
+@import "menu";
 @import "menubar";
 @import "tieredmenu";
 @import "breadcrumb";
@@ -96,6 +97,7 @@
     @include ui-splitbutton();
 
     //menu
+    @include ui-menu();
     @include ui-contextmenu();
 
     @include ui-panelmenu();

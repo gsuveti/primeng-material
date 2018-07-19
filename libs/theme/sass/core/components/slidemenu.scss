@@ -1,6 +1,6 @@
 @mixin ui-slidemenu() {
   &.ui-slidemenu {
-    @include ui-menu();
+    @include ui-submenu();
     .ui-slidemenu-wrapper {
       .ui-slidemenu-content {
         .ui-menu-list {
