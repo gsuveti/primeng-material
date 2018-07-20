@@ -1,59 +1,75 @@
 <div>
-    <h2>1.Using sass variables in stylesheet</h2>
-    <p>$margin-x-small: 4px;</p>
-    <p>$margin-small: 8px;</p>
-    <p>$margin-medium: 16px;</p>
-    <p>$margin-large: 24px;</p>
-    <p>$margin-x-large: 32px;</p>
-    <div class="grid">
-        <div class="first">
-            <p>margin top extra small</p>
-            <p>margin right small</p>
-            <p>margin bottom medium</p>
-            <p>margin left large </p>
-        </div>
+  <h2>1.Using sass variables in stylesheet</h2>
+  <p>$margin-x-small: 4px;</p>
+  <p>$margin-small: 8px;</p>
+  <p>$margin-medium: 16px;</p>
+  <p>$margin-large: 24px;</p>
+  <p>$margin-x-large: 32px;</p>
+  <div class="grid">
+    <div class="first">
+      <p>margin top extra small</p>
+      <p>margin right small</p>
+      <p>margin bottom medium</p>
+      <p>margin left large </p>
     </div>
+  </div>
 
 
-    <div class="grid">
-        <div class="second">
-            <p>margin top/bottom extra large</p>
-            <p>margin right/left large</p>
-        </div>
+  <div class="grid">
+    <div class="second">
+      <p>margin top/bottom extra large</p>
+      <p>margin right/left large</p>
     </div>
+  </div>
 
-    <div class="grid">
-        <div class="third">
-            <p>all margins medium</p>
-        </div>
+  <div class="grid">
+    <div class="third">
+      <p>all margins medium</p>
     </div>
+  </div>
 </div>
 
 <div>
-    <h2>2.Using predefined classes</h2>
-    <p>m<span style="color: red">position</span>-<span style="color: red">size</span></p>
-    <p>position=[t|r|b|l|y|x] (if missing the size will be applied to all margins. e.g.: m-xs)</p>
-    <p>size=[xs|sm|md|lg|xl]; (if missing the md size will be used. e.g.: mt - same as mt-md)</p>
-    <div class="grid">
-        <div class="mt-xs mr-sm mb-md ml-lg">
-            <p>margin top extra small</p>
-            <p>margin right small</p>
-            <p>margin bottom medium</p>
-            <p>margin left large </p>
-        </div>
+  <h2>2.Using predefined classes</h2>
+  <p>m<span style="color: red">position</span>-<span style="color: red">size</span></p>
+  <p>position=[t|r|b|l|y|x] (if missing the size will be applied to all margins. e.g.: m-xs)</p>
+  <p>size=[xs|sm|md|lg|xl|none|auto]; (if missing the md size will be used. e.g.: mt - same as mt-md)</p>
+  <div class="grid">
+    <div class="mt-xs mr-sm mb-md ml-lg">
+      <p>margin top extra small</p>
+      <p>margin right small</p>
+      <p>margin bottom medium</p>
+      <p>margin left large </p>
     </div>
+  </div>
 
 
-    <div class="grid">
-        <div class="my-xl mx-lg">
-            <p>margin top/bottom extra large</p>
-            <p>margin right/left large</p>
-        </div>
+  <div class="grid">
+    <div class="my-xl mx-lg">
+      <p>margin top/bottom extra large</p>
+      <p>margin right/left large</p>
     </div>
+  </div>
+
+  <div class="grid">
+    <div class="m-md">
+      <p>all margins medium</p>
+    </div>
+  </div>
+
+
+  <div>
+    <h2>None & Auto</h2>
 
     <div class="grid">
-        <div class="m-md">
-            <p>all margins medium</p>
-        </div>
+      <div class="m my-none">
+        <p>all margins medium</p>
+      </div>
     </div>
+    <div class="grid" style="width: 300px">
+      <div class="m mx-auto" style="width: 100px">
+        <p>all margins medium</p>
+      </div>
+    </div>
+  </div>
 </div>
