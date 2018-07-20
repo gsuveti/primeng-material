@@ -105,14 +105,14 @@ export class AppComponent {
         label: 'Sizes',
         routerLink: ['/primeng-material/sizes']
       },
-      // {
-      //   label: 'Side nav',
-      //   routerLink: ['/primeng-material/sidenav']
-      // },
-      // {
-      //   label: 'Gridle - grid system',
-      //   routerLink: ['/primeng-material/gridle']
-      // },
+      {
+        label: 'Side nav',
+        routerLink: ['/primeng-material/sidenav']
+      },
+      {
+        label: 'Gridle - grid system',
+        routerLink: ['/primeng-material/gridle']
+      },
       {
         label: 'Icons',
         routerLink: ['/primeng-material/icons']

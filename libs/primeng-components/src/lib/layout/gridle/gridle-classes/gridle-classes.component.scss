@@ -1,0 +1,25 @@
+$colors: #F44336, #E91E63, #9C27B0, #673AB7, #3F51B5, #2196F3, #03A9F4, #00BCD4, #009688, #4CAF50, #8BC34A, #CDDC39, #FFEB3B, #FFC107, #FF9800, #FF5722, #795548, #9E9E9E, #607D8B;
+$repeat: length($colors);
+
+.container {
+  [class*="gr-"] {
+    padding: 16px;
+    border: 1px solid #dce1e4;
+    background-color: #eaedef;
+  }
+
+  .color [class*="gr-"] {
+    @for $i from 1 through $repeat {
+      &:nth-child(#{length($colors)}n+#{$i}) {
+        background: nth($colors, random(length($colors)));
+      }
+    }
+  }
+
+  .debug [class*="gr-"] {
+    &:before {
+      content: attr(class);
+    }
+  }
+}
+

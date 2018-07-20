@@ -1,19 +1,145 @@
 <div class="container">
-    <div class="row">
-        <div class="gr-12@xs gr-6@sm gr-8@lg gr-4@xl p" style="background-color: lightcoral">
-            I change width on resize
-        </div>
-        <div class="gr-12@xs  gr-6@sm gr-4@lg gr-8@xl p" style="background-color: red">
-            I change width on resize
-        </div>
-    </div>
+  <h2>States</h2>
+  <pre>
+    <code>
 
-    <div class="row">
-        <div class="gr-8@xs p" style="background-color: lightskyblue">
-            8 cols width
-        </div>
-        <div class="gr-4@xs p" style="background-color: blue">
-            4 cols width
-        </div>
+    $smStartBreakpoint: $tabletBreakpoint; //768px
+    $mdStartBreakpoint: $laptopSmallBreakpoint; //1024px;
+    $lgStartBreakpoint: $laptopMediumBreakpoint; //1200px;
+    $xlStartBreakpoint: $laptopLargeBreakpoint; //1440px;
+
+    xs-only - [0, 767) //mobile phones
+    sm-only - [768, 1024) //tablets
+    md-only - [1024, 1200) //laptop small
+    lg-only - [1200, 1440) //laptop mediu
+    xl-only - [1440, *) //large laptop
+
+    xs or xs-up - [0, *)
+    sm or sm-up - [768, *)
+    md or md-up - [1024, *)
+    lg or lg-up - [1200, *)
+    xl or xl-up - [1440, *)
+
+    xs-down - [0, 0)
+    sm-down - [0, 767)
+    md-down - [0, 1024
+    lg-down - [0, 1200)
+    xl-down - [0, 1440)
+
+    </code>
+  </pre>
+
+
+
+  <h3>Fixed</h3>
+  <div class="row debug">
+    <div class="gr-1"></div>
+    <div class="gr-1"></div>
+    <div class="gr-1"></div>
+    <div class="gr-1"></div>
+    <div class="gr-1"></div>
+    <div class="gr-1"></div>
+    <div class="gr-1"></div>
+    <div class="gr-1"></div>
+    <div class="gr-1"></div>
+    <div class="gr-1"></div>
+    <div class="gr-1"></div>
+    <div class="gr-1"></div>
+    <div class="gr-2"></div>
+    <div class="gr-2"></div>
+    <div class="gr-2"></div>
+    <div class="gr-2"></div>
+    <div class="gr-2"></div>
+    <div class="gr-2"></div>
+    <div class="gr-3"></div>
+    <div class="gr-3"></div>
+    <div class="gr-3"></div>
+    <div class="gr-3"></div>
+    <div class="gr-4"></div>
+    <div class="gr-4"></div>
+    <div class="gr-4"></div>
+    <div class="gr-6"></div>
+    <div class="gr-6"></div>
+    <div class="gr-12"></div>
+  </div>
+
+  <h3>Responsive</h3>
+
+  <div class="row debug">
+    <div class="gr-12@xs gr-6@sm gr-4@lg gr-3@xl"></div>
+    <div class="gr-12@xs gr-6@sm gr-4@lg gr-3@xl"></div>
+    <div class="gr-12@xs gr-6@sm gr-4@lg gr-3@xl"></div>
+    <div class="gr-12@xs gr-6@sm gr-4@lg gr-3@xl"></div>
+    <div class="gr-12@xs gr-6@sm gr-4@lg gr-3@xl"></div>
+    <div class="gr-12@xs gr-6@sm gr-4@lg gr-3@xl"></div>
+    <div class="gr-12@xs gr-6@sm gr-4@lg gr-3@xl"></div>
+    <div class="gr-12@xs gr-6@sm gr-4@lg gr-3@xl"></div>
+    <div class="gr-12@xs gr-6@sm gr-4@lg gr-3@xl"></div>
+    <div class="gr-12@xs gr-6@sm gr-4@lg gr-3@xl"></div>
+    <div class="gr-12@xs gr-6@sm gr-4@lg gr-3@xl"></div>
+    <div class="gr-12@xs gr-6@sm gr-4@lg gr-3@xl"></div>
+  </div>
+
+  <h3>Grow & adapt</h3>
+
+  <div class="row nowrap row-align-middle">
+    <div class="gr-adapt">
+      <img width="100px" height="100px"
+           src="https://scontent-amt2-1.xx.fbcdn.net/v/t1.0-9/14141849_1063108600440191_1054844470884166529_n.jpg?_nc_cat=0&oh=7dac409dad5f4970530489ad383503b4&oe=5BE53648"/>
     </div>
+    <div class="gr-grow">
+      <p>lorem ipsum</p>
+    </div>
+  </div>
+
+
+  <h3>Vertical align top</h3>
+
+  <div class="row debug nowrap row-align-top">
+    <div class="gr-4" style="height: 100px"></div>
+    <div class="gr-8"></div>
+  </div>
+  <h3>Vertical align middle</h3>
+  <div class="row debug nowrap row-align-middle">
+    <div class="gr-4" style="height: 100px"></div>
+    <div class="gr-8"></div>
+  </div>
+  <h3>Vertical align bottom</h3>
+  <div class="row debug nowrap row-align-bottom">
+    <div class="gr-4" style="height: 100px"></div>
+    <div class="gr-8"></div>
+  </div>
+  <h3>Horizontal align left</h3>
+  <div class="row debug nowrap row-align-left">
+    <div class="gr-4"></div>
+    <div class="gr-4"></div>
+  </div>
+  <h3>Horizontal align right</h3>
+  <div class="row debug nowrap row-align-right">
+    <div class="gr-4"></div>
+    <div class="gr-4"></div>
+  </div>
+  <h3>Horizontal align center</h3>
+  <div class="row debug nowrap row-align-center">
+    <div class="gr-4"></div>
+    <div class="gr-4"></div>
+  </div>
+
+  <h3>Hide/Show</h3>
+  <div class="row color">
+    <div class="gr-12 hide@sm">
+      I'm not display (display:none) on "sm" state
+    </div>
+    <div class="gr-12 not-visible@sm">
+      I'm not visible (visibility:hidden) on "sm" state
+    </div>
+    <div class="gr-12 hide show@sm">
+      I'm hided by default but displayed on "sm" state
+    </div>
+    <div class="gr-12 not-visible visible@sm">
+      I'm not visible by default but visible on "sm" state
+    </div>
+  </div>
+
+
 </div>

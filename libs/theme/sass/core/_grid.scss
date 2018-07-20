@@ -1,5 +1,5 @@
-@import "~coffeekraken-gridle/flex";
 @import "vars/breakpoints";
+@import "~coffeekraken-gridle/flex";
 
 $smStartBreakpoint: $tabletBreakpoint;
 $mdStartBreakpoint: $laptopSmallBreakpoint;
@@ -56,19 +56,19 @@ $xlStartBreakpoint: $laptopLargeBreakpoint;
   ));
 
   @include g-register-state(xs-down, (
-    max-width:$smStartBreakpoint - 1px
+    max-width: 0
   ));
   @include g-register-state(sm-down, (
-    max-width:$mdStartBreakpoint - 1px
+    max-width: $smStartBreakpoint - 1px
   ));
   @include g-register-state(md-down, (
-    max-width:$lgStartBreakpoint - 1px
+    max-width: $mdStartBreakpoint - 1px
   ));
   @include g-register-state(lg-down, (
-    max-width:$xlStartBreakpoint - 1px
+    max-width: $lgStartBreakpoint - 1px
   ));
   @include g-register-state(xl-down, (
-    max-width : $xlStartBreakpoint
+    max-width : $xlStartBreakpoint - 1px
   ));
 }
 
@@ -78,10 +78,11 @@ $xlStartBreakpoint: $laptopLargeBreakpoint;
   @include g-setup((
           context : 12,
           gutter-width : 0px, // size of the gutters
-          gutter-left : 0px, // size of left gutter
+          gutter-left : 0px, // 'size of left gutter
           gutter-right : 0px, // size of right gutter
   ));
 
   @include register-states();
+  @include g-init();
   @include g-classes();
 }

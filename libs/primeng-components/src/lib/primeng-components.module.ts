@@ -17,7 +17,6 @@ import {SideNavBasicComponent} from './layout/side-nav/side-nav-basic/side-nav-b
 import {PaddingsComponent} from './layout/sizes/paddings/paddings.component';
 import {GridleComponent} from './layout/gridle/gridle.component';
 import {GridleClassesComponent} from './layout/gridle/gridle-classes/gridle-classes.component';
-import {GridleMixinsComponent} from './layout/gridle/gridle-mixins/gridle-mixins.component';
 import {CheckboxComponent} from './forms/checkbox/checkbox.component';
 import {DropdownComponent} from './forms/dropdown/dropdown.component';
 import {InputSwitchComponent} from './forms/input-switch/input-switch.component';
@@ -397,7 +396,6 @@ const routes: Routes = [
     PaddingsComponent,
     GridleComponent,
     GridleClassesComponent,
-    GridleMixinsComponent,
     CheckboxComponent,
     DropdownComponent,
     InputSwitchComponent,
