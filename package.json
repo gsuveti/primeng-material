@@ -51,6 +51,8 @@
     "material-icons-font": "^1.3.0",
     "moment": "^2.22.2",
     "ngrx-store-freeze": "0.2.2",
+    "ngx-cookie-service": "^1.0.10",
+    "ngx-webstorage": "^2.0.1",
     "primeicons": "^1.0.0-beta.9",
     "primeng": "^6.0.0",
     "prismjs": "^1.15.0",
@@ -58,6 +60,7 @@
     "roboto-fontface": "^0.9.0",
     "rxjs": "^6.0.0",
     "rxjs-compat": "6.0.0",
+    "uuid": "^3.3.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
