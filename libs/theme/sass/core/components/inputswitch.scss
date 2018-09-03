@@ -1,32 +1,47 @@
 @mixin ui-inputswitch($checked:$accent, $unchecked: $white, $slider: $slider-color ) {
+  $width: 34px;
+  $slider-height: 14px;
+  $handle-size: 20px;
   &.ui-inputswitch {
-    background-color: $slider;
-    border-radius: 8px;
-    width: 34px !important;
-    height: 14px;
-    overflow: visible;
-    position: relative;
+    width: $width !important;
+    height: $slider-height;
 
-    .ui-inputswitch-on, .ui-inputswitch-onlabel, .ui-inputswitch-off, .ui-inputswitch-offlabel {
-      visibility: hidden;
+    .ui-inputswitch-slider {
+      border-radius: 8px;
+      width: $width !important;
+      height: $slider-height;
+      background-color: $slider;
 
-    }
-    .ui-inputswitch-handle {
-      @include ui-shadow-2;
-      width: 20px !important;
-      height: 20px !important;
-      border-radius: 50%;
-      position: relative;
-      top: -3px;
-      background-color: $unchecked;
-      transition: background-color 0.3s;
+      &:before {
+        transition: background-color 0.3s;
+        @include ui-shadow-2;
+        width: 20px !important;
+        height: 20px !important;
+        border-radius: 50%;
+        top: ($handle-size - $slider-height) / -2;
+        left: 0;
+      }
     }
 
     &.ui-inputswitch-checked {
-      background-color: rgba($checked, $opacity-slider-checked);
-      .ui-inputswitch-handle {
-        background-color: $checked;
-        color: #000000;
+      .ui-inputswitch-slider {
+        background-color: rgba($checked, $opacity-slider-checked);
+        &:before {
+          background-color: $checked;
+          color: #000000;
+          transform: translateX($width - $handle-size);
+        }
+      }
+    }
+
+    &:hover {
+      .ui-inputswitch-slider {
+        background-color: $slider;
+      }
+      &.ui-inputswitch-checked {
+        .ui-inputswitch-slider {
+          background-color: rgba($checked, $opacity-slider-checked);
+        }
       }
     }
   }
