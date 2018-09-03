@@ -7,9 +7,9 @@ const jeditor = require('gulp-json-editor');
 const run = require('gulp-run');
 
 const distPath = './theme-dist';
-const srcPath = 'libs/theme/';
-const jsSrcPath = 'libs/theme/js/**/';
-const sassSrcPath = 'libs/theme/sass/**/';
+const srcPath = 'theme/';
+const jsSrcPath = 'theme/js/**/';
+const sassSrcPath = 'theme/sass/**/';
 
 const exec = require('child_process').exec;
 const semver = require('semver')

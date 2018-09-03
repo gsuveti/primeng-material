@@ -15,10 +15,12 @@
       width: $icon-size;
       padding: 0;
 
-      .fa {
+      .ui-dropdown-trigger-icon {
+        width: $icon-size;
         color: $icon-dark-inactive-color;
-        margin-top: 0;
+        text-align: center;
         margin-left: 0;
+        left: 0;
       }
     }
     .ui-dropdown-label {
@@ -83,7 +85,7 @@
             border-bottom-color: $primary-text-color;
           }
         }
-        .fa {
+        .ui-dropdown-trigger-icon {
           top: $margin-medium;
           right: $margin-medium;
           color: $primary-text-color;

@@ -31,6 +31,10 @@ export class AppComponent {
             icon: 'ui-icon-grid-on',
             items: [
               {
+                label: 'Table',
+                routerLink: ['/primeng-material/data/table']
+              },
+              {
                 label: 'Data Table',
                 routerLink: ['/primeng-material/data/data-table']
               },

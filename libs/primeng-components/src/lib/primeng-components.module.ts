@@ -115,7 +115,6 @@ import {FormComponent} from './forms/form/form.component';
 import {OverlaySidebarComponent} from './overlays/overlay-sidebar/overlay-sidebar.component';
 import {TreeTableScrollableComponent} from './tree-table/tree-table-scrollable/tree-table-scrollable.component';
 import {PickListComponent} from './data/lists/pick-list/pick-list.component';
-import {TableComponent} from './data/data-table/table/table.component';
 import {ConfirmationService, TreeDragDropService} from 'primeng/api';
 import {SourceCodeTabViewModule} from '@primeng-material/source-code-tab-view';
 
@@ -184,6 +183,8 @@ import {
 } from 'primeng/primeng';
 import {TableModule} from 'primeng/table';
 import {MessageService} from 'primeng/components/common/messageservice';
+import {TableComponent} from './data/table/table.component';
+import {TableFilterComponent} from './data/table/table-filter/table-filter.component';
 
 const routes: Routes = [
   {
@@ -204,8 +205,12 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            redirectTo: 'data-table',
+            redirectTo: 'table',
             pathMatch: 'full'
+          },
+          {
+            path: 'table',
+            component: TableComponent
           },
           {
             path: 'data-table',
@@ -495,10 +500,11 @@ const routes: Routes = [
     OverlaySidebarComponent,
     TreeTableScrollableComponent,
     PickListComponent,
-    TableComponent
+    TableComponent,
+    TableFilterComponent
   ],
   providers: [ConfirmationService, TreeDragDropService, MessageService],
-  exports: []
+  exports: [TableComponent, TableFilterComponent]
 })
 export class PrimengComponentsModule {
 }

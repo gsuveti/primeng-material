@@ -1,5 +1,5 @@
 @import "vars/breakpoints";
-@import "~coffeekraken-gridle/flex";
+@import "../../../node_modules/coffeekraken-gridle/flex";
 
 $smStartBreakpoint: $tabletBreakpoint;
 $mdStartBreakpoint: $laptopSmallBreakpoint;

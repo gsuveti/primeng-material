@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import * as faker from 'faker';
-import { Message } from 'primeng/primeng';
-import { MenuItem } from 'primeng/api';
+import {Message} from 'primeng/primeng';
+import {MenuItem} from 'primeng/api';
+import {Table} from 'primeng/table';
 
 @Component({
-  selector: 'primeng-material-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  selector: 'primeng-material-table-filter',
+  templateUrl: './table-filter.component.html',
+  styleUrls: ['./table-filter.component.scss']
 })
-export class TableComponent implements OnInit {
+export class TableFilterComponent implements OnInit {
   items: MenuItem[];
   msgs: Message[];
   cars: Car[] = [];
@@ -17,11 +18,16 @@ export class TableComponent implements OnInit {
 
   displayCarDialog: boolean;
 
-  colors = [];
+  colors = [{
+    label: 'all',
+    value: ''
+  }];
   cols: any[];
   frozenCols: any[];
+  @ViewChild('dt') table: Table;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit() {
     this.cars = this.generateCars(100);
@@ -40,14 +46,14 @@ export class TableComponent implements OnInit {
     ];
 
     this.cols = [
-      { field: 'year', header: 'Year' },
-      { field: 'brand', header: 'Brand' },
-      { field: 'color', header: 'Color' },
-      { field: 'photo', header: 'Photo' }
+      {field: 'year', header: 'Year'},
+      {field: 'brand', header: 'Brand'},
+      {field: 'color', header: 'Color'},
+      {field: 'photo', header: 'Photo'}
     ];
 
     this.frozenCols = [
-      { field: 'vin', header: 'Vin' }
+      {field: 'vin', header: 'Vin'}
     ];
   }
 
@@ -87,12 +93,17 @@ export class TableComponent implements OnInit {
     });
   }
 
+  filterByStart(event) {
+    console.log(event.value);
+    this.table.filter(event.value, 'year', 'lt');
+  }
+
   private generateCars(lenght) {
     const cars = [];
     for (let i = 0; i < lenght; i++) {
       const car = {
         vin: faker.random.uuid(),
-        year: faker.date.past().getFullYear(),
+        year: faker.date.between('1992-04-02', '2017-06-11'),
         brand: faker.company.companyName(),
         color: faker.internet.color(),
         photo: faker.image.transport(100, 100, true)
@@ -111,7 +122,7 @@ export class TableComponent implements OnInit {
 
 interface Car {
   vin: string;
-  year: string;
+  year: Date;
   brand: string;
   color: string;
   photo: string;
