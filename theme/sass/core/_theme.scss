@@ -9,14 +9,71 @@
 @import "wrappers/table-filter";
 @import "wrappers/pager";
 @import "components/widget";
-
+@import "card";
 
 @mixin theme($extra-class:'') {
   body#{$extra-class} {
+    --opacity-hover: #{$opacity-hover};
+    --datatable-row-hover-opacity: #{$datatable-row-hover-opacity};
+    --opacity-dividers: #{$opacity-dividers};
+    --opacity-button-hover: #{$opacity-button-hover};
+
+    --opacity-text-dark-primary: #{$opacity-text-dark-primary};
+    --opacity-text-dark-accent: #{$opacity-text-dark-accent};
+    --opacity-text-dark-disabled: #{$opacity-text-dark-disabled};
+
+    --opacity-text-light-primary: #{$opacity-text-light-primary};
+    --opacity-text-light-accent: #{$opacity-text-light-accent};
+    --opacity-text-light-disabled: #{$opacity-text-light-disabled};
+
+    --white: #{$white};
+    --black: #{$black};
+
+    --primary: #{$primary};
+    --primary-lighter: #{$primary-lighter};
+    --primary-darker: #{$primary-darker};
+
+    --accent: #{$accent};
+    --accent-lighter: #{$accent-lighter};
+    --accent-darker: #{$accent-darker};
+
+    --primary-text-color: #{$primary-text-color};
+    --primary-lighter-text-color: #{$primary-lighter-text-color};
+    --primary-darker-text-color: #{$primary-darker-text-color};
+
+    --accent-text-color: #{$accent-text-color};
+    --accent-lighter-text-color: #{$accent-lighter-text-color};
+    --accent-darker-text-color: #{$accent-darker-text-color};
+
+    --default: #{$default};
+    --info: #{$info};
+    --success: #{$success};
+    --warn: #{$warn};
+    --danger: #{$danger};
+
+    --default-text-color: #{$default-text-color};
+    --default-lighter-text-color: #{$default-lighter-text-color};
+    --info-text-color: #{$info-text-color};
+    --success-text-color: #{$success-text-color};
+    --warn-text-color: #{$warn-text-color};
+    --danger-text-color: #{$danger-text-color};
+
+    --hover: #{$hover};
+    --datatable-row-hover: #{$datatable-row-hover};
+    --border-color: #{$border-color};
+    --slider-color: #{$slider-color};
+    --icon-dark-inactive-color: #{$icon-dark-inactive-color};
+    --icon-dark-active-color: #{$icon-dark-active-color};
+    --icon-light-inactive-color: #{$icon-light-inactive-color};
+    --icon-light-active-color: #{$icon-light-active-color};
+
     font-family: "Roboto", "Helvetica Neue", sans-serif;
     text-decoration: none;
     margin: 0;
     padding: 0;
+    .card {
+      @include card();
+    }
 
     @include font-size-regular();
     @include make-spacing();
@@ -76,40 +133,39 @@
     }
   }
 
-
 }
 
 $background-colors: (
-        white: $white,
-        black: $black,
-        primary:$primary,
-        primary-lighter: $primary-lighter,
-        primary-darker: $primary-darker,
-        accent: $accent,
-        accent-lighter:$accent-lighter,
-        accent-darker: $accent-darker,
-        default: $default,
-        info: $info,
-        success:$success,
-        warn: $warn,
-        danger: $danger,
-        border:$icon-dark-inactive-color
+  white: $white,
+  black: $black,
+  primary:$primary,
+  primary-lighter: $primary-lighter,
+  primary-darker: $primary-darker,
+  accent: $accent,
+  accent-lighter:$accent-lighter,
+  accent-darker: $accent-darker,
+  default: $default,
+  info: $info,
+  success:$success,
+  warn: $warn,
+  danger: $danger,
+  border:$icon-dark-inactive-color
 ) !default;
 $colors: (
-        white: $white,
-        black: $black,
-        primary:$primary-text-color,
-        primary-lighter: $primary-lighter-text-color,
-        primary-darker: $primary-darker-text-color,
-        accent: $accent-text-color,
-        accent-lighter:$accent-lighter-text-color,
-        accent-darker: $accent-darker-text-color,
-        default: $default-text-color,
-        default-lighter: $default-lighter-text-color,
-        info: $info-text-color,
-        success:$success-text-color,
-        warn: $warn-text-color,
-        danger: $danger-text-color
+  white: $white,
+  black: $black,
+  primary:$primary-text-color,
+  primary-lighter: $primary-lighter-text-color,
+  primary-darker: $primary-darker-text-color,
+  accent: $accent-text-color,
+  accent-lighter:$accent-lighter-text-color,
+  accent-darker: $accent-darker-text-color,
+  default: $default-text-color,
+  default-lighter: $default-lighter-text-color,
+  info: $info-text-color,
+  success:$success-text-color,
+  warn: $warn-text-color,
+  danger: $danger-text-color
 ) !default;
 
 @mixin generateColorClasses() {

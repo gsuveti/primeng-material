@@ -3,7 +3,7 @@
   border-radius: $borderRadius;
   background: $default;
   padding: $margin-medium;
-  margin: $margin-medium;
+  margin: $margin-medium 0;
 
   box-sizing: border-box;
   &.card-w-title {
