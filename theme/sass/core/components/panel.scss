@@ -65,12 +65,9 @@
       }
 
     }
-
+    &.card {
+      @include ui-shadow-content();
+      border: none;
+    }
   }
-
-  &.card {
-    @include ui-shadow-content();
-    border: none;
-  }
-
 }
