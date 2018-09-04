@@ -1,5 +1,5 @@
 @import "vars/breakpoints";
-@import "../../../node_modules/coffeekraken-gridle/flex";
+@import "~coffeekraken-gridle/flex";
 
 $smStartBreakpoint: $tabletBreakpoint;
 $mdStartBreakpoint: $laptopSmallBreakpoint;
@@ -72,14 +72,13 @@ $xlStartBreakpoint: $laptopLargeBreakpoint;
   ));
 }
 
-
 @mixin make-grid() {
   // setting up the grid
   @include g-setup((
-          context : 12,
-          gutter-width : 0px, // size of the gutters
-          gutter-left : 0px, // 'size of left gutter
-          gutter-right : 0px, // size of right gutter
+    context : 12,
+    gutter-width : 0px, // size of the gutters
+    gutter-left : 0px, // 'size of left gutter
+    gutter-right : 0px, // size of right gutter
   ));
 
   @include register-states();
