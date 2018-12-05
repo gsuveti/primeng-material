@@ -9,7 +9,7 @@
     .ui-fileupload-buttonbar {
       background-color: transparent;
       border-color: transparent;
-      padding: 0 0 $margin-small 0;
+      padding: 0 0 var(--spacer-sm) 0;
     }
     .ui-button {
       border-color: transparent;

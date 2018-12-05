@@ -13,7 +13,7 @@
       color: $text-color;
       padding-right: $icon-size;
       .ui-multiselect-label {
-        padding: $margin-small $icon-size $margin-small 0;
+        padding: var(--spacer-sm) $icon-size var(--spacer-sm) 0;
       }
     }
     .ui-multiselect-trigger {
@@ -47,7 +47,7 @@
 
       .ui-multiselect-header {
         border-radius: 0;
-        padding: $margin-medium;
+        padding: var(--spacer-md);
         position: relative;
         .ui-chkbox {
           float: none;
@@ -97,8 +97,8 @@
         .ui-multiselect-close {
           position: absolute;
           right: $icon-size;
-          top: $margin-medium;
-          bottom: $margin-medium;
+          top: var(--spacer-md);
+          bottom: var(--spacer-md);
           width: $icon-size;
           display: flex;
           align-items: center;
@@ -111,7 +111,7 @@
       }
       .ui-multiselect-item {
         @include font-size-regular;
-        padding: $margin-medium;
+        padding: var(--spacer-md);
         color: $default-text-color;
         border-radius: 0;
 

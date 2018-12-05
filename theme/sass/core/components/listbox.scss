@@ -15,7 +15,7 @@
     }
 
     .ui-listbox-header {
-      padding: $margin-medium;
+      padding: var(--spacer-md);
       vertical-align: middle;
       float: none;
       margin-left: 0;
@@ -53,7 +53,7 @@
         .ui-listbox-item {
           overflow: hidden;
           @include font-size-regular;
-          padding: $margin-medium;
+          padding: var(--spacer-md);
           margin: 0;
           color: #424242;
           position: relative;

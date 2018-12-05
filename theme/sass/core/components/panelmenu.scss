@@ -22,7 +22,7 @@
 
         .ui-panelmenu-header-link {
           display: flex;
-          padding: $margin-medium;
+          padding: var(--spacer-md);
           .ui-panelmenu-icon, .ui-menuitem-icon {
             color: $icon-dark-active-color;
           }
@@ -56,8 +56,8 @@
           margin: 0;
           .ui-menuitem-link {
             border: 0 none;
-            padding: $margin-medium;
-            padding-left: $margin-medium + $icon-size + $margin-small;
+            padding: var(--spacer-md);
+            padding-left: var(--spacer-md) + $icon-size + var(--spacer-sm);
             width: 100%;
             box-sizing: border-box;
             border-radius: 0;
@@ -92,7 +92,7 @@
               }
             }
             .ui-menu-list {
-              margin-left: $margin-medium;
+              margin-left: var(--spacer-md);
             }
           }
         }

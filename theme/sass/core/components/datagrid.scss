@@ -1,13 +1,13 @@
 @mixin ui-datagrid {
   &.ui-datagrid {
     .ui-datagrid-header {
-      padding: $margin-medium;
+      padding: var(--spacer-md);
       &:empty {
 
       }
     }
     .ui-datagrid-content {
-      padding: $margin-medium;
+      padding: var(--spacer-md);
       border-left: 1px solid $border-color;
       border-right: 1px solid $border-color;
 

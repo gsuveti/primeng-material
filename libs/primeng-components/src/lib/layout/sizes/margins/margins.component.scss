@@ -1,23 +1,17 @@
-$margin-x-small: 4px;
-$margin-small: 8px;
-$margin-medium: 16px;
-$margin-large: 24px;
-$margin-x-large: 32px;
-
 $primary: orange;
 $border-color: gray;
 $primary-text-color: black;
 
 .first {
-  margin: $margin-x-small $margin-small $margin-medium $margin-large;
+  margin: var(--spacer-xs) var(--spacer-sm) var(--spacer-md) var(--spacer-lg);
 }
 
 .second {
-  margin: $margin-x-large $margin-large;
+  margin: var(--spacer-xl) var(--spacer-lg);
 }
 
 .third {
-  margin: $margin-medium;
+  margin: var(--spacer-md);
 }
 
 .grid {
@@ -28,7 +22,7 @@ $primary-text-color: black;
 
   > * {
     width: 201px;
-    padding: $margin-small;
+    padding: var(--spacer-sm);
     background-color: $primary;
     color: $primary-text-color;
   }

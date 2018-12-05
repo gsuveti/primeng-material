@@ -6,12 +6,12 @@
 ) {
   &.ui-sidebar {
     background-color: $white;
-    padding: $margin-medium;
+    padding: var(--spacer-md);
 
     .ui-sidebar-close {
       position: absolute;
-      top: $margin-small;
-      right: $margin-small;
+      top: var(--spacer-sm);
+      right: var(--spacer-sm);
       @include overlay-close(transparent, $hover);
     }
 

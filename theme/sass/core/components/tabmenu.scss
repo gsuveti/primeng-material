@@ -11,7 +11,7 @@
       border-radius: 0;
       > .ui-tabmenuitem {
         top: auto;
-        margin: 0 $margin-x-small 0 0;
+        margin: 0 var(--spacer-xs) 0 0;
         padding: 0;
         border-style: solid;
         border-width: 0 0 2px 0;
@@ -21,7 +21,7 @@
           border-color: transparent;
 
           .ui-menuitem-link {
-            padding: $margin-medium;
+            padding: var(--spacer-md);
             background-color: transparent;
             color: $default-text-color;
 
@@ -35,7 +35,7 @@
             }
 
             .ui-menuitem-icon {
-              margin-right: $margin-small;
+              margin-right: var(--spacer-sm);
               &:before {
                 &:empty {
                   display: none;

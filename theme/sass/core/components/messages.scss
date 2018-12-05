@@ -12,7 +12,7 @@
 ) {
 
   &.ui-messages {
-    padding: $margin-small;
+    padding: var(--spacer-sm);
     ul {
       display: inline-block;
       margin-left: 0;
@@ -44,8 +44,8 @@
     }
     .ui-messages-close {
       text-decoration: none;
-      right: $margin-small;
-      top: $margin-small;
+      right: var(--spacer-sm);
+      top: var(--spacer-sm);
     }
     .ui-messages-icon {
       background: none;

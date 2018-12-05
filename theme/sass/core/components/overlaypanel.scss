@@ -20,7 +20,7 @@
 
     }
     .ui-overlaypanel-content {
-      padding: $margin-medium;
+      padding: var(--spacer-md);
     }
   }
 }

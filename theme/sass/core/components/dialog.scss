@@ -11,7 +11,7 @@
     .ui-dialog-titlebar {
       background-color: transparent;
       color: $default-text-color;
-      padding: $margin-medium;
+      padding: var(--spacer-md);
       .ui-dialog-title {
         @include font-size-headline2()
       }
@@ -27,7 +27,7 @@
       }
     }
     .ui-dialog-content {
-      padding: $margin-medium;
+      padding: var(--spacer-md);
       overflow: visible;
     }
 

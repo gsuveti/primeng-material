@@ -6,11 +6,11 @@
   $border-color:$border-color
 ) {
   &.ui-fieldset {
-    padding: $margin-medium;
+    padding: var(--spacer-md);
     border: 1px solid $border-color;
 
     .ui-fieldset-legend {
-      padding: $margin-medium;
+      padding: var(--spacer-md);
       color: $default-text-color;
 
       .ui-fieldset-toggler {
@@ -19,7 +19,7 @@
 
         background-color: $primary;
         color: $primary-text-color;
-        margin-right: $margin-small;
+        margin-right: var(--spacer-sm);
         border-radius: 50%;
         width: $button-height;
         height: $button-height;

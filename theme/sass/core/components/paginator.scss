@@ -7,7 +7,7 @@
   &.ui-paginator {
     color: $text-color;
     background-color: $background-color;
-    padding: $margin-medium;
+    padding: var(--spacer-md);
     border: 1px solid $border-color;
 
     > a {
@@ -34,7 +34,7 @@
 
     .ui-paginator-pages {
       vertical-align: middle;
-      margin: 0 $margin-small;
+      margin: 0 var(--spacer-sm);
       a {
         padding: 0;
         color: $text-color;

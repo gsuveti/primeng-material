@@ -10,7 +10,7 @@
     @include font-size-regular();
 
     background: transparent;
-    padding: $margin-small 0;
+    padding: var(--spacer-sm) 0;
     margin-bottom: 1px;
     border: 0 solid $border-color;
     border-bottom-width: $input-line-height;

@@ -2,11 +2,11 @@
   @include ui-shadow-content();
   border-radius: $borderRadius;
   background: $default;
-  padding: $margin-medium;
-  margin: $margin-medium 0;
+  padding: var(--spacer-md);
+  margin: var(--spacer-md) 0;
 
   box-sizing: border-box;
   &.card-w-title {
-    padding-bottom: $margin-x-large;
+    padding-bottom: var(--spacer-xl);
   }
 }

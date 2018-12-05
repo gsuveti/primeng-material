@@ -13,38 +13,44 @@
       .ui-table-thead {
         .ui-sortable-column {
           position: relative;
-          padding: $margin-small $margin-x-large $margin-small $margin-small;
+          padding: var(--spacer-sm) var(--spacer-xl) var(--spacer-sm) var(--spacer-sm);
 
           .ui-sortable-column-icon {
             color: $default-text-color;
             position: absolute;
 
             top: calc(50% - #{$icon-size-large / 2});
-            right: $margin-small;
+            right: var(--spacer-sm);
             display: flex;
             justify-content: center;
           }
+
           &:hover {
             background-color: $hover;
           }
+
           &.ui-state-highlight {
             background-color: transparent;
             color: $default-text-color;
+
             &:hover {
               background-color: $hover;
             }
           }
         }
+
         .ui-column-filter {
           width: calc(100%);
         }
+
         > tr {
           > th {
             text-align: start;
-            padding: $margin-small;
-            height: $button-height + 2 * $margin-small;
+            padding: var(--spacer-sm);
+            height: calc(#{$button-height} + 2 * var(--spacer-sm));
             @include row-border();
           }
+
           &:not(:last-child) {
             > th {
               border-bottom-color: transparent;
@@ -52,21 +58,25 @@
           }
         }
       }
+
       .ui-table-tbody {
         > tr {
           background: transparent;
+
           > td {
             background-color: transparent;
             color: $default-text-color;
 
-            padding: $margin-small;
-            height: $button-height + 2 * $margin-small;
+            padding: var(--spacer-sm);
+            height: calc(#{$button-height} + 2 * var(--spacer-sm));
             @include row-border();
           }
+
           &:hover {
             background-color: $datatable-row-hover;
             color: $default-text-color;
           }
+
           &.ui-contextmenu-selected {
             color: $default-text-color;
           }
@@ -74,9 +84,11 @@
           &.ui-state-highlight {
             background-color: $accent;
             color: $accent-text-color;
+
             a {
               color: $accent-text-color;
             }
+
             .ui-chkbox {
               .ui-chkbox-box {
                 border: 1px solid currentColor;
@@ -86,13 +98,16 @@
 
           &:nth-child(odd) {
             background-color: $datatable-row-odd;
+
             &:hover {
               background-color: $datatable-row-hover;
               color: $default-text-color;
             }
+
             &.ui-contextmenu-selected {
               color: $default-text-color;
             }
+
             &.ui-state-highlight {
               background-color: $accent;
               color: $accent-text-color;
@@ -104,10 +119,11 @@
       .ui-table-tfoot {
         > tr {
           > td {
-            padding: $margin-small;
-            height: $button-height + 2 * $margin-small;
+            padding: var(--spacer-sm);
+            height: calc(#{$button-height} + 2 * var(--spacer-sm));
             @include row-border();
           }
+
           &:not(:last-child) {
             > td {
               border-bottom-color: transparent;
@@ -120,6 +136,7 @@
 
     &.card {
       padding: 0;
+
       .ui-table-thead, .ui-table-tbody, .ui-table-tfoot {
         tr {
           th, td {
@@ -127,10 +144,12 @@
           }
         }
       }
+
       .ui-paginator, .ui-table-caption, .ui-table-summary, .ui-table-thead, .ui-table-tfoot {
         background-color: transparent;
         border-color: transparent;
       }
+
       .ui-table-summary {
         border-top: 1px solid $border-color;
       }
@@ -160,7 +179,7 @@
               border: 0 !important;
 
               .ui-column-title {
-                padding-right: $margin-x-small;
+                padding-right: var(--spacer-xs);
                 display: inline-block;
                 font-weight: bold;
               }
@@ -171,7 +190,7 @@
     }
 
     .ui-table-caption, .ui-table-summary {
-      padding: $margin-small;
+      padding: var(--spacer-sm);
       background-color: transparent;
       color: $default-text-color;
       text-align: start;
@@ -181,6 +200,7 @@
     .ui-table-caption {
       border-bottom: 0 none;
     }
+
     .ui-table-summary {
       border-top: 0 none;
     }

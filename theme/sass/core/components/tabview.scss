@@ -21,13 +21,13 @@
         > {
           a {
             flex-grow: 1;
-            padding: $margin-medium;
+            padding: var(--spacer-md);
             &:focus {
               outline: 0 none;
             }
           }
           .fa-close {
-            margin: $margin-x-small;
+            margin: var(--spacer-xs);
           }
         }
         .ui-tabview-left-icon, .ui-tabview-right-icon {
@@ -64,7 +64,7 @@
       }
     }
     .ui-tabview-panel {
-      padding: $margin-medium;
+      padding: var(--spacer-md);
     }
     &.ui-tabview-top > .ui-tabview-nav {
       border-bottom: 1px solid $border-color;
@@ -96,7 +96,7 @@
         width: 100%;
         > a {
           width: 100%;
-          padding-right: $margin-x-large;
+          padding-right: var(--spacer-xl);
         }
       }
     }

@@ -9,7 +9,7 @@
       background-color: transparent;
       color: $default-text-color;
       border: none;
-      padding: $margin-medium $margin-large;
+      padding: var(--spacer-md) var(--spacer-lg);
       display: flex;
 
       > * {
@@ -28,7 +28,7 @@
         display: flex;
         align-items: center;
         position: relative;
-        margin: 0 0 0 $margin-medium;
+        margin: 0 0 0 var(--spacer-md);
         &:hover {
           background-color: inherit;
         }
@@ -53,14 +53,14 @@
         height: 100%;
         box-sizing: border-box;
         border-top: 1px solid $border-color;
-        padding: $margin-medium $margin-large;
+        padding: var(--spacer-md) var(--spacer-lg);
       }
 
       .ui-panel-footer {
         display: flex;
         justify-content: flex-end;
 
-        padding: $margin-medium $margin-small $margin-medium $margin-large;
+        padding: var(--spacer-md) var(--spacer-sm) var(--spacer-md) var(--spacer-lg);
         border-top: 1px solid $border-color;
       }
 

@@ -22,7 +22,7 @@
 
   border: 1px solid $border-color;
   border-radius: $borderRadius;
-  padding: $margin-small 0;
+  padding: var(--spacer-sm) 0;
 
   &.ui-menu-dynamic {
     background-color: $default;
@@ -44,7 +44,7 @@
     border: 0 none;
     width: 100%;
     box-sizing: border-box;
-    padding: $margin-medium;
+    padding: var(--spacer-md);
 
     background-color: $accent;
     color: $accent-text-color;
@@ -65,7 +65,7 @@
       display: flex;
       align-items: center;
       border: 0 none;
-      padding: $margin-medium;
+      padding: var(--spacer-md);
       width: 100%;
       box-sizing: border-box;
       border-radius: 0;
@@ -76,17 +76,17 @@
         color: $default-text-color;
       }
       .ui-menuitem-icon {
-        margin-right: $margin-small;
+        margin-right: var(--spacer-sm);
         display: inline-block;
         vertical-align: middle;
         float: none;
         color: $icon-dark-active-color;
       }
       .ui-submenu-icon {
-        right: $margin-small;
+        right: var(--spacer-sm);
         margin: 0;
         top: unset;
-        margin-left: $margin-small;
+        margin-left: var(--spacer-sm);
         vertical-align: middle;
       }
       .ui-menuitem-text {

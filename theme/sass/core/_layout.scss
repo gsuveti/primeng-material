@@ -25,7 +25,7 @@
           width: $icon-size-large;
           height: $icon-size-large;
           border-radius: 100%;
-          margin-left: $margin-small;
+          margin-left: var(--spacer-sm);
         }
 
         .brand {
@@ -36,7 +36,7 @@
           .brand-image {
             height: $button-height;
             display: none;
-            bottom: $margin-x-small;
+            bottom: var(--spacer-xs);
 
             @include g-state(lg) {
               display: flex;
@@ -45,7 +45,7 @@
 
           }
           .brand-title {
-            margin-left: $margin-small;
+            margin-left: var(--spacer-sm);
             @include font-size-headline3();
           }
         }
@@ -103,13 +103,13 @@
         &.side-nav-side-right {
           z-index: 2000;
           right: 0;
-          transform: translateX($side-nav-width + $margin-small);
+          transform: translateX($side-nav-width + var(--spacer-sm));
         }
 
         &.side-nav-side-left {
           z-index: 3000;
           left: 0;
-          transform: translateX(- $side-nav-width - $margin-small);
+          transform: translateX(- $side-nav-width - var(--spacer-sm));
         }
       }
 

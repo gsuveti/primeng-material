@@ -35,7 +35,7 @@
 
 @mixin custom-select($color: $default-text-color) {
   @include font-size-regular();
-  padding-right: $margin-medium;
+  padding-right: var(--spacer-md);
   color: $color;
   background-color: transparent;
   appearance: none;
@@ -52,8 +52,8 @@
 }
 
 @mixin divider($background:$default, $separator:$border-color) {
-  border-top: $margin-medium solid $background;
-  border-bottom: $margin-medium solid $background;
+  border-top: var(--spacer-md) solid $background;
+  border-bottom: var(--spacer-md) solid $background;
   height: 1px;
   background-color: $separator;
 }
@@ -62,7 +62,7 @@
 @mixin md-inputfield() {
   .md-inputfield {
     position: relative;
-    margin-top: $font-size-small + $margin-small;
+    margin-top: $font-size-small + var(--spacer-sm);
 
     .ui-inputtext {
       + label {
@@ -83,7 +83,7 @@
 @mixin ui-float-label() {
   .ui-float-label {
     position: relative;
-    margin-top: $font-size-small + $margin-small;
+    margin-top: $font-size-small + var(--spacer-sm);
 
     .ui-inputtext {
       + label {

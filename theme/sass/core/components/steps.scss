@@ -39,7 +39,7 @@
         }
         .ui-steps-title {
           display: inline;
-          margin-left: $margin-small;
+          margin-left: var(--spacer-sm);
         }
       }
       &.ui-state-highlight {
@@ -72,7 +72,7 @@
       &:not(:last-child) {
         &:after {
           content: ' ';
-          width: $margin-x-large;
+          width: var(--spacer-xl);
           height: 2px;
           background-color: $divider;
           margin-bottom: auto;

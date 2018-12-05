@@ -13,7 +13,7 @@
 
   &.ui-treetable {
     .ui-treetable-header, .ui-treetable-footer {
-      padding: $margin-medium;
+      padding: var(--spacer-md);
 
       background-color: transparent;
       border-color: $border-color;
@@ -24,6 +24,7 @@
       border-top-left-radius: $borderRadius;
       border-top-right-radius: $borderRadius;
     }
+
     .ui-treetable-footer {
       border-bottom-left-radius: $borderRadius;
       border-bottom-right-radius: $borderRadius;
@@ -38,22 +39,24 @@
         color: $default-text-color;
         vertical-align: top;
         position: relative;
-        height: $button-height + 2 * $margin-small;
-        padding: $margin-small;
+        height: calc(#{$button-height} + 2 * var(--spacer-sm));
+        padding: var(--spacer-sm);
         overflow: visible;
         @include row-border();
       }
     }
+
     tfoot td {
       border: 0 none;
-      padding: $margin-small;
+      padding: var(--spacer-sm);
     }
+
     tbody .ui-treetable-row {
       td {
         overflow: visible;
         vertical-align: middle;
-        padding: $margin-small;
-        height: $button-height + 2 * $margin-small;
+        padding: var(--spacer-sm);
+        height: calc(#{$button-height} + 2 * var(--spacer-sm));
         border: 1px solid $border-color;
         @include row-border();
         @include ui-inputtext('input');
@@ -72,12 +75,14 @@
             }
           }
         }
+
         .ui-treetable-checkbox {
           border: 1px solid $border-color;
           border-radius: $border-radius;
           display: inline-flex;
           justify-content: center;
           align-items: center;
+
           .ui-chkbox-icon {
             margin-left: 0;
           }
@@ -87,6 +92,7 @@
       &.ui-treetable-row-selectable:not(.ui-state-highlight):hover {
 
       }
+
       &.ui-state-highlight {
         background-color: $accent;
         border-color:   $accent;
@@ -95,6 +101,7 @@
         .ui-treetable-toggler {
           color: $accent-text-color;
         }
+
         .ui-treetable-checkbox {
           border-color: $accent-text-color;
 
@@ -111,8 +118,8 @@
         font-weight: bold;
         display: flex;
         text-align: start;
-        margin-right: -$margin-medium;
-        margin-left: -$margin-medium;
+        margin-right: -var(--spacer-md);
+        margin-left: -var(--spacer-md);
         border-top: 1px solid $border-color;
 
         > * {

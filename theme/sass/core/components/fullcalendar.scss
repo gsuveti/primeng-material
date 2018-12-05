@@ -40,7 +40,7 @@
       border: 1px solid $border-color;
     }
     .fc-day-header {
-      padding: $margin-small 0;
+      padding: var(--spacer-sm) 0;
     }
 
     .fc-row {

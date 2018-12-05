@@ -16,7 +16,7 @@
     top: 90px;
     .ui-growl-item-container {
       opacity: 1;
-      margin: $margin-small 0;
+      margin: var(--spacer-sm) 0;
       @include ui-shadow-3;
 
       &.ui-growl-message-info {
@@ -46,13 +46,13 @@
       }
     }
     .ui-growl-item {
-      padding: $margin-small $margin-x-large;
+      padding: var(--spacer-sm) var(--spacer-xl);
 
       .ui-growl-image {
         background: none;
         @include ui-icon-large();
-        top: $margin-small;
-        left: $margin-small;
+        top: var(--spacer-sm);
+        left: var(--spacer-sm);
         &.fa-info-circle {
           &:before {
             content: "info";
@@ -76,12 +76,12 @@
       }
       .ui-growl-message {
         margin: 0;
-        padding: 0 $margin-small;
+        padding: 0 var(--spacer-sm);
       }
       .ui-growl-icon-close {
         @include ui-icon-large();
-        top: $margin-small;
-        right: $margin-small;
+        top: var(--spacer-sm);
+        right: var(--spacer-sm);
         &:before {
           content: "close";
         }

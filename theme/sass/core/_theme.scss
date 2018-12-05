@@ -1,5 +1,5 @@
 @import "vars/vars";
-@import "sizes";
+@import "spacing";
 @import "utils";
 @import "reset";
 @import "fonts";
@@ -12,6 +12,10 @@
 @import "card";
 
 @mixin theme($extra-class:'') {
+  :root {
+    font-size: 16px;
+  }
+
   body#{$extra-class} {
     --opacity-hover: #{$opacity-hover};
     --datatable-row-hover-opacity: #{$datatable-row-hover-opacity};
@@ -71,12 +75,12 @@
     text-decoration: none;
     margin: 0;
     padding: 0;
+
     .card {
       @include card();
     }
 
     @include font-size-regular();
-    @include make-spacing();
 
     a {
       text-decoration: none;
@@ -122,67 +126,49 @@
     h1 {
       @include font-size-headline1();
     }
+
     h2 {
       @include font-size-headline2();
     }
+
     h3 {
       @include font-size-headline3();
     }
+
     h4 {
       @include font-size-headline3();
     }
   }
 
+  @include generateColorClasses();
+
+
 }
 
-$background-colors: (
-  white: $white,
-  black: $black,
-  primary:$primary,
-  primary-lighter: $primary-lighter,
-  primary-darker: $primary-darker,
-  accent: $accent,
-  accent-lighter:$accent-lighter,
-  accent-darker: $accent-darker,
-  default: $default,
-  info: $info,
-  success:$success,
-  warn: $warn,
-  danger: $danger,
-  border:$icon-dark-inactive-color
-) !default;
-$colors: (
-  white: $white,
-  black: $black,
-  primary:$primary-text-color,
-  primary-lighter: $primary-lighter-text-color,
-  primary-darker: $primary-darker-text-color,
-  accent: $accent-text-color,
-  accent-lighter:$accent-lighter-text-color,
-  accent-darker: $accent-darker-text-color,
-  default: $default-text-color,
-  default-lighter: $default-lighter-text-color,
-  info: $info-text-color,
-  success:$success-text-color,
-  warn: $warn-text-color,
-  danger: $danger-text-color
-) !default;
+$colors: white,
+black,
+primary,
+primary-lighter,
+primary-darker,
+accent,
+accent-lighter,
+accent-darker,
+default,
+info,
+success,
+warn,
+danger,
+border,
+hover;
+
 
 @mixin generateColorClasses() {
-  @each $name, $value in $colors {
+  @each $name in $colors {
     .color-#{$name} {
-      color: $value;
+      color: var(--#{$name}) !important;
     }
-  }
-}
-
-@mixin generateBackgroundColorClasses() {
-  @each $name, $value in $background-colors {
     .background-#{$name} {
-      background-color: $value;
+      background-color: var(--#{$name}) !important;
     }
   }
 }
-
-@include generateBackgroundColorClasses();
-@include generateColorClasses();

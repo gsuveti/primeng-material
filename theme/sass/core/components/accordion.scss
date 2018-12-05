@@ -8,7 +8,7 @@
   $border-radius: $borderRadius;
 
   &.ui-accordion {
-    margin: $margin-medium 0;
+    margin: var(--spacer-md) 0;
     > * {
       &:first-child {
         .ui-accordion-header {
@@ -30,7 +30,7 @@
       background-color: transparent;
       color: $default-text-color;
       border-radius: 0;
-      padding: $margin-medium $margin-large;
+      padding: var(--spacer-md) var(--spacer-lg);
 
       &:not(.ui-state-active):not(.ui-state-disabled):hover {
         background-color: transparent;
@@ -43,18 +43,18 @@
         background-color: transparent;
         color: $default-text-color;
         border-radius: $border-radius $border-radius 0 0;
-        margin-top: $margin-medium;
+        margin-top: var(--spacer-md);
 
         > a {
           color: $default-text-color;
         }
         + .ui-accordion-content-wrapper {
-          margin-bottom: $margin-medium;
+          margin-bottom: var(--spacer-md);
         }
       }
       > a {
         padding: 0;
-        padding-right: $icon-size-large + $margin-medium;
+        padding-right: $icon-size-large + var(--spacer-md);
       }
 
       .ui-accordion-toggle-icon {
@@ -65,7 +65,7 @@
         top: 0;
         bottom: 0;
         height: 100%;
-        right: $margin-large;
+        right: var(--spacer-lg);
         left: unset;
         margin-top: 0;
         transition: transform ease .3s;
@@ -88,7 +88,7 @@
         border: 1px solid $border-color;
         border-radius: 0 0 $border-radius $border-radius;
         border-top-width: 0;
-        padding: $margin-medium;
+        padding: var(--spacer-md);
       }
 
     }

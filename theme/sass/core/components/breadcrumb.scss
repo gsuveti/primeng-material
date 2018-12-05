@@ -3,7 +3,7 @@
   $color:$default-text-color
 ) {
   &.ui-breadcrumb {
-    padding: $margin-medium;
+    padding: var(--spacer-md);
     background: transparent;
     border: none;
 

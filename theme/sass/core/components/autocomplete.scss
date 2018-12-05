@@ -91,7 +91,7 @@
     .ui-autocomplete-list-item {
       transition: background-color 0.03s;
       @include font-size-regular;
-      padding: $margin-medium;
+      padding: var(--spacer-md);
       border-radius: 0;
       color: $default-text-color;
       .ui-autocomplete-query {
@@ -102,7 +102,7 @@
       }
     }
     .ui-autocomplete-group {
-      padding: $margin-medium;
+      padding: var(--spacer-md);
     }
   }
 }

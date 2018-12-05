@@ -1,8 +1,8 @@
 /// margin-small
-$margin-x-small: 4px;
+var(--spacer-xs): 4px;
 /// margin-x-small
-$margin-small: 8px;
+var(--spacer-sm): 8px;
 /// margin-medium
-$margin-medium: 16px;
-$margin-large: 24px;
-$margin-x-large: 32px;
+var(--spacer-md): 16px;
+var(--spacer-lg): 24px;
+var(--spacer-xl): 32px;

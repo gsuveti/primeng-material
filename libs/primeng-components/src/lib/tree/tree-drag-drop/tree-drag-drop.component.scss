@@ -1,9 +1,3 @@
-$margin-x-small: 4px;
-$margin-small: 8px;
-$margin-medium: 16px;
-$margin-large: 24px;
-$margin-x-large: 32px;
-
 $primary: blue;
 $border-color: gray;
 $primary-text-color: black;
@@ -12,7 +6,7 @@ $primary-text-color: black;
 .swap {
   display: flex;
   justify-content: center;
-  margin-top: $margin-medium;
+  margin-top: var(--spacer-md);
 
   i {
     //@include ui-icon-large();

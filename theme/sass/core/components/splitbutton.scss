@@ -24,11 +24,11 @@
       &.ui-splitbutton-menubutton {
         &.ui-button-icon-only {
           border-radius: 0 $borderRadius $borderRadius 0;
-          width: $icon-size + 2 * $margin-small;
-          min-width: $icon-size + 2 * $margin-small;
+          width: calc(#{$icon-size} + 2 * var(--spacer-sm));
+          min-width: calc(#{$icon-size} + 2 * var(--spacer-sm));
           height: $button-height;
-          padding-left: $margin-small;
-          padding-right: $margin-small;
+          padding-left: var(--spacer-sm);
+          padding-right: var(--spacer-sm);
         }
       }
     }
@@ -55,6 +55,7 @@
 @mixin splitbutton-child-button() {
   .ui-button {
     margin: 0;
+
     &.ui-state-default {
       background-color: transparent;
       color: inherit;
@@ -69,6 +70,7 @@
         background-color: transparent;
         color: inherit;
       }
+
       &:active {
         box-shadow: none;
       }

@@ -6,7 +6,7 @@
   &.ui-progressbar {
     height: 4px;
     background-color: $background;
-    margin-top: $margin-medium;
+    margin-top: var(--spacer-md);
     overflow: visible;
 
     .ui-progressbar-value {
@@ -16,7 +16,7 @@
       color: $default-text-color;
       @include font-size-small();
       position: absolute;
-      top: calc(-1em - #{$margin-x-small});
+      top: calc(-1em - #{var(--spacer-xs)});
       text-align: left;
     }
   }

@@ -1,7 +1,7 @@
 $button-height: 36px;
 $button-min-width: 64px;
 
-$toolbar-height: $button-height + 2 * $margin-medium;
+$toolbar-height: calc(#{$button-height} + 2 * var(--spacer-md));
 $side-nav-width: 300px;
 $side-nav-width-md: 425px;
 $side-nav-width-lg: 768px;

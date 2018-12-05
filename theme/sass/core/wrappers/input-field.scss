@@ -8,7 +8,7 @@
     display: inline-flex;
     flex-wrap: wrap;
     align-items: baseline;
-    margin-bottom: $margin-medium;
+    margin-bottom: var(--spacer-md);
 
     //TODO move me in dropdown
     .ui-dropdown {
@@ -23,7 +23,7 @@
 
     .control-prefix {
       flex-basis: unset;
-      margin-right: $margin-small;
+      margin-right: var(--spacer-sm);
       + .ui-inputtext, .ui-dropdown {
         flex-basis: unset;
         flex: 1;
@@ -38,7 +38,7 @@
       border-color: transparent;
       background-color: transparent;
       padding: 0;
-      margin: $margin-x-small 0;
+      margin: var(--spacer-xs) 0;
       text-align: left;
     }
 
@@ -143,7 +143,7 @@
     .right-aligned-labels {
       .input-field {
         > label {
-          padding-right: $margin-medium;
+          padding-right: var(--spacer-md);
           justify-content: flex-end;
         }
       }

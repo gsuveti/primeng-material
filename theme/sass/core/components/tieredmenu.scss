@@ -1,7 +1,7 @@
 @mixin ui-tieredmenu($background:$default) {
   &.ui-tieredmenu {
     @include ui-tiered-submenu($background);
-    padding: $margin-small 0;
+    padding: var(--spacer-sm) 0;
   }
 }
 
@@ -11,7 +11,7 @@
     .ui-menuitem {
       .ui-submenu {
         .ui-menu-child {
-          padding: $margin-small 0;
+          padding: var(--spacer-sm) 0;
           background-color: $background;
         }
       }

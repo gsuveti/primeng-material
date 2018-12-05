@@ -20,7 +20,7 @@
   @include font-size-headline3();
   text-transform: uppercase;
 
-  padding: 0 $margin-medium;
+  padding: 0 var(--spacer-md);
   min-width: $button-min-width;
   height: $button-height;
   vertical-align: bottom;
@@ -89,10 +89,10 @@
       margin: 0;
     }
     .ui-button-icon-right {
-      margin-left: $margin-small;
+      margin-left: var(--spacer-sm);
     }
     .ui-button-icon-left {
-      margin-right: $margin-small;
+      margin-right: var(--spacer-sm);
     }
   }
   &.ui-button-text-icon-right {

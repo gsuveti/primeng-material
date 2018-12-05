@@ -6,7 +6,7 @@
 ) {
   &.ui-picklist {
     .ui-picklist-buttons {
-      padding: $margin-small $margin-medium;
+      padding: var(--spacer-sm) var(--spacer-md);
       .ui-picklist-buttons-cell {
         display: flex;
         flex-direction: column;
@@ -22,7 +22,7 @@
           padding: 0;
         }
         .ui-picklist-item {
-          padding: $margin-x-small $margin-small;
+          padding: var(--spacer-xs) var(--spacer-sm);
           &.ui-state-highlight {
             background-color: $accent;
           }
@@ -30,16 +30,16 @@
       }
 
       .ui-picklist-filter-container {
-        padding: $margin-small;
+        padding: var(--spacer-sm);
         border: 1px solid $border-color;
         border-width: 0 1px;
 
         .ui-picklist-filter {
-          padding-left: $margin-large;
+          padding-left: var(--spacer-lg);
           text-indent: 0;
         }
         .fa {
-          left: $margin-small;
+          left: var(--spacer-sm);
         }
       }
       .ui-picklist-list {

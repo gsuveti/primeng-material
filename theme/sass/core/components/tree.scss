@@ -8,7 +8,7 @@
   $border-radius: $borderRadius;
 
   &.ui-tree {
-    padding: $margin-medium;
+    padding: var(--spacer-md);
 
     .ui-treenode-children {
       padding-left: 0;
@@ -20,12 +20,12 @@
       }
       .ui-tree-toggler {
         vertical-align: middle;
-        margin: 0 0 0 $margin-x-small;
+        margin: 0 0 0 var(--spacer-xs);
       }
 
       .ui-treenode-icon {
         vertical-align: middle;
-        margin: 0 $margin-x-small;
+        margin: 0 var(--spacer-xs);
 
         &.fa-folder:before {
           content: "folder";
@@ -36,11 +36,11 @@
       }
 
       .ui-chkbox {
-        margin: 0 $margin-x-small;
+        margin: 0 var(--spacer-xs);
       }
       .ui-treenode-label {
         margin: 0;
-        padding: $margin-x-small $margin-small;
+        padding: var(--spacer-xs) var(--spacer-sm);
         vertical-align: middle;
       }
 
@@ -79,7 +79,7 @@
         }
         .ui-treenode-icon {
           vertical-align: top;
-          margin-right: $margin-x-small;
+          margin-right: var(--spacer-xs);
         }
         .ui-treenode-label {
           white-space: nowrap;

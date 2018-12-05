@@ -1,6 +1,6 @@
 @mixin ui-toolbar($background:$primary, $color:$primary-text-color) {
   &.ui-toolbar {
-    padding: $margin-medium;
+    padding: var(--spacer-md);
     border: none;
     display: flex;
     flex-direction: row;
