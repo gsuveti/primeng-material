@@ -16,6 +16,7 @@
       .ui-panelmenu-header {
         padding: 0;
         background-color: transparent;
+
         &:focus {
           outline: none;
         }
@@ -23,18 +24,22 @@
         .ui-panelmenu-header-link {
           display: flex;
           padding: var(--spacer-md);
+
           .ui-panelmenu-icon, .ui-menuitem-icon {
             color: $icon-dark-active-color;
           }
+
           .ui-menuitem-text {
             color: $default-text-color;
           }
 
           &.ui-state-active {
             background-color: $accent;
+
             .ui-panelmenu-icon, .ui-menuitem-icon {
               color: $icon-dark-active-color;
             }
+
             .ui-menuitem-text {
               color: $accent-text-color;
             }
@@ -54,29 +59,34 @@
 
         .ui-menuitem {
           margin: 0;
+
           .ui-menuitem-link {
             border: 0 none;
             padding: var(--spacer-md);
-            padding-left: var(--spacer-md) + $icon-size + var(--spacer-sm);
+            padding-left: calc(var(--spacer-md) + #{$icon-size} + var(--spacer-sm));
             width: 100%;
             box-sizing: border-box;
             border-radius: 0;
             position: relative;
+
             &.ui-state-active {
               background-color: $accent;
               color: $accent-text-color;
             }
+
             &:hover {
               &:not(.ui-state-active) {
                 background-color: $hover;
                 color: $default-text-color;
               }
             }
+
             .ui-menuitem-text {
               display: inline-block;
               vertical-align: middle;
               float: none;
             }
+
             .fa {
               position: static;
               display: inline-block;
@@ -91,6 +101,7 @@
                 color: $default-text-color;
               }
             }
+
             .ui-menu-list {
               margin-left: var(--spacer-md);
             }

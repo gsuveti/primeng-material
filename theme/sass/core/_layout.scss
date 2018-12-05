@@ -44,6 +44,7 @@
             }
 
           }
+
           .brand-title {
             margin-left: var(--spacer-sm);
             @include font-size-headline3();
@@ -92,6 +93,7 @@
             position: absolute;
             transform: translateX(0);
           }
+
           &.side-nav-side-permanent {
             @include g-state(md) {
               position: relative;
@@ -103,13 +105,13 @@
         &.side-nav-side-right {
           z-index: 2000;
           right: 0;
-          transform: translateX($side-nav-width + var(--spacer-sm));
+          transform: translateX(calc(#{$side-nav-width} + var(--spacer-sm)));
         }
 
         &.side-nav-side-left {
           z-index: 3000;
           left: 0;
-          transform: translateX(- $side-nav-width - var(--spacer-sm));
+          transform: translateX(calc(#{-$side-nav-width} - var(--spacer-sm)));
         }
       }
 

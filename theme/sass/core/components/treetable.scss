@@ -118,8 +118,8 @@
         font-weight: bold;
         display: flex;
         text-align: start;
-        margin-right: -var(--spacer-md);
-        margin-left: -var(--spacer-md);
+        margin-right: var(--spacer-nmd);
+        margin-left: var(--spacer-nmd);
         border-top: 1px solid $border-color;
 
         > * {
