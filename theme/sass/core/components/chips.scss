@@ -4,9 +4,7 @@
       @include ui-inputtext();
 
       .ui-chips-input-token {
-        border: 1px solid var(--border-color);
-
-        loat: none;
+        float: none;
         display: inline-flex;
         margin: 0 1px;
         vertical-align: middle;
