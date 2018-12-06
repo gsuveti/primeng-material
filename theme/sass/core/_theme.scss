@@ -1,16 +1,15 @@
 @import "vars/default-css-vars";
 @import "vars/vars";
-
 @import "spacing";
 @import "utils";
 @import "reset";
 @import "fonts";
-
 @import "ripple";
 @import "shadow";
 @import "wrappers/input-field";
 @import "wrappers/table-filter";
 @import "wrappers/pager";
+@import "primeng_theme";
 @import "components/widget";
 @import "card";
 
@@ -66,6 +65,8 @@
       }
     }
 
+
+    @include primeng-theme();
     @include ui-icon();
     @include ui-widget();
     @include md-inputfield();
