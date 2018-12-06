@@ -1,0 +1,61 @@
+body {
+  --opacity-hover: 0.04;
+  --datatable-row-hover-opacity: 0.08;
+  --opacity-dividers: 0.12;
+  --opacity-button-hover: 0.12;
+  --opacity-slider: 0.38;
+  --opacity-slider-checked: 0.5;
+
+
+  --opacity-text-dark-primary: 0.87;
+  --opacity-text-dark-accent: 0.54;
+  --opacity-text-dark-disabled: 0.38;
+
+  --opacity-text-light-primary: 1;
+  --opacity-text-light-accent: 0.7;
+  --opacity-text-light-disabled: 0.5;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --primary: #2196f3;
+  --primary-lighter: #6ec6ff;
+  --primary-darker: #0069c0;
+
+  --accent: #ffd740;
+  --accent-lighter: #ffe082;
+  --accent-darker: #c8a600;
+
+  --primary-text-color: var(--white);
+  --primary-lighter-text-color: var(--black);
+  --primary-darker-text-color: var(--white);
+
+  --accent-text-color: var(--black);
+  --accent-lighter-text-color: var(--black);
+  --accent-darker-text-color: var(--black);
+
+  --default: #ffffff;
+  --info: #00bcd4;
+  --success: #4caf50;
+  --warn: #ff9800;
+  --danger: #f44336;
+
+  --default-text-color: rgba(0, 0, 0, var(--opacity-text-dark-primary));
+  --default-lighter-text-color: rgba(0, 0, 0, var(--opacity-text-dark-accent));
+
+  --info-text-color: #000000;
+  --success-text-color: #ffffff;
+  --warn-text-color: #ffffff;
+  --danger-text-color: #ffffff;
+
+  --hover: rgba(0, 0, 0, var(--opacity-hover));
+  --datatable-row-hover: rgba(0, 0, 0, var(--datatable-row-hover-opacity));
+  --border-color: rgba(0, 0, 0, var(--opacity-dividers));
+  --slider-color: rgba(0, 0, 0, var(--opacity-slider));
+
+  --icon-dark-inactive-color: rgba(0, 0, 0, var(--opacity-text-dark-disabled));
+  --icon-dark-active-color: rgba(0, 0, 0, var(--opacity-text-dark-accent));
+
+  --icon-light-inactive-color: rgba(255, 255, 255, var(--opacity-text-light-disabled));
+  --icon-light-active-color: rgba(255, 255, 255, var(--opacity-text-light-primary));
+}

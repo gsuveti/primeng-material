@@ -5,9 +5,13 @@
 @import "~primeicons/primeicons.css";
 @import "~primeng/resources/primeng.css";
 
-@import "../../../theme/sass/blue-amber/theme";
+@import "../../../theme/sass/core/grid";
+@import "../../../theme/sass/core/theme";
+@import "../../../theme/sass/core/layout";
 
-@include blue-amber();
+@include make-grid();
+@include theme();
+@include layout();
 
 
 //@include blue-amber-layout();

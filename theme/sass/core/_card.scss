@@ -1,3 +1,5 @@
+@import "vars/vars";
+
 @mixin card() {
   @include ui-shadow-content();
   border-radius: $borderRadius;

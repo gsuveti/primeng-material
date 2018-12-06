@@ -2,7 +2,10 @@
   &.ui-chips {
     > ul.ui-inputtext {
       @include ui-inputtext();
+
       .ui-chips-input-token {
+        border: 1px solid var(--border-color);
+
         loat: none;
         display: inline-flex;
         margin: 0 1px;
@@ -13,11 +16,13 @@
           padding: 0;
           margin: 0;
           vertical-align: bottom;
+
           .ui-state-disabled {
             width: 0;
           }
         }
       }
+
       .ui-chips-token {
         display: inline-block;
         float: none;
@@ -31,6 +36,7 @@
           vertical-align: middle;
         }
       }
+
       &.ui-state-disabled {
         border-bottom: 1px dotted;
       }

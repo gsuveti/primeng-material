@@ -68,6 +68,8 @@
             box-sizing: border-box;
             border-radius: 0;
             position: relative;
+            color: $default-text-color;
+            
 
             &.ui-state-active {
               background-color: $accent;

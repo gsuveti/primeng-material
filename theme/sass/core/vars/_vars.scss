@@ -1,3 +1,53 @@
+
 @import "font-sizes";
 @import "breakpoints";
 @import "elements-sizes";
+
+
+$opacity-hover: var(--opacity-hover);
+$datatable-row-hover-opacity: var(--datatable-row-hover-opacity);
+$opacity-dividers: var(--opacity-dividers);
+$opacity-button-hover: var(--opacity-button-hover);
+$opacity-slider: var(--opacity-slider);
+$opacity-slider-checked: var(--opacity-slider-checked);
+$opacity-text-dark-primary: var(--opacity-text-dark-primary);
+$opacity-text-dark-accent: var(--opacity-text-dark-accent);
+$opacity-text-dark-disabled: var(--opacity-text-dark-disabled);
+$opacity-text-light-primary: var(--opacity-text-light-primary);
+$opacity-text-light-accent: var(--opacity-text-light-accent);
+$opacity-text-light-disabled: var(--opacity-text-light-disabled);
+$white: var(--white);
+$black: var(--black);
+$primary: var(--primary);
+$primary-lighter: var(--primary-lighter);
+$primary-darker: var(--primary-darker);
+$accent: var(--accent);
+$accent-lighter: var(--accent-lighter);
+$accent-darker: var(--accent-darker);
+$primary-text-color: var(--primary-text-color);
+$primary-lighter-text-color: var(--primary-lighter-text-color);
+$primary-darker-text-color: var(--primary-darker-text-color);
+$accent-text-color: var(--accent-text-color);
+$accent-lighter-text-color: var(--accent-lighter-text-color);
+$accent-darker-text-color: var(--accent-darker-text-color);
+$default: var(--default);
+$info: var(--info);
+$success: var(--success);
+$warn: var(--warn);
+$danger: var(--danger);
+$default-text-color: var(--default-text-color);
+$default-lighter-text-color: var(--default-lighter-text-color);
+$info-text-color: var(--info-text-color);
+$success-text-color: var(--success-text-color);
+$warn-text-color: var(--warn-text-color);
+$danger-text-color: var(--danger-text-color);
+$hover: var(--hover);
+$datatable-row-hover: var(--datatable-row-hover);
+$border-color: var(--border-color);
+$slider-color: var(--slider-color);
+$icon-dark-inactive-color: var(--icon-dark-inactive-color);
+$icon-dark-active-color: var(--icon-dark-active-color);
+$icon-light-inactive-color: var(--icon-light-inactive-color);
+$icon-light-active-color: var(--icon-light-active-color);
+
+@import "primeng-vars";

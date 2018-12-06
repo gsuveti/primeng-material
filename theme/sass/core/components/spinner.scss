@@ -8,7 +8,7 @@
     }
 
     .ui-inputtext {
-      padding-right: $icon-size + var(--spacer-sm);
+      padding-right: calc(#{$icon-size} + var(--spacer-sm));
     }
 
     .ui-spinner-button {

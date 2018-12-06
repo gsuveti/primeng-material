@@ -1,3 +1,5 @@
+@import "vars/vars";
+
 @mixin placeholder {
   ::-webkit-input-placeholder {
     @content
@@ -62,12 +64,13 @@
 @mixin md-inputfield() {
   .md-inputfield {
     position: relative;
-    margin-top: $font-size-small + var(--spacer-sm);
+    margin-top: calc(#{$font-size-small} + var(--spacer-sm));
 
     .ui-inputtext {
       + label {
         @include font-size-small();
       }
+
       &:focus, &.ui-state-filled {
         + label {
           color: $primary;
@@ -83,12 +86,13 @@
 @mixin ui-float-label() {
   .ui-float-label {
     position: relative;
-    margin-top: $font-size-small + var(--spacer-sm);
+    margin-top: calc(#{$font-size-small} + var(--spacer-sm));
 
     .ui-inputtext {
       + label {
         @include font-size-small();
       }
+
       &:focus, &.ui-state-filled {
         + label {
           color: $primary;
@@ -103,7 +107,7 @@
 
 @mixin progress-bar($color) {
   height: 5px;
-  background-color: lighten($color, 30);
+  background-color: $color;
   overflow: hidden;
 
   &:before {

@@ -1,3 +1,5 @@
+@import "../vars/vars";
+
 @mixin ui-datatable {
   &.ui-datatable {
     .ui-datatable-loading {

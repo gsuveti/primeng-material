@@ -23,7 +23,7 @@
 
       &.ui-splitbutton-menubutton {
         &.ui-button-icon-only {
-          border-radius: 0 $borderRadius $borderRadius 0;
+          border-radius: 0 $borderRadius $borderRadius 0 !important;
           width: calc(#{$icon-size} + 2 * var(--spacer-sm));
           min-width: calc(#{$icon-size} + 2 * var(--spacer-sm));
           height: $button-height;

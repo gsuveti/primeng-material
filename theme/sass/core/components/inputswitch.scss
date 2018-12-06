@@ -1,4 +1,6 @@
-@mixin ui-inputswitch($checked:$accent, $unchecked: $white, $slider: $slider-color ) {
+@import '../vars/vars';
+
+@mixin ui-inputswitch($checked: $accent, $unchecked: $white, $slider: $slider-color, $slider-checked: $accent-lighter ) {
   $width: 34px;
   $slider-height: 14px;
   $handle-size: 20px;
@@ -13,6 +15,7 @@
       background-color: $slider;
 
       &:before {
+        background-color: $unchecked;
         transition: background-color 0.3s;
         @include ui-shadow-2;
         width: 20px !important;
@@ -25,7 +28,8 @@
 
     &.ui-inputswitch-checked {
       .ui-inputswitch-slider {
-        background-color: rgba($checked, $opacity-slider-checked);
+        background-color: $slider-checked;
+
         &:before {
           background-color: $checked;
           color: #000000;
@@ -38,9 +42,10 @@
       .ui-inputswitch-slider {
         background-color: $slider;
       }
+
       &.ui-inputswitch-checked {
         .ui-inputswitch-slider {
-          background-color: rgba($checked, $opacity-slider-checked);
+          background-color: $slider-checked;
         }
       }
     }
