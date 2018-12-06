@@ -26,13 +26,18 @@
 
     .ui-accordion-header {
       margin-top: 0;
+      padding: 0;
+
       transition: margin-top .3s, border-radius .3s;
 
       border: 1px solid $border-color;
       background-color: transparent;
       color: $default-text-color;
       border-radius: 0;
-      padding: var(--spacer-md) var(--spacer-lg);
+
+      &:before, &:after {
+        pointer-events: none;
+      }
 
       &:not(.ui-state-active):not(.ui-state-disabled):hover {
         background-color: transparent;
@@ -58,8 +63,7 @@
       }
 
       > a {
-        padding: 0;
-        padding-right: calc(#{$icon-size-large} + var(--spacer-md));
+        padding: var(--spacer-md) var(--spacer-lg);
       }
 
       .ui-accordion-toggle-icon {

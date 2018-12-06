@@ -1,3 +1,5 @@
+@import "../vars/vars";
+
 @mixin ui-fileupload(
   $primary: $primary,
   $accent: $accent,
@@ -6,11 +8,16 @@
   $border-color:$border-color
 ) {
   &.ui-fileupload {
+    .ui-progressbar {
+      display: none;
+    }
+
     .ui-fileupload-buttonbar {
       background-color: transparent;
       border-color: transparent;
       padding: 0 0 var(--spacer-sm) 0;
     }
+
     .ui-button {
       border-color: transparent;
       background-color: $primary;
@@ -22,9 +29,9 @@
         color: $primary-text-color;
       }
     }
+
     .ui-fileupload-content {
-      border: 2px solid $border-color;
-      border-style: dashed;
+      border: 2px dashed $border-color;
     }
   }
 }
