@@ -25,7 +25,7 @@
         display: inline-block;
         float: none;
         vertical-align: middle;
-        @include font-size-regular;
+        @include font-size-regular();
         margin-bottom: 2px;
         border-radius: 24px;
 

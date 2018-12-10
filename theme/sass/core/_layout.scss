@@ -47,7 +47,8 @@
 
           .brand-title {
             margin-left: var(--spacer-sm);
-            @include font-size-headline3();
+            font-size: var(--font-size-medium);
+            font-weight: var(--font-weight-medium);
           }
         }
       }
@@ -78,6 +79,7 @@
       .side-nav-side {
         position: absolute;
         bottom: 0;
+        overflow: auto;
         min-width: $side-nav-width;
         width: $side-nav-width;
         transform: translateX(0);

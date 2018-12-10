@@ -146,7 +146,7 @@
 
           input.ui-cell-editor {
             padding: var(--spacer-sm) 0;
-            @include font-size-regular;
+            @include font-size-regular();
           }
 
           &.ui-editable-column {

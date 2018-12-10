@@ -1,5 +1,5 @@
 body {
-  $spacer: 1rem !default;
+  $spacer: 1.6rem !default;
   $spacer-xs: $spacer * .25;
   $spacer-sm: $spacer * .5;
   $spacer-md: $spacer;
@@ -7,7 +7,7 @@ body {
   $spacer-xl: $spacer * 2;
 
   $spacers: () !default;
-  // stylelint-disable-next-line scss/dollar-variable-default
+
   $spacers: map-merge(
       (
         '': $spacer,

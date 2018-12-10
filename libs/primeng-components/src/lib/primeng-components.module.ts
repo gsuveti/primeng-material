@@ -185,6 +185,7 @@ import {TableModule} from 'primeng/table';
 import {MessageService} from 'primeng/components/common/messageservice';
 import {TableComponent} from './data/table/table.component';
 import {TableFilterComponent} from './data/table/table-filter/table-filter.component';
+import {TypographyComponent} from './typography/typography.component';
 
 const routes: Routes = [
   {
@@ -303,6 +304,10 @@ const routes: Routes = [
       {
         path: 'icons',
         component: IconsComponent
+      },
+      {
+        path: 'typography',
+        component: TypographyComponent
       }
     ]
   }
@@ -501,7 +506,8 @@ const routes: Routes = [
     TreeTableScrollableComponent,
     PickListComponent,
     TableComponent,
-    TableFilterComponent
+    TableFilterComponent,
+    TypographyComponent
   ],
   providers: [ConfirmationService, TreeDragDropService, MessageService],
   exports: [TableComponent, TableFilterComponent]

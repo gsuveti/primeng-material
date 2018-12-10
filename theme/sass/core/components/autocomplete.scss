@@ -67,7 +67,7 @@
         display: inline-block;
         float: none;
         vertical-align: middle;
-        @include font-size-regular;
+        @include font-size-regular();
         margin-bottom: 2px;
         border-radius: 24px;
 
@@ -90,7 +90,7 @@
     padding: 0;
     .ui-autocomplete-list-item {
       transition: background-color 0.03s;
-      @include font-size-regular;
+      @include font-size-regular();
       padding: var(--spacer-md);
       border-radius: 0;
       color: $default-text-color;

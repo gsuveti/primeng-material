@@ -25,11 +25,25 @@
             "assets": [
               "apps/primeng-material/src/favicon.ico",
               "apps/primeng-material/src/assets",
-              { "glob": "**/*.html", "input": "./libs/primeng-components/src/lib/", "output": "./assets/" },
-              { "glob": "**/*.ts", "input": "./libs/primeng-components/src/lib/", "output": "./assets/" },
-              { "glob": "**/*.scss", "input": "./libs/primeng-components/src/lib/", "output": "./assets/" }
+              {
+                "glob": "**/*.html",
+                "input": "./libs/primeng-components/src/lib/",
+                "output": "./assets/"
+              },
+              {
+                "glob": "**/*.ts",
+                "input": "./libs/primeng-components/src/lib/",
+                "output": "./assets/"
+              },
+              {
+                "glob": "**/*.scss",
+                "input": "./libs/primeng-components/src/lib/",
+                "output": "./assets/"
+              }
             ],
             "styles": [
+              "node_modules/material-icons-font/material-icons-font.css",
+              "node_modules/roboto-fontface/css/roboto/roboto-fontface.css",
               "apps/primeng-material/src/styles.scss"
             ],
             "scripts": [

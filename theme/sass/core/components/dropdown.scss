@@ -53,7 +53,7 @@
       }
       .ui-dropdown-item {
         margin: 0;
-        @include font-size-regular;
+        @include font-size-regular();
         padding: 0.625em 1em;
         color: $default-text-color;
         transition: background-color 0.3s;

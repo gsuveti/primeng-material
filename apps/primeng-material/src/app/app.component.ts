@@ -120,6 +120,10 @@ export class AppComponent {
       {
         label: 'Icons',
         routerLink: ['/primeng-material/icons']
+      },
+      {
+        label: 'Typography',
+        routerLink: ['/primeng-material/typography']
       }
     ];
   }

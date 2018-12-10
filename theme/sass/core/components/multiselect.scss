@@ -110,7 +110,7 @@
         }
       }
       .ui-multiselect-item {
-        @include font-size-regular;
+        @include font-size-regular();
         padding: var(--spacer-md);
         color: $default-text-color;
         border-radius: 0;

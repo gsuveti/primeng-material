@@ -2,41 +2,101 @@
 
 $font-size-small: 12px;
 
+
+@mixin setup-fonts() {
+  --font-size-small: 1.2rem;
+  --font-size-base: 1.4rem;
+  --font-size-regular: var(--font-size-base);
+  --font-size-medium: 1.6rem;
+
+  --font-size-h1: 4.5rem;
+  --font-size-h2: 2.0rem;
+  --font-size-h3: 1.4rem;
+  --font-size-h4: 1.4rem;
+
+  --font-weight-base: 400;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-weight: var(--font-weight-base);
+  font-size: var(--font-size-base);
+
+  h1 {
+    font-size: var(--font-size-h1);
+  }
+
+  h2 {
+    font-size: var(--font-size-h2);
+  }
+
+  h3 {
+    font-size: var(--font-size-h3);
+  }
+
+  h4 {
+    font-size: var(--font-size-h3);
+  }
+
+
+  $font-sizes: (
+    small: var(--font-size-small),
+    sm: var(--font-size-small),
+    regular: var(--font-size-regular),
+    medium: var(--font-size-medium),
+    md: var(--font-size-medium),
+    h1: var(--font-size-h1),
+    h2: var(--font-size-h2),
+    h3: var(--font-size-h3),
+    h4: var(--font-size-h4)
+  );
+
+  $font-weights: (
+    small: var(--font-weight-base),
+    sm: var(--font-weight-base),
+    regular: var(--font-weight-base),
+    medium: var(--font-weight-base),
+    md: var(--font-weight-base),
+    h1: var(--font-weight-bold),
+    h2: var(--font-weight-bold),
+    h3: var(--font-weight-bold),
+    h4: var(--font-weight-bold)
+  );
+
+  @include createTextClasses($font-sizes, $font-weights);
+}
+
+@mixin createTextClasses($font-sizes,$font-weights) {
+  @each $size, $length in $font-sizes {
+    .text-#{$size} {
+      //margin: 0;
+      font-size: $length !important;
+      font-weight: map_get($font-weights, $size) !important;
+    }
+  }
+}
+
 @mixin font-size-small() {
-  font-weight: 400;
-  font-size: $font-size-small;
+  font-size: var(--font-size-small);
 }
 
 @mixin font-size-regular() {
-  font-weight: 400;
-  font-size: 14px;
-  @include g-state(md) {
-    font-size: 13px;
-  }
+  font-size: var(--font-size-base);
 }
 
 @mixin font-size-medium() {
-  font-weight: 400;
-  font-size: 16px;
-  @include g-state(md) {
-    font-size: 15px;
-  }
+  font-size: var(--font-size-medium);
 }
 
 @mixin font-size-headline3() {
-  font-size: 14px;
-  font-weight: 500;
-  @include g-state(md) {
-    font-size: 13px;
-  }
+  font-size: var(--font-size-h3);
 }
 
 @mixin font-size-headline2() {
-  font-weight: 400;
-  font-size: 20px;
+  font-size: var(--font-size-h2);
 }
 
 @mixin font-size-headline1() {
-  font-weight: 400;
-  font-size: 45px;
+  font-size: var(--font-size-h1);
 }

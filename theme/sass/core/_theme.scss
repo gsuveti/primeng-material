@@ -3,7 +3,6 @@
 @import "spacing";
 @import "utils";
 @import "reset";
-@import "fonts";
 @import "ripple";
 @import "shadow";
 @import "wrappers/input-field";
@@ -15,12 +14,12 @@
 
 @mixin theme($extra-class:'') {
   :root {
-    font-size: 16px;
+    font-size: 62.5%;
   }
 
   body#{$extra-class} {
 
-    font-family: "Roboto", "Helvetica Neue", sans-serif;
+    @include setup-fonts();
     text-decoration: none;
     margin: 0;
     padding: 0;
@@ -74,22 +73,6 @@
     @include input-field();
     @include table-filter();
     @include pager();
-
-    h1 {
-      @include font-size-headline1();
-    }
-
-    h2 {
-      @include font-size-headline2();
-    }
-
-    h3 {
-      @include font-size-headline3();
-    }
-
-    h4 {
-      @include font-size-headline3();
-    }
   }
 
   @include generateColorClasses();

@@ -52,7 +52,7 @@
       .ui-listbox-list {
         .ui-listbox-item {
           overflow: hidden;
-          @include font-size-regular;
+          @include font-size-regular();
           padding: var(--spacer-md);
           margin: 0;
           color: #424242;
