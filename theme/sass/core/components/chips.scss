@@ -1,12 +1,17 @@
 @mixin ui-chips() {
   &.ui-chips {
     > ul.ui-inputtext {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0 !important;
+
       @include ui-inputtext();
 
       .ui-chips-input-token {
         float: none;
         display: inline-flex;
-        margin: 0 1px;
+        margin: 0;
         vertical-align: middle;
         padding: 0;
 
@@ -22,17 +27,37 @@
       }
 
       .ui-chips-token {
-        display: inline-block;
+        display: inline-flex;;
         float: none;
         vertical-align: middle;
         @include font-size-regular();
-        margin-bottom: 2px;
+        line-height: normal;
+
         border-radius: 24px;
+        padding: var(--spacer-xs) var(--spacer-sm);
+        margin: var(--spacer-xs) var(--spacer-xs) var(--spacer-xs) 0;
+        background-color: #e0e0e0;
+        color: var(--default-text-color);
 
         .ui-chips-token-label {
           display: inline-block;
           vertical-align: middle;
+          margin: 0 var(--spacer-lg) 0 0;
         }
+
+        .ui-chips-token-icon {
+          cursor: pointer;
+          background: var(--icon-dark-active-color);
+          color: var(--icon-light-active-color);
+          border-radius: 50%;
+          height: 1em;
+          width: 1em;
+          right: var(--spacer-sm);
+        }
+      }
+
+      .ui-chips-input-token {
+        margin: var(--spacer-sm) 0;
       }
 
       &.ui-state-disabled {

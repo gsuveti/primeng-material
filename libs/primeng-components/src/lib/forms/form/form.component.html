@@ -1,5 +1,4 @@
 <div class="container">
-  <h3>User Form</h3>
   <form #userform="ngForm" (ngSubmit)="onSubmit(userform)" class="row">
     <div class="form-field gr-12 gr-3@md px-xs py-sm">
       <label for="firstName">Title</label>
@@ -54,11 +53,13 @@
     </div>
 
 
+  </form>
+  <div class="row row-align-right">
     <button class="mt-xl"
             pButton
             type="submit"
             label="Submit"
             [disabled]="!userform.valid">
     </button>
-  </form>
+  </div>
 </div>
