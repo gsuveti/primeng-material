@@ -1,15 +1,20 @@
 @mixin ui-autocomplete() {
   &.ui-autocomplete {
+    width: 100%;
+
     .ui-autocomplete-loader {
       @include spin();
     }
 
     .ui-autocomplete-input {
+      width: 100%;
       padding-right: $icon-size;
     }
+
     .ui-autocomplete-dropdown.ui-button:enabled:not(:focus):hover {
       background: none;
     }
+
     .ui-autocomplete-dropdown.ui-button.ui-button-icon-only {
       @include ui-button-reset();
       position: absolute;
@@ -25,10 +30,12 @@
       .ui-button-text {
         display: none;
       }
+
       .ui-button-icon-left {
         color: $icon-dark-inactive-color;
       }
     }
+
     .ui-autocomplete-panel {
       @include ui-autocomplete-panel();
     }
@@ -38,18 +45,22 @@
 
       .ui-autocomplete-multiple-container {
         display: flex;
+
         &:not(.ui-state-disabled) {
           &:hover {
             border-color: $primary;
           }
         }
+
         &.ui-state-focus {
 
         }
+
         &.ui-state-disabled {
           border-bottom: 1px dotted;
         }
       }
+
       .ui-autocomplete-input-token {
         float: none;
         display: inline-flex;
@@ -63,6 +74,7 @@
           vertical-align: bottom;
         }
       }
+
       .ui-autocomplete-token {
         display: inline-block;
         float: none;
@@ -88,19 +100,23 @@
   }
   .ui-autocomplete-list {
     padding: 0;
+
     .ui-autocomplete-list-item {
       transition: background-color 0.03s;
       @include font-size-regular();
       padding: var(--spacer-md);
       border-radius: 0;
       color: $default-text-color;
+
       .ui-autocomplete-query {
         font-weight: 700;
       }
+
       &.ui-state-highlight {
         background-color: $hover;
       }
     }
+
     .ui-autocomplete-group {
       padding: var(--spacer-md);
     }

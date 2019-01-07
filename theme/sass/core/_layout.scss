@@ -6,6 +6,25 @@
     --toolbar-height: 60px;
     --sidenav-width: 300px;
 
+
+    .form-field {
+      display: inline-flex;
+      flex-direction: column;
+
+      > label {
+        font-size: var(--font-size-small);
+        min-height: var(--font-size-small);
+        max-height: var(--font-size-small);
+        //color: var(--primary);
+      }
+
+      > .error {
+        color: var(--danger);
+        font-size: var(--font-size-small);
+        margin-top: var(--spacer-xs);
+      }
+    }
+
     .layout-wrapper {
       display: flex;
       flex-direction: column;

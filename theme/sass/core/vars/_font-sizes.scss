@@ -25,18 +25,24 @@ $font-size-small: 12px;
 
   h1 {
     font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-base);
   }
 
   h2 {
     font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-base);
+
   }
 
   h3 {
     font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-base);
+
   }
 
   h4 {
     font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-base);
   }
 
 
