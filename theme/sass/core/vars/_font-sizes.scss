@@ -58,10 +58,10 @@ $font-size-small: 12px;
     regular: var(--font-weight-base),
     medium: var(--font-weight-base),
     md: var(--font-weight-base),
-    h1: var(--font-weight-bold),
-    h2: var(--font-weight-bold),
-    h3: var(--font-weight-bold),
-    h4: var(--font-weight-bold)
+    h1: var(--font-weight-base),
+    h2: var(--font-weight-base),
+    h3: var(--font-weight-base),
+    h4: var(--font-weight-base)
   );
 
   @include createTextClasses($font-sizes, $font-weights);
@@ -70,7 +70,7 @@ $font-size-small: 12px;
 @mixin createTextClasses($font-sizes,$font-weights) {
   @each $size, $length in $font-sizes {
     .text-#{$size} {
-      //margin: 0;
+      //margin: 0;s
       font-size: $length !important;
       font-weight: map_get($font-weights, $size) !important;
     }
