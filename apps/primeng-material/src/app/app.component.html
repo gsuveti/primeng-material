@@ -1,6 +1,12 @@
+<nav class="side-nav-side side-nav-side-left side-nav-side-permanent"
+     [class.side-nav-side-open]="leftMenuOpen">
+  <p-panelMenu [model]="navigationMenuItems"></p-panelMenu>
+</nav>
+
+
 <div class="layout-wrapper">
-  <div class="layout-toolbar background-white card m-none mb-xs">
-    <button class="primary-button side-nav-toggle side-nav-side-permanent mx" pButton
+  <div class="layout-toolbar background-white card m-none">
+    <button class="primary-button side-nav-toggle mx" pButton
             type="button" icon="material-icons ui-icon-menu"
             (click)="toggleLeftMenu()"></button>
     <div class="brand">
@@ -13,21 +19,11 @@
   </div>
 
   <div class="layout-content">
-    <div class="side-nav-container ">
-      <nav class="side-nav-side side-nav-side-left side-nav-side-permanent"
-           [class.side-nav-side-open]="leftMenuOpen">
-        <p-panelMenu [model]="navigationMenuItems"></p-panelMenu>
-      </nav>
 
 
-      <div class="side-nav-content app-side-nav-content p-xl">
-        <router-outlet></router-outlet>
-      </div>
-
-      <nav class="side-nav-side side-nav-side-right"
-           [class.side-nav-side-open]="rightMenuOpen">
-        right
-      </nav>
+    <div class="p-xl">
+      <router-outlet></router-outlet>
     </div>
+
   </div>
 </div>

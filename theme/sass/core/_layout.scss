@@ -3,20 +3,29 @@
 @mixin layout($extra-class:'') {
 
   body {
-    overflow-y: hidden;
+    --toolbar-height: 60px;
+    --sidenav-width: 300px;
 
     .layout-wrapper {
-      height: 100vh;
       display: flex;
       flex-direction: column;
-
       position: relative;
+      padding-left: 0;
+      transition: padding-left .3s;
 
       .layout-toolbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+
+
         width: 100%;
         background-color: $primary;
         color: $primary-text-color;
-        min-height: 60px;
+        min-height: var(--toolbar-height);
+        height: var(--toolbar-height);
         display: flex;
         align-items: center;
 
@@ -54,77 +63,48 @@
       }
 
       .layout-content {
-        width: 100%;
-        flex-grow: 1;
         display: flex;
-        overflow: hidden;
+        z-index: 0;
+        padding-top: var(--toolbar-height);
       }
 
     }
 
-    .side-nav-container {
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      flex-grow: 1;
+    .side-nav-side {
+      position: fixed;
+      bottom: 0;
+      top: var(--toolbar-height);
 
-      .side-nav-content {
-        overflow-y: auto;
+      overflow: auto;
+      min-width: var(--sidenav-width);
+      width: var(--sidenav-width);
+      transform: translateX(0);
+      transition: transform .3s;
 
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-      }
+      @include ui-shadow-content();
+      background-color: $default;
 
-      .side-nav-side {
-        position: absolute;
-        bottom: 0;
-        overflow: auto;
-        min-width: $side-nav-width;
-        width: $side-nav-width;
-        transform: translateX(0);
-        transition: transform .3s;
-
-        @include ui-shadow-content();
-        background-color: $default;
-
-        &.side-nav-side-right, &.side-nav-side-left {
-          height: 100%;
-
-          &.side-nav-side-open {
-            position: absolute;
-            transform: translateX(0);
-          }
-
-          &.side-nav-side-permanent {
-            @include g-state(md) {
-              position: relative;
-              transform: translateX(0);
-            }
-          }
-        }
-
-        &.side-nav-side-right {
-          z-index: 2000;
-          right: 0;
-          transform: translateX(calc(#{$side-nav-width} + var(--spacer-sm)));
-        }
-
-        &.side-nav-side-left {
-          z-index: 3000;
-          left: 0;
-          transform: translateX(calc(#{-$side-nav-width} - var(--spacer-sm)));
+      &.side-nav-side-right, &.side-nav-side-left {
+        &.side-nav-side-open {
+          transform: translateX(0);
         }
       }
 
+      &.side-nav-side-right {
+        z-index: 2000;
+        right: 0;
+        transform: translateX(calc(#{$side-nav-width} + var(--spacer-sm)));
+      }
+
+      &.side-nav-side-left {
+        z-index: 3000;
+        left: 0;
+        transform: translateX(calc(#{-$side-nav-width} - var(--spacer-sm)));
+      }
     }
 
-    .side-nav-toggle {
-      &.side-nav-side-permanent {
-        @include g-state(md) {
-          display: none !important;
-        }
-      }
+    .side-nav-side-open + .layout-wrapper {
+      padding-left: var(--sidenav-width);
     }
 
     .circle {
