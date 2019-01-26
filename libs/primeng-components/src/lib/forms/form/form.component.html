@@ -1,58 +1,70 @@
 <div class="container">
   <form #userform="ngForm" (ngSubmit)="onSubmit(userform)" class="row">
-    <div class="form-field gr-12 gr-3@md px-xs py-sm">
-      <label for="firstName">Title</label>
-      <p-dropdown [options]="titles"
-                  [autoWidth]="false"
-                  [(ngModel)]="user.title"
-                  name="title"
-                  placeholder="Select a title"
-                  required></p-dropdown>
-    </div>
-
-    <div class="form-field gr-12 gr-3@md px-xs py-sm">
-      <label for="firstName">First Name</label>
-      <input pInputText type="text" class="form-control" id="firstName"
-             [(ngModel)]="user.firstName" name="firstName" required>
-      <div class="error"
-           *ngIf="userform.invalid && (userform.dirty || userform.touched) && userform.controls.firstName?.errors?.required">
-        First Name Required
+    <div class="gr-12 gr-3@md px-xs py-sm">
+      <div class="form-field">
+        <label for="firstName">Title</label>
+        <p-dropdown [options]="titles"
+                    [autoWidth]="false"
+                    [(ngModel)]="user.title"
+                    name="title"
+                    placeholder="Select a title"
+                    required></p-dropdown>
       </div>
     </div>
 
-    <div class="form-field gr-12 gr-3@md px-xs py-sm">
-      <label for="secondName">Second Name</label>
-      <input pInputText type="text" class="form-control" id="secondName"
-             required
-             [(ngModel)]="user.secondName" name="secondName">
-      <div class="error"
-           *ngIf="userform.invalid && (userform.dirty || userform.touched) && userform.controls.secondName?.errors?.required">
-        Second Name Required
+    <div class="gr-12 gr-3@md px-xs py-sm">
+      <div class="form-field">
+        <label for="firstName">First Name</label>
+        <input pInputText type="text" class="form-control" id="firstName"
+               [(ngModel)]="user.firstName" name="firstName" required>
+        <div class="error"
+             *ngIf="userform.invalid && (userform.dirty || userform.touched) && userform.controls['firstName']?.errors?.required">
+          First Name Required
+        </div>
+        <div class="hint">This is an hint</div>
       </div>
     </div>
 
-    <div class="form-field gr-12 gr-3@md px-xs py-sm ">
-      <label for="nickName">Nickname</label>
-      <input pInputText type="text" class="form-control" id="nickName"
-             [(ngModel)]="user.nickName" name="nickName">
+    <div class="gr-12 gr-3@md px-xs py-sm">
+      <div class="form-field">
+        <label for="secondName">Second Name</label>
+        <input pInputText type="text" class="form-control" id="secondName"
+               required
+               [(ngModel)]="user.secondName" name="secondName">
+        <div class="error"
+             *ngIf="userform.invalid && (userform.dirty || userform.touched) && userform.controls['secondName']?.errors?.required">
+          Second Name Required
+        </div>
+      </div>
     </div>
 
-    <div class="form-field gr-12 gr-3@md px-xs py-sm ">
-      <label for="firstName">Role</label>
-
-      <p-autoComplete [(ngModel)]="user.role" name="role" [suggestions]="roles"
-                      (completeMethod)="searchRoles($event)"
-                      required
-                      [minLength]="2" placeholder="Select a role">
-      </p-autoComplete>
+    <div class="gr-12 gr-3@md px-xs py-sm ">
+      <div class="form-field">
+        <label for="nickName">Nickname</label>
+        <input pInputText type="text" class="form-control" id="nickName"
+               [(ngModel)]="user.nickName" name="nickName">
+        <div class="hint">This is an hint</div>
+      </div>
     </div>
 
-    <div class="form-field gr-12 gr-3@md px-xs py-sm">
-      <label>Skills:</label>
-      <p-chips [(ngModel)]="user.skills" name="skills"></p-chips>
+    <div class="gr-12 gr-3@md px-xs py-sm ">
+      <div class="form-field">
+        <label for="firstName">Role</label>
+
+        <p-autoComplete [(ngModel)]="user.role" name="role" [suggestions]="roles"
+                        (completeMethod)="searchRoles($event)"
+                        required
+                        [minLength]="2" placeholder="Select a role">
+        </p-autoComplete>
+      </div>
     </div>
 
-
+    <div class="gr-12 gr-3@md px-xs py-sm">
+      <div class="form-field">
+        <label>Skills:</label>
+        <p-chips [(ngModel)]="user.skills" name="skills"></p-chips>
+      </div>
+    </div>
   </form>
   <div class="row row-align-right">
     <button class="mt-xl"

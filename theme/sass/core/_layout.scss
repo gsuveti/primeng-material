@@ -10,6 +10,9 @@
     .form-field {
       display: inline-flex;
       flex-direction: column;
+      position: relative;
+      width: 100%;
+      padding-bottom: var(--spacer-md);
 
       > label {
         font-size: var(--font-size-small);
@@ -22,6 +25,29 @@
         color: var(--danger);
         font-size: var(--font-size-small);
         margin-top: var(--spacer-xs);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      > .hint {
+        font-size: var(--font-size-small);
+        margin-top: var(--spacer-xs);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .error ~ .hint{
+        display: none;
       }
     }
 
