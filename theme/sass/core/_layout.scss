@@ -45,6 +45,20 @@
       .error ~ .hint {
         display: none;
       }
+
+      &.form-field-outline {
+        .ui-inputtext {
+          padding: var(--spacer-sm);
+          border: 1px solid var(--border-color);
+          transition: border-color 0.3s;
+          border-radius: 4px;
+
+          &:focus, &.ui-state-focus {
+            border-width: 2px;
+            border-color: var(--primary);
+          }
+        }
+      }
     }
 
     .circle {
