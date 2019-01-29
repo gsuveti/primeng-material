@@ -11,133 +11,109 @@
 ) {
   $border-radius: $borderRadius;
 
-  &.ui-treetable {
-    .ui-treetable-header, .ui-treetable-footer {
-      padding: var(--spacer-md);
-
-      background-color: transparent;
-      border-color: $border-color;
-      color: $default-text-color;
-    }
-
-    .ui-treetable-header {
-      border-top-left-radius: $borderRadius;
-      border-top-right-radius: $borderRadius;
-    }
-
-    .ui-treetable-footer {
-      border-bottom-left-radius: $borderRadius;
-      border-bottom-right-radius: $borderRadius;
-    }
-
-    thead tr {
-      border-color: $border-color;
-
-      th {
-        text-align: left;
-        background-color: transparent;
-        color: $default-text-color;
-        vertical-align: top;
-        position: relative;
-        height: calc(#{$button-height} + 2 * var(--spacer-sm));
-        padding: var(--spacer-sm);
-        overflow: visible;
-        @include row-border();
-      }
-    }
-
-    tfoot td {
-      border: 0 none;
-      padding: var(--spacer-sm);
-    }
-
-    tbody .ui-treetable-row {
-      td {
-        overflow: visible;
-        vertical-align: middle;
-        padding: var(--spacer-sm);
-        height: calc(#{$button-height} + 2 * var(--spacer-sm));
-        border: 1px solid $border-color;
-        @include row-border();
-        @include ui-inputtext('input');
-
-        &.ui-treetable-child-table-container {
-          padding: 0;
-          border-top-color: transparent;
-          border-bottom-color: transparent;
-
-          tbody .ui-treetable-row {
-            td {
-              border-color: transparent;
-              border-bottom-color: $border-color;
-              border-left-width: 0;
-              border-right-width: 0;
-            }
-          }
-        }
-
-        .ui-treetable-checkbox {
-          border: 1px solid $border-color;
-          border-radius: $border-radius;
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-
-          .ui-chkbox-icon {
-            margin-left: 0;
-          }
-        }
-      }
-
-      &.ui-treetable-row-selectable:not(.ui-state-highlight):hover {
-
-      }
-
-      &.ui-state-highlight {
-        background-color: $accent;
-        border-color:   $accent;
-        color: $accent-text-color;
-
-        .ui-treetable-toggler {
-          color: $accent-text-color;
-        }
-
-        .ui-treetable-checkbox {
-          border-color: $accent-text-color;
-
-          .ui-chkbox-icon {
-            color: $accent-text-color;
-          }
-        }
-      }
-    }
-
-    &.ui-treetable-scrollable {
-      .ui-treetable-scrollable-header {
-
-        font-weight: bold;
-        display: flex;
-        text-align: start;
-        margin-right: var(--spacer-nmd);
-        margin-left: var(--spacer-nmd);
-        border-top: 1px solid $border-color;
-
-        > * {
-          padding: 8px;
-        }
-      }
-
-
-      .ui-treetable-tablewrapper {
-        overflow-y: scroll;
-        overflow-x: hidden;
-        border-bottom: 1px solid $border-color;
-        border-top: 1px solid $border-color;
-
-        table thead {
-          display: none;
-        }
-      }
-    }
+  .ui-treetable .ui-treetable-caption,
+  .ui-treetable .ui-treetable-summary {
+    background-color: #f4f4f4;
+    color: #333333;
+    border: 1px solid #c8c8c8;
+    padding: 0.571em 1em;
+    text-align: center;
   }
+  .ui-treetable .ui-treetable-caption {
+    border-bottom: 0 none;
+    font-weight: 700;
+  }
+  .ui-treetable .ui-treetable-summary {
+    border-top: 0 none;
+    font-weight: 700;
+  }
+  .ui-treetable .ui-treetable-thead > tr > th {
+    padding: 0.571em 0.857em;
+    border: 1px solid #c8c8c8;
+    font-weight: 700;
+    color: #333333;
+    background-color: #f4f4f4;
+  }
+  .ui-treetable .ui-treetable-tbody > tr > td {
+    padding: 0.571em 0.857em;
+  }
+  .ui-treetable .ui-treetable-tfoot > tr > td {
+    padding: 0.571em 0.857em;
+    border: 1px solid #c8c8c8;
+    font-weight: 700;
+    color: #333333;
+    background-color: #ffffff;
+  }
+  .ui-treetable .ui-sortable-column .ui-sortable-column-icon {
+    color: #848484;
+  }
+  .ui-treetable .ui-sortable-column:not(.ui-state-highlight):hover {
+    background-color: #e0e0e0;
+    color: #333333;
+  }
+  .ui-treetable .ui-sortable-column:not(.ui-state-highlight):hover .ui-sortable-column-icon {
+    color: #333333;
+  }
+  .ui-treetable .ui-sortable-column.ui-state-highlight {
+    background-color: #007ad9;
+    color: #ffffff;
+  }
+  .ui-treetable .ui-sortable-column.ui-state-highlight .ui-sortable-column-icon {
+    color: #ffffff;
+  }
+  .ui-treetable .ui-editable-column input {
+    font-size: 14px;
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  .ui-treetable .ui-editable-column input:focus {
+    outline: 1px solid #007ad9;
+    outline-offset: 2px;
+  }
+  .ui-treetable .ui-treetable-tbody > tr {
+    background-color: #ffffff;
+    color: #333333;
+  }
+  .ui-treetable .ui-treetable-tbody > tr > td {
+    background-color: inherit;
+    border: 1px solid #c8c8c8;
+  }
+  .ui-treetable .ui-treetable-tbody > tr > td .ui-treetable-toggler {
+    color: #848484;
+    vertical-align: middle;
+  }
+  .ui-treetable .ui-treetable-tbody > tr > td .ui-treetable-chkbox {
+    vertical-align: middle;
+    margin-right: 0.5em;
+  }
+  .ui-treetable .ui-treetable-tbody > tr.ui-state-highlight {
+    background-color: #007ad9;
+    color: #ffffff;
+  }
+  .ui-treetable .ui-treetable-tbody > tr.ui-state-highlight > td {
+    background-color: inherit;
+    border: 1px solid #c8c8c8;
+  }
+  .ui-treetable .ui-treetable-tbody > tr.ui-state-highlight > td .ui-treetable-toggler {
+    color: #ffffff;
+  }
+  .ui-treetable .ui-treetable-tbody > tr.ui-contextmenu-selected {
+    background-color: #007ad9;
+    color: #ffffff;
+  }
+  .ui-treetable .ui-treetable-tbody > tr.ui-contextmenu-selected > td {
+    background-color: inherit;
+    border: 1px solid #c8c8c8;
+  }
+  .ui-treetable .ui-treetable-tbody > tr.ui-contextmenu-selected > td .ui-treetable-toggler {
+    color: #ffffff;
+  }
+  .ui-treetable.ui-treetable-hoverable-rows .ui-treetable-tbody > tr:not(.ui-state-highlight):not(.ui-contextmenu-selected):hover {
+    cursor: pointer;
+    background-color: #eaeaea;
+    color: #333333;
+  }
+  .ui-treetable .ui-column-resizer-helper {
+    background-color: #007ad9;
+  }
+
 }
