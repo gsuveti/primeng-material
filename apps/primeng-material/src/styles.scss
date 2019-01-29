@@ -7,6 +7,10 @@
 @import "../../../theme/sass/core/theme";
 @import "../../../theme/sass/core/layout";
 @import "../../../theme/sass/core/grid";
+//@import "../../../theme/sass/core/font-sizes";
+//@import "../../../theme/sass/core/icon";
+//@import "../../../theme/sass/core/spacing";
+//@import "~primeng/resources/themes/nova-light/theme.css";
 
 
 :root {
@@ -14,5 +18,8 @@
 }
 
 @include make-grid();
+//@include setup-fonts();
+//@include setup-spacing();
+//@include ui-icon();
 @include layout();
 @include theme();
