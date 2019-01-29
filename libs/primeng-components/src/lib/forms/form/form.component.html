@@ -21,7 +21,7 @@
              *ngIf="userform.invalid && (userform.dirty || userform.touched) && userform.controls['firstName']?.errors?.required">
           First Name Required
         </div>
-        <div class="hint">This is an hint</div>
+        <div class="hint">This is a hint</div>
       </div>
     </div>
 
@@ -43,7 +43,7 @@
         <label for="nickName">Nickname</label>
         <input pInputText type="text" class="form-control" id="nickName"
                [(ngModel)]="user.nickName" name="nickName">
-        <div class="hint">This is an hint</div>
+        <div class="hint">This is a hint</div>
       </div>
     </div>
 

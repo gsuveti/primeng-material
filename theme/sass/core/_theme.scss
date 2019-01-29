@@ -1,8 +1,9 @@
 @import "vars/default-css-vars";
-@import "vars/vars";
+
 @import "spacing";
+@import "font-sizes";
+@import "icon";
 @import "utils";
-@import "reset";
 @import "ripple";
 @import "shadow";
 @import "wrappers/input-field";
@@ -13,13 +14,17 @@
 @import "card";
 
 @mixin theme($extra-class:'') {
+
+
   :root {
     font-size: 62.5%;
   }
 
-  body#{$extra-class} {
+  @include setup-spacing();
+  @include setup-fonts();
+  @include ui-icon();
 
-    @include setup-fonts();
+  body#{$extra-class} {
     text-decoration: none;
     margin: 0;
     padding: 0;
@@ -27,8 +32,6 @@
     .card {
       @include card();
     }
-
-    @include font-size-regular();
 
     a {
       text-decoration: none;
@@ -43,7 +46,7 @@
     hr {
       border: 0;
       height: 1px;
-      background-color: $border-color;
+      background-color: var(--border-color);
     }
 
     .divider {
@@ -60,13 +63,13 @@
       }
 
       &.ui-autocomplete-panel, &.ui-datepicker {
-        background: $default;
+        background: var(--default);
       }
     }
 
 
     @include primeng-theme();
-    @include ui-icon();
+
     @include ui-widget();
     @include md-inputfield();
     @include ui-float-label();

@@ -1,5 +1,18 @@
-@import "vars/breakpoints";
 @import "~coffeekraken-gridle/flex";
+
+$mobileSmallBreakpoint: 320px;
+$mobileMediumBreakpoint: 375px;
+$mobileLargeBreakpoint: 425px;
+//sm
+$tabletBreakpoint: 768px;
+//md
+$laptopSmallBreakpoint: 1024px;
+//lg
+$laptopMediumBreakpoint: 1200px;
+//xl
+$laptopLargeBreakpoint: 1440px;
+$fourKBreakpoint: 2560px;
+
 
 $smStartBreakpoint: $tabletBreakpoint;
 $mdStartBreakpoint: $laptopSmallBreakpoint;
@@ -73,6 +86,7 @@ $xlStartBreakpoint: $laptopLargeBreakpoint;
 }
 
 @mixin make-grid() {
+
   // setting up the grid
   @include g-setup((
     context : 12,
@@ -84,4 +98,30 @@ $xlStartBreakpoint: $laptopLargeBreakpoint;
   @include register-states();
   @include g-init();
   @include g-classes();
+
+
+  body {
+
+    --mobile-small-breakpoint: #{$mobileSmallBreakpoint};
+    --mobile-medium-breakpoint: #{$mobileMediumBreakpoint};
+    --mobile-large-breakpoint: #{$mobileMediumBreakpoint};
+    //sm
+    --sm-start-breakpoint: #{$tabletBreakpoint};
+    --sm-breakpoint: var(--sm-start-breakpoint);
+    --tablet-breakpoint: var(--sm-start-breakpoint);
+    //md
+    --md-start-breakpoint: #{$laptopSmallBreakpoint};
+    --md-breakpoint: var(--md-start-breakpoint);
+    --laptop-small-breakpoint: var(--md-start-breakpoint);
+    //lg
+    --lg-start-breakpoint: #{$laptopMediumBreakpoint};
+    --lg-breakpoint: var(--lg-start-breakpoint);
+    --laptop-medium-breakpoint: var(--lg-start-breakpoint);
+    //xl
+    --xl-start-breakpoint: #{$laptopLargeBreakpoint};
+    --xl-breakpoint: var(--xl-start-breakpoint);
+    --laptop-large-breakpoint: var(--xl-start-breakpoint);
+    --four-k-breakpoint: #{$fourKBreakpoint};
+  }
+
 }

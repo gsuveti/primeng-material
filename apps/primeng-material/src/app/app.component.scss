@@ -1,3 +1,104 @@
-.layout-toolbar{
+.layout-toolbar {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 0;
+  transition: padding-left .3s;
+
+  .layout-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+
+    width: 100%;
+    background-color: var(--primary);
+    color: var(--primary-text-color);
+    min-height: var(--toolbar-height);
+    height: var(--toolbar-height);
+    display: flex;
+    align-items: center;
+
+    .profile-img {
+      object-fit: cover;
+      width: var(--icon-size-large);
+      height: var(--icon-size-large);;
+      border-radius: 100%;
+      margin-left: var(--spacer-sm);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      height: var(--button-height);
+
+      .brand-image {
+        height: var(--button-height);
+        display: none;
+        bottom: var(--spacer-xs);
+
+        @media screen and(min-width: var(--laptop-small-breakpoint)) {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      .brand-title {
+        margin-left: var(--spacer-sm);
+        font-size: var(--font-size-medium);
+        font-weight: var(--font-weight-medium);
+      }
+    }
+  }
+
+  .layout-content {
+    display: flex;
+    z-index: 0;
+    padding-top: var(--toolbar-height);
+  }
+
+}
+
+.side-nav-side {
+  position: fixed;
+  bottom: 0;
+  top: var(--toolbar-height);
+
+  overflow: auto;
+  min-width: var(--side-nav-width);
+  width: var(--side-nav-width);
+  transform: translateX(0);
+  transition: transform .3s;
+
+  background-color: var(--default);
+  box-shadow: var(--shadow-1);
+
+  &.side-nav-side-right, &.side-nav-side-left {
+    &.side-nav-side-open {
+      transform: translateX(0);
+    }
+  }
+
+  &.side-nav-side-right {
+    z-index: 2000;
+    right: 0;
+    transform: translateX(var(--side-nav-width) + var(--spacer-sm));
+  }
+
+  &.side-nav-side-left {
+    z-index: 3000;
+    left: 0;
+    transform: translateX(calc(-1 * (var(--side-nav-width) + var(--spacer-sm))));
+  }
+}
+
+.side-nav-side-open + .layout-wrapper {
+  padding-left: var(--side-nav-width);
 }

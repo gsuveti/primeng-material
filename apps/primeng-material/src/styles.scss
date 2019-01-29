@@ -4,15 +4,15 @@
 @import '~prismjs/themes/prism.css';
 @import "~primeicons/primeicons.css";
 @import "~primeng/resources/primeng.css";
-
-@import "../../../theme/sass/core/grid";
 @import "../../../theme/sass/core/theme";
 @import "../../../theme/sass/core/layout";
+@import "../../../theme/sass/core/grid";
+
+
+:root {
+  font-size: 62.5%;
+}
 
 @include make-grid();
-@include theme();
 @include layout();
-
-
-//@include blue-amber-layout();
-//@import "~primeng/resources/themes/nova-light/theme.css";
+@include theme();

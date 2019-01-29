@@ -3,10 +3,6 @@
 @mixin layout($extra-class:'') {
 
   body {
-    --toolbar-height: 60px;
-    --sidenav-width: 300px;
-
-
     .form-field {
       display: inline-flex;
       flex-direction: column;
@@ -46,110 +42,9 @@
         text-overflow: ellipsis;
       }
 
-      .error ~ .hint{
+      .error ~ .hint {
         display: none;
       }
-    }
-
-    .layout-wrapper {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      padding-left: 0;
-      transition: padding-left .3s;
-
-      .layout-toolbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1;
-
-
-        width: 100%;
-        background-color: $primary;
-        color: $primary-text-color;
-        min-height: var(--toolbar-height);
-        height: var(--toolbar-height);
-        display: flex;
-        align-items: center;
-
-        .profile-img {
-          object-fit: cover;
-          width: $icon-size-large;
-          height: $icon-size-large;
-          border-radius: 100%;
-          margin-left: var(--spacer-sm);
-        }
-
-        .brand {
-          display: flex;
-          align-items: center;
-          height: $button-height;
-
-          .brand-image {
-            height: $button-height;
-            display: none;
-            bottom: var(--spacer-xs);
-
-            @include g-state(lg) {
-              display: flex;
-              align-items: center;
-            }
-
-          }
-
-          .brand-title {
-            margin-left: var(--spacer-sm);
-            font-size: var(--font-size-medium);
-            font-weight: var(--font-weight-medium);
-          }
-        }
-      }
-
-      .layout-content {
-        display: flex;
-        z-index: 0;
-        padding-top: var(--toolbar-height);
-      }
-
-    }
-
-    .side-nav-side {
-      position: fixed;
-      bottom: 0;
-      top: var(--toolbar-height);
-
-      overflow: auto;
-      min-width: var(--sidenav-width);
-      width: var(--sidenav-width);
-      transform: translateX(0);
-      transition: transform .3s;
-
-      @include ui-shadow-content();
-      background-color: $default;
-
-      &.side-nav-side-right, &.side-nav-side-left {
-        &.side-nav-side-open {
-          transform: translateX(0);
-        }
-      }
-
-      &.side-nav-side-right {
-        z-index: 2000;
-        right: 0;
-        transform: translateX(calc(#{$side-nav-width} + var(--spacer-sm)));
-      }
-
-      &.side-nav-side-left {
-        z-index: 3000;
-        left: 0;
-        transform: translateX(calc(#{-$side-nav-width} - var(--spacer-sm)));
-      }
-    }
-
-    .side-nav-side-open + .layout-wrapper {
-      padding-left: var(--sidenav-width);
     }
 
     .circle {

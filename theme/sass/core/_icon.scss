@@ -1,15 +1,15 @@
 @mixin ui-icon-large() {
-  width: $icon-size-large;
-  height: $icon-size-large;
-  line-height: $icon-size-large;
-  font-size: $icon-size-large;
+  width: var(--icon-size-large);
+  height: var(--icon-size-large);
+  line-height: var(--icon-size-large);
+  font-size: var(--icon-size-large);
 }
 
 @mixin ui-icon-small() {
-  width: $icon-size;
-  height: $icon-size;
-  line-height: $icon-size;
-  font-size: $icon-size;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  line-height: var(--icon-size);
+  font-size: var(--icon-size);
 }
 
 @mixin ui-material-icons() {
@@ -65,6 +65,7 @@
 
   .fa-angle-up {
     transform: rotate(-90deg);
+
     &:before {
       content: "play_arrow";
     }
@@ -72,6 +73,7 @@
 
   .fa-angle-double-up {
     transform: rotate(-90deg);
+
     &:before {
       content: "skip_next";
     }
@@ -79,6 +81,7 @@
 
   .fa-angle-down {
     transform: rotate(90deg);
+
     &:before {
       content: "play_arrow";
     }
@@ -86,6 +89,7 @@
 
   .fa-angle-double-down {
     transform: rotate(-90deg);
+
     &:before {
       content: "skip_previous";
     }
@@ -101,6 +105,7 @@
 
   .fa-angle-left {
     transform: rotate(180deg);
+
     &:before {
       content: "play_arrow";
     }
@@ -204,6 +209,7 @@
 
   .fa-arrow-circle-left {
     transform: rotate(180deg);
+
     &:before {
       content: "play_circle_outline";
     }
@@ -3952,6 +3958,7 @@
   i, .material-icons, .fa, *[class*='ui-icon-'], *[class*='fa-'] {
     @include ui-icon-small();
     @include ui-material-icons();
+
     &.large {
       @include ui-icon-large();
     }

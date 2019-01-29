@@ -1,11 +1,11 @@
-$button-height: 36px;
-$button-min-width: 64px;
+$button-height: var(--button-height);
+$button-min-width: var(--button-min-width);
 
-$toolbar-height: calc(#{$button-height} + 2 * var(--spacer-md));
-$side-nav-width: 300px;
-$side-nav-width-md: 425px;
-$side-nav-width-lg: 768px;
+$toolbar-height: var(--toolbar-height);
+$side-nav-width: var(--side-nav-width);
+$side-nav-width-md: var(--side-nav-width-md);
+$side-nav-width-lg: var(--side-nav-width-lg);
 
-$radio-button-size: 20px;
-$icon-size: 16px;
-$icon-size-large: 24px;
+$radio-button-size: var(--radio-button-size);
+$icon-size: var(--icon-size);
+$icon-size-large: var(--icon-size-large);

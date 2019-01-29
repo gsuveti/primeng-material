@@ -2,7 +2,7 @@
 
 @mixin card() {
   @include ui-shadow-content();
-  border-radius: $borderRadius;
+  border-radius: var(--border-radius);
   background: $default;
   padding: var(--spacer-md);
   margin: var(--spacer-md) 0;

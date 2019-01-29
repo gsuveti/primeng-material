@@ -1,9 +1,7 @@
 @import "../vars/vars";
 @import "../utils";
-@import "../reset";
 @import "../ripple";
 @import "../shadow";
-@import "icon";
 @import "autocomplete";
 @import "checkbox";
 @import "editor";
@@ -139,8 +137,6 @@
     @include ui-growl();
     //fileupload
     @include ui-fileupload();
-
-    @include reset();
 
   }
 

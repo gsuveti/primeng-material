@@ -1,7 +1,7 @@
 //primeng
 $fontFamily: "Roboto", Helvetica, Arial, sans-serif;
-$fontSize: 1em;
-$borderRadius: 2px;
+$fontSize: var(--font-size-regular);
+$borderRadius: var(--border-radius);
 $disabledOpacity: 0.35;
 
 //Header
