@@ -47,7 +47,6 @@
           > th {
             text-align: start;
             padding: var(--spacer-sm);
-            height: calc(#{$button-height} + 2 * var(--spacer-sm));
             @include row-border();
           }
 
@@ -68,7 +67,6 @@
             color: $default-text-color;
 
             padding: var(--spacer-sm);
-            height: calc(#{$button-height} + 2 * var(--spacer-sm));
             @include row-border();
           }
 
@@ -120,7 +118,6 @@
         > tr {
           > td {
             padding: var(--spacer-sm);
-            height: calc(#{$button-height} + 2 * var(--spacer-sm));
             @include row-border();
           }
 
