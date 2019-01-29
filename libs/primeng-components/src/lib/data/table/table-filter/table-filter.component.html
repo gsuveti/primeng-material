@@ -39,7 +39,7 @@
                (input)="dt.filter($event.target.value, 'vin', 'contains')">
       </th>
       <th>
-        <p-calendar styleClass="ui-column-filter" [yearNavigator]="true" yearRange="1992:2030"
+        <p-calendar styleClass="ui-column-filter" [yearNavigator]="true" yearRange="1992:2030" appendTo="body"
                     (onSelect)="dt.filter($event, 'year', 'gt')"></p-calendar>
       <th>
         <p-calendar styleClass="ui-column-filter" [yearNavigator]="true" yearRange="1992:2030" appendTo="body"
@@ -49,8 +49,9 @@
         <input class="ui-column-filter" pInputText type="text"
                (input)="dt.filter($event.target.value, 'brand', 'contains')">
       </th>
+
       <th>
-        <p-dropdown [options]="colors" styleClass="ui-column-filter" [autoWidth]="false"
+        <p-dropdown appendTo="body" [options]="colors" styleClass="ui-column-filter" [autoWidth]="false"
                     (onChange)="dt.filter($event.value, 'color', 'contains')"></p-dropdown>
       </th>
     </tr>
