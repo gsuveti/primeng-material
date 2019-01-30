@@ -11,6 +11,8 @@
   &.ui-table {
     .ui-table-wrapper {
       .ui-table-thead {
+        background-color: var(--default);
+
         .ui-sortable-column {
           position: relative;
           padding: var(--spacer-sm) var(--spacer-xl) var(--spacer-sm) var(--spacer-sm);
