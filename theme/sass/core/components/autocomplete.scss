@@ -8,7 +8,7 @@
 
     .ui-autocomplete-input {
       width: 100%;
-      padding-right: $icon-size;
+      padding-right: calc(var(--icon-size) + var(--spacer-xs));
     }
 
     .ui-autocomplete-dropdown.ui-button:enabled:not(:focus):hover {

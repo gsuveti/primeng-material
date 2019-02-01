@@ -90,10 +90,11 @@ $xlStartBreakpoint: $laptopLargeBreakpoint;
   // setting up the grid
   @include g-setup((
     context : 12,
-    gutter-width : 0px, // size of the gutters
-    gutter-left : 0px, // 'size of left gutter
-    gutter-right : 0px, // size of right gutter
+    gutter-width : 16px, // size of the gutters
+    gutter-left : 8px, // 'size of left gutter
+    gutter-right : 4px, // size of right gutter
   ));
+
 
   @include register-states();
   @include g-init();

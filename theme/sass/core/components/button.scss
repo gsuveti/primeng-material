@@ -222,10 +222,10 @@
     .ui-button {
       box-shadow: none;
       &:first-child {
-        border-radius: $borderRadius $borderRadius 0 0;
+        border-radius: $borderRadius 0 0 $borderRadius;
       }
       &:last-child {
-        border-radius: 0 0 $borderRadius $borderRadius;
+        border-radius: 0 $borderRadius $borderRadius 0;
       }
 
       &:not(:last-child) {
@@ -238,18 +238,6 @@
         border: none;
       }
     }
-
-    @include g-state(sm) {
-      .ui-button {
-        &:first-child {
-          border-radius: $borderRadius 0 0 $borderRadius;
-        }
-        &:last-child {
-          border-radius: 0 $borderRadius $borderRadius 0;
-        }
-      }
-    }
-
   }
 }
 

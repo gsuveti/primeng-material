@@ -5,18 +5,20 @@
 @mixin ui-inputtext($element:"&.ui-inputtext",$border-color:$border-color,$primary:$primary,$danger:$danger) {
   #{$element} {
     $input-line-height: 1px;
+
     //TODO angular material uses 16px
-    //@include font-size-medium();
-    @include font-size-regular();
+    font-size: var(--font-size-base);
     line-height: normal;
+    padding: var(--spacer-sm) 0;
+    height: calc(var(--spacer-sm) + 2 * --spacer-sm);
 
     background: transparent;
-    padding: var(--spacer-sm) 0;
+
     margin-bottom: 1px;
     border: 0 solid $border-color;
     border-bottom-width: $input-line-height;
     transition: border-color 0.3s;
-    border-radius: 0px;
+    border-radius: 0;
 
     &:focus, &.ui-state-focus {
       border-bottom-width: $input-line-height + 1px;
