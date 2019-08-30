@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {MenuItem} from 'primeng/api';
+import { Component } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-root',
@@ -33,10 +33,6 @@ export class AppComponent {
               {
                 label: 'Table',
                 routerLink: ['/primeng-material/data/table']
-              },
-              {
-                label: 'Data Table',
-                routerLink: ['/primeng-material/data/data-table']
               },
               {
                 label: 'Plain HTML Table',

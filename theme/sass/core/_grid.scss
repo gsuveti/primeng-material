@@ -1,4 +1,4 @@
-@import "~coffeekraken-gridle/flex";
+@import "~coffeekraken-gridle/index";
 
 $mobileSmallBreakpoint: 320px;
 $mobileMediumBreakpoint: 375px;
@@ -97,7 +97,6 @@ $xlStartBreakpoint: $laptopLargeBreakpoint;
 
 
   @include register-states();
-  @include g-init();
   @include g-classes();
 
 

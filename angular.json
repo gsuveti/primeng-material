@@ -49,9 +49,11 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
               "node_modules/quill/dist/quill.js",
+              "node_modules/chart.js/dist/Chart.js",
               "node_modules/moment/moment.js",
               "node_modules/fullcalendar/dist/fullcalendar.js",
-              "node_modules/fullcalendar/dist/locale-all.js"
+              "node_modules/fullcalendar/dist/locale-all.js",
+
             ]
           },
           "configurations": {
@@ -98,9 +100,7 @@
             "polyfills": "apps/primeng-material/src/polyfills.ts",
             "tsConfig": "apps/primeng-material/tsconfig.spec.json",
             "karmaConfig": "apps/primeng-material/karma.conf.js",
-            "styles": [
-              "apps/primeng-material/src/styles.scss"
-            ],
+            "styles": ["apps/primeng-material/src/styles.scss"],
             "scripts": [],
             "assets": [
               "apps/primeng-material/src/favicon.ico",
@@ -115,9 +115,7 @@
               "apps/primeng-material/tsconfig.app.json",
               "apps/primeng-material/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -142,9 +140,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/primeng-material-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -182,9 +178,7 @@
               "libs/primeng-components/tsconfig.lib.json",
               "libs/primeng-components/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -222,9 +216,7 @@
               "libs/source-code-tab-view/tsconfig.lib.json",
               "libs/source-code-tab-view/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -232,6 +224,19 @@
   },
   "defaultProject": "primeng-material",
   "cli": {
-    "defaultCollection": "@nrwl/schematics"
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/schematics:library": {
+      "unitTestRunner": "karma",
+      "framework": "angular"
+    },
+    "@nrwl/schematics:application": {
+      "unitTestRunner": "karma",
+      "e2eTestRunner": "protractor"
+    },
+    "@nrwl/schematics:node-application": {
+      "framework": "express"
+    }
   }
 }
