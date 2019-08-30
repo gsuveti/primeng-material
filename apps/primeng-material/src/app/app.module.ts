@@ -11,9 +11,10 @@ import { PanelMenuModule } from 'primeng/primeng';
 import { ButtonModule } from 'primeng/button';
 import { DevPlaygroundComponent } from './dev-playground/dev-playground.component';
 import { CookieService } from 'ngx-cookie-service';
+import { HelloWorldComponent } from './hello-world/hello-world.component';
 
 @NgModule({
-  declarations: [AppComponent, DevPlaygroundComponent],
+  declarations: [AppComponent, DevPlaygroundComponent, HelloWorldComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

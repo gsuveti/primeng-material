@@ -25,7 +25,8 @@
     "help": "./node_modules/.bin/nx help",
     "theme:clean": "./node_modules/.bin/gulp theme-clean",
     "theme:build": "./node_modules/.bin/gulp theme-build",
-    "theme:publish-irian-npm": "npm run theme:clean && npm run theme:build && cd theme-dist && npm publish --tag latest --registry https://nexus.irian.at/content/repositories/irian-npm/"
+    "theme:publish-irian-npm": "npm run theme:clean && npm run theme:build && cd theme-dist && npm publish --tag latest --registry https://nexus.irian.at/content/repositories/irian-npm/",
+    "playground": "angular-playground"
   },
   "private": true,
   "dependencies": {
@@ -99,6 +100,7 @@
     "typescript": "~3.4.5",
     "@ngrx/store-devtools": "7.2.0",
     "dotenv": "6.2.0",
-    "@nrwl/workspace": "8.0.0"
+    "@nrwl/workspace": "8.0.0",
+    "angular-playground": "^6.0.1"
   }
 }

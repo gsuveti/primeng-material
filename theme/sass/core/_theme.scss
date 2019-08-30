@@ -1,5 +1,4 @@
 @import "vars/default-css-vars";
-
 @import "spacing";
 @import "font-sizes";
 @import "icon";
@@ -102,10 +101,10 @@ hover;
 
 @mixin generateColorClasses() {
   @each $name in $colors {
-    .color-#{$name} {
+    .color-#{"" + $name} {
       color: var(--#{$name}) !important;
     }
-    .background-#{$name} {
+    .background-#{"" + $name} {
       background-color: var(--#{$name}) !important;
     }
   }
