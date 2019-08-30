@@ -11,7 +11,7 @@ import { NodeService } from '../node.service';
 export class TreeComponent implements OnInit {
   msgs: Message[];
 
-  @ViewChild('expandingTree') expandingTree: Tree;
+  @ViewChild('expandingTree', { static: false }) expandingTree: Tree;
 
   filesTree1: TreeNode[];
   filesTree2: TreeNode[];

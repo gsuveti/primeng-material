@@ -24,7 +24,7 @@ export class TableFilterComponent implements OnInit {
   }];
   cols: any[];
   frozenCols: any[];
-  @ViewChild('dt') table: Table;
+  @ViewChild('dt', { static: true }) table: Table;
 
   constructor() {
   }

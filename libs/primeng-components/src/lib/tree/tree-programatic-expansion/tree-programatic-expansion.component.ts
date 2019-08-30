@@ -8,7 +8,7 @@ import { NodeService } from '../../node.service';
   styleUrls: ['./tree-programatic-expansion.component.scss']
 })
 export class TreeProgramaticExpansionComponent implements OnInit {
-  @ViewChild('expandingTree') expandingTree: Tree;
+  @ViewChild('expandingTree', { static: true }) expandingTree: Tree;
 
   filesTree: TreeNode[];
 
