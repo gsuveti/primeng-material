@@ -24,6 +24,7 @@
     .control-prefix {
       flex-basis: unset;
       margin-right: var(--spacer-sm);
+
       + .ui-inputtext, .ui-dropdown {
         flex-basis: unset;
         flex: 1;
@@ -57,6 +58,7 @@
     &.has-error {
       .ui-inputtext, .ui-dropdown {
         border-bottom-color: $danger;
+
         &:enabled {
           &:hover {
             border-bottom-color: $danger;
@@ -78,6 +80,7 @@
     &.has-warning {
       .ui-inputtext, .ui-dropdown {
         border-bottom-color: $warn;
+
         &:enabled {
           &:hover {
             border-bottom-color: $warn;
@@ -102,6 +105,7 @@
           border-bottom-color: $success;
         }
       }
+
       > label, .control-prefix {
         color: $success;
       }
@@ -111,42 +115,6 @@
   .ui-fluid {
     .input-field {
       display: flex;
-    }
-  }
-
-  @include g-state(sm) {
-    .left-aligned-labels, .right-aligned-labels {
-      .input-field {
-        display: flex;
-        margin: 0;
-
-        > label {
-          flex-basis: $label-width;
-          + * {
-            &:not(.control-prefix) {
-              flex-basis: unset;
-              flex: 1;
-            }
-          }
-        }
-        .control-prefix {
-          + * {
-            flex-basis: unset;
-            flex: 1;
-          }
-        }
-        .ui-message {
-          padding-left: $label-width;
-        }
-      }
-    }
-    .right-aligned-labels {
-      .input-field {
-        > label {
-          padding-right: var(--spacer-md);
-          justify-content: flex-end;
-        }
-      }
     }
   }
 }

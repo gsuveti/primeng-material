@@ -155,39 +155,6 @@
 
     }
 
-    &.ui-table-responsive {
-      @include g-state(xs-down) {
-        .ui-table-thead, .ui-table-tfoot {
-          > tr {
-            > th, > td {
-              display: none !important;
-            }
-          }
-        }
-
-        .ui-table-tbody {
-          > tr {
-            > td {
-
-              text-align: left;
-              display: block;
-              width: 100% !important;
-              box-sizing: border-box;
-              float: left;
-              clear: left;
-              border: 0 !important;
-
-              .ui-column-title {
-                padding-right: var(--spacer-xs);
-                display: inline-block;
-                font-weight: bold;
-              }
-            }
-          }
-        }
-      }
-    }
-
     .ui-table-caption, .ui-table-summary {
       padding: var(--spacer-sm);
       background-color: transparent;

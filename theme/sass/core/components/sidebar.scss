@@ -1,34 +1,19 @@
 @import "overlaypanel";
 
-@mixin ui-sidebar(
-  $primary: $primary,
-  $primary-text-color: $primary-text-color
-) {
+@mixin ui-sidebar() {
   &.ui-sidebar {
-    background-color: $white;
+    background-color: var(--default);
     padding: var(--spacer-md);
 
     .ui-sidebar-close {
       position: absolute;
       top: var(--spacer-sm);
       right: var(--spacer-sm);
-      @include overlay-close(transparent, $hover);
+      @include overlay-close(transparent, var(--hover));
     }
 
     &.ui-sidebar-sm, &.ui-sidebar-md, &.ui-sidebar-lg {
-      width: $side-nav-width;
-    }
-
-    @include g-state(sm) {
-      &.ui-sidebar-md, &.ui-sidebar-lg {
-        width: $side-nav-width-md;
-      }
-    }
-
-    @include g-state(lg) {
-      &.ui-sidebar-lg {
-        width: $side-nav-width-lg;
-      }
+      width: var(--side-nav-width);
     }
   }
 }

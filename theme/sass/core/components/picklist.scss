@@ -7,12 +7,14 @@
   &.ui-picklist {
     .ui-picklist-buttons {
       padding: var(--spacer-sm) var(--spacer-md);
+
       .ui-picklist-buttons-cell {
         display: flex;
         flex-direction: column;
         align-items: center;
       }
     }
+
     .ui-picklist-listwrapper {
       .ui-picklist-list {
         width: auto;
@@ -21,8 +23,10 @@
           height: 0;
           padding: 0;
         }
+
         .ui-picklist-item {
           padding: var(--spacer-xs) var(--spacer-sm);
+
           &.ui-state-highlight {
             background-color: $accent;
           }
@@ -38,69 +42,13 @@
           padding-left: var(--spacer-lg);
           text-indent: 0;
         }
-        .fa {
-          left: var(--spacer-sm);
-        }
       }
+
       .ui-picklist-list {
         border: 1px solid $border-color;
       }
     }
-    @include g-state(sm) {
-      display: flex;
-      align-items: center;
 
-      .ui-picklist-listwrapper {
-        flex: 1;
-      }
-      .ui-picklist-buttons {
-        width: auto;
-      }
-    }
-
-    &.ui-picklist-responsive {
-      @include g-state(xs) {
-        display: flex;
-        flex-direction: column;
-
-        .ui-picklist-listwrapper {
-          width: 100% !important;
-        }
-        .ui-picklist-buttons {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 100% !important;
-          height: auto;
-
-          .ui-picklist-buttons-cell {
-            flex-direction: row;
-            justify-content: center;
-          }
-
-          .fa {
-            &.fa-angle-right, &.fa-angle-left {
-              &:before {
-                content: "play_arrow";
-              }
-            }
-
-            &.fa-angle-double-right, &.fa-angle-double-left {
-              &:before {
-                content: "fast_forward";
-              }
-            }
-
-            &.fa-angle-right, &.fa-angle-double-right {
-              transform: rotate(90deg);
-            }
-            &.fa-angle-left, &.fa-angle-double-left {
-              transform: rotate(-90deg);
-            }
-          }
-        }
-      }
-    }
   }
 }
 
