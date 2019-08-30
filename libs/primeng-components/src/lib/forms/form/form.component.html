@@ -1,6 +1,6 @@
 <div class="container">
   <form #userform="ngForm" (ngSubmit)="onSubmit(userform)" class="row">
-    <div class="gr-12 gr-3@md px-xs py-sm">
+    <div class="gr-12 gr-3@md py-sm">
       <div class="form-field">
         <label for="firstName">Title</label>
         <p-dropdown [options]="titles"
@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="gr-12 gr-3@md px-xs py-sm">
+    <div class="gr-12 gr-3@md py-sm">
       <div class="form-field">
         <label for="firstName">First Name</label>
         <input pInputText type="text" class="form-control" id="firstName"
@@ -25,7 +25,7 @@
       </div>
     </div>
 
-    <div class="gr-12 gr-3@md px-xs py-sm">
+    <div class="gr-12 gr-3@md py-sm">
       <div class="form-field">
         <label for="secondName">Second Name</label>
         <input pInputText type="text" class="form-control" id="secondName"
@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <div class="gr-12 gr-3@md px-xs py-sm ">
+    <div class="gr-12 gr-3@md py-sm ">
       <div class="form-field">
         <label for="nickName">Nickname</label>
         <input pInputText type="text" class="form-control" id="nickName"
@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div class="gr-12 gr-3@md px-xs py-sm ">
+    <div class="gr-12 gr-3@md py-sm ">
       <div class="form-field">
         <label for="firstName">Role</label>
 
@@ -59,7 +59,7 @@
       </div>
     </div>
 
-    <div class="gr-12 gr-3@md px-xs py-sm">
+    <div class="gr-12 gr-3@md py-sm">
       <div class="form-field">
         <label>Skills:</label>
         <p-chips [(ngModel)]="user.skills" name="skills"></p-chips>
