@@ -1,0 +1,6 @@
+{
+  "sourceRoots": ["./apps/primeng-material/src"],
+  "angularCli": {
+    "appName": "playground"
+  }
+}
