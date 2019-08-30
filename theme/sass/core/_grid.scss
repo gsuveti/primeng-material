@@ -85,7 +85,7 @@ $xlStartBreakpoint: $laptopLargeBreakpoint;
   ));
 }
 
-@mixin make-grid() {
+@mixin make-grid($selector:'body') {
 
   // setting up the grid
   @include g-setup((
@@ -101,7 +101,7 @@ $xlStartBreakpoint: $laptopLargeBreakpoint;
   @include g-classes();
 
 
-  body {
+  #{$selector} {
 
     --mobile-small-breakpoint: #{$mobileSmallBreakpoint};
     --mobile-medium-breakpoint: #{$mobileMediumBreakpoint};

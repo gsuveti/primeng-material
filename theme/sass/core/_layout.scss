@@ -1,8 +1,8 @@
 @import "vars/vars";
 
-@mixin layout($extra-class:'') {
+@mixin layout($selector:'body') {
 
-  body {
+  #{$selector} {
     .form-field {
       display: inline-flex;
       flex-direction: column;
