@@ -1,5 +1,5 @@
 {
-  "name": "@irian/primeng-material",
+  "name": "@irian-ro/primeng-material",
   "version": "5.0.0",
   "peerDependencies": {
     "coffeekraken-gridle": "^3.0.0",
