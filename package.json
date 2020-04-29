@@ -48,7 +48,7 @@
     "core-js": "^3.2.1",
     "faker": "^4.1.0",
     "fullcalendar": "^3.10.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "material-icons-font": "^2.0.0",
     "moment": "^2.24.0",
     "ngx-cookie-service": "^2.2.0",
