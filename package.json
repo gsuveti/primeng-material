@@ -50,7 +50,7 @@
     "fullcalendar": "^3.10.1",
     "jquery": "^3.4.1",
     "material-icons-font": "^2.0.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ngx-cookie-service": "^2.2.0",
     "ngx-webstorage": "^4.0.1",
     "primeicons": "^2.0.0",
